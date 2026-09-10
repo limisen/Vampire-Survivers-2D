@@ -4,28 +4,37 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject Player;
 
+    public EnemyData enemyData;
     [SerializeField] float moveSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (moveSpeed == 0)
-        {
-            moveSpeed = 3; // Simply a base movement Speed unless any other is provided Via the SerializeField
-        }
+        enemyData = GetComponent<EnemyData>();
+
+        Player = GameObject.FindWithTag("Player");
+        Debug.Log(Player.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // calculate the distance between this object (The enemy) and the target object (The Player)
-        // and move a portion of that distance each frame:
+        if (isActiveAndEnabled)
+        {
+            moveSpeed = enemyData.moveSpeed;
 
-        Vector3 delta = Player.transform.position - transform.position;
 
-        delta.z = 0; // make sure the GameObject this script is attached to doesn't (try to) get closer on the Z-Axis
+            // calculate the distance between this object (The enemy) and the target object (The Player)
+            // and move a portion of that distance each frame:
 
-        transform.position += delta * Time.deltaTime * (moveSpeed * 0.9f);
-                                                                  /* ↑  makey the enemy slightly slower than the player in order to allow them to move away*/
+            Vector3 delta = Player.transform.position - transform.position;
+
+            delta.z = 0; // make sure the GameObject this script is attached to doesn't (try to) get closer on the Z-Axis
+
+            delta.Normalize(); // Make it so the direaction/point we are moving to doesnt change the speed of the movement based on the distance
+
+            transform.position += delta * (moveSpeed * 0.95f) * Time.deltaTime;
+            /* ↑  makey the enemy slightly slower than the player in order to allow them to move away*/
+        }
     }
 }
