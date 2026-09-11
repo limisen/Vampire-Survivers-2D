@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
         //}
 
         // New input system
-        transform.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed, 0) * Time.deltaTime;
+        if (playerData.GetComponent<PlayerData>().gameMenu.gamePaused == false)
+        {
+            transform.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed, 0) * Time.deltaTime;
+        }
     }
 }

@@ -13,13 +13,12 @@ public class EnemyMovement : MonoBehaviour
         enemyData = GetComponent<EnemyData>();
 
         Player = GameObject.FindWithTag("Player");
-        Debug.Log(Player.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActiveAndEnabled)
+        if (isActiveAndEnabled && Player.GetComponentInParent<PlayerData>().gameMenu.gamePaused == false)
         {
             moveSpeed = enemyData.moveSpeed;
 

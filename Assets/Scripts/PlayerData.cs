@@ -12,8 +12,9 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public float EXP_to_next_lvl = 5f;
     [SerializeField] public float current_EXP;
     [SerializeField] public float current_lvl = 1;
+    public int upgrades_Chosen = 0;
 
-    [SerializeField] GameMenu gameMenu;
+    [SerializeField] public GameMenu gameMenu;
 
     void Start()
     {
@@ -37,6 +38,9 @@ public class PlayerData : MonoBehaviour
         // IF lvl up with exact EXP
         if (current_EXP == EXP_to_next_lvl)
         {
+            gameMenu.LvL_Up_Menu.SetActive(true);
+            gameMenu.gamePaused = true;
+
             current_lvl++; // increase current lvl
             EXP_to_next_lvl += EXP_to_next_lvl * current_lvl; // raise the EXP needed to levelUP
             current_EXP = 0; // Reset the progress towards the next lvl
@@ -47,6 +51,9 @@ public class PlayerData : MonoBehaviour
         // IF lvl up with excess EXP
         else if (current_EXP > EXP_to_next_lvl)
         {
+            gameMenu.LvL_Up_Menu.SetActive(true);
+            gameMenu.gamePaused = true;
+
             current_lvl++; // increase current lvl
 
             current_EXP -= EXP_to_next_lvl; // Reset the progress towards the next lvl BUT keep the excess exp

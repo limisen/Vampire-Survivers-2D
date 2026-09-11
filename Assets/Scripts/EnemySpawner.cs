@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
     private float timeRemaining;
 
     [SerializeField] GameObject[] list_of_enemies;
-
+    [SerializeField] GameMenu gameMenu;
 
     public void SpawnEnemy()
     {
@@ -20,12 +20,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        timeRemaining -= Time.deltaTime;
-
-        if (timeRemaining < 0)
+        if (gameMenu.gamePaused == false)
         {
-            SpawnEnemy();
-            timeRemaining = time_between_spawns;
+            timeRemaining -= Time.deltaTime;
+
+            if (timeRemaining < 0)
+            {
+                SpawnEnemy();
+                timeRemaining = time_between_spawns;
+            }
         }
     }
 }
