@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
+    [SerializeField] public GameObject Player;
 
     public EnemyData enemyData;
     [SerializeField] float moveSpeed;
@@ -32,8 +32,7 @@ public class EnemyMovement : MonoBehaviour
 
             delta.Normalize(); // Make it so the direaction/point we are moving to doesnt change the speed of the movement based on the distance
 
-            transform.position += delta * (moveSpeed * 0.95f) * Time.deltaTime;
-            /* ↑  makey the enemy slightly slower than the player in order to allow them to move away*/
+            transform.position += delta * moveSpeed * Time.deltaTime;
         }
     }
 }

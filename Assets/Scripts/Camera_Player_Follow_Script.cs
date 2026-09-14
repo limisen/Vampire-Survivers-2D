@@ -18,7 +18,7 @@ public class Camera_Player_Follow_Script : MonoBehaviour
             delta.z = 0; // make sure the GameObject this script is attached to doesn't (try to) get closer on the Z-Axis
 
             transform.position += delta * Time.deltaTime * (followSpeed * 0.33f);
-            /* ↑  Smoothen the cameras movement to make it less 'jerky'*/
+                                                                        /* ↑  Smoothen the cameras movement to make it less 'jerky'*/
         }
     }
 }

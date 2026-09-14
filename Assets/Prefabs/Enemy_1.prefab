@@ -129,6 +129,9 @@ MonoBehaviour:
   currentHP: 10
   DMG: 3
   EXP_to_Drop: 1
+  EXP_Prefab: {fileID: 4495294543294757013, guid: 56d3ec21444ae1849922ef158e9a9f55, type: 3}
+  score_to_give: 10
+  player_data: {fileID: 0}
 --- !u!114 &-724874750902971119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +193,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.05
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0

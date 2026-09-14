@@ -1,24 +1,28 @@
-using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 5f;
-    [SerializeField] public int MaxHP = 10;
-    [SerializeField] public int current_HP;
+    [SerializeField] public float MaxHP = 10;
+    [SerializeField] public float current_HP = 0;
 
     [SerializeField] public int DMG = 1;
 
     [SerializeField] public float EXP_to_next_lvl = 5f;
-    [SerializeField] public float current_EXP;
+    [SerializeField] public float current_EXP = 0;
     [SerializeField] public float current_lvl = 1;
-    public int upgrades_Chosen = 0;
+    public int upgrades_Chosen = 1;
+
+    public int score = 0;
 
     [SerializeField] public GameMenu gameMenu;
 
     void Start()
     {
         current_HP = MaxHP;
+
+        gameMenu.HP_slider.maxValue = MaxHP;
     }
 
     void Update()
@@ -30,7 +34,12 @@ public class PlayerData : MonoBehaviour
         if (current_HP <= 0)
         {
             Debug.Log("Player Died");
+            gameMenu.gamePaused = true;
+            gameMenu.Player_UI.SetActive(false);
+            gameMenu.GameOverMenu.SetActive(true);
         }
+
+        gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
     }
 
     public void On_level_up()

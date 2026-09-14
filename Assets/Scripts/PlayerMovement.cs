@@ -1,21 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public readonly PlayerData playerData;
     [SerializeField] GameObject playerData;
-    [SerializeField] public float moveSpeed;
+    [SerializeField] public InputAction moveAction;
+    [SerializeField] public InputAction UI_Action;
+    private float moveSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moveSpeed = playerData.GetComponent<PlayerData>().moveSpeed;
+        moveAction.Enable();
+        UI_Action.Enable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Old input system
+        // Old input system KeyCode:
         //if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         //{
         //    transform.position += new Vector3(0, moveSpeed * 1, 0) * Time.deltaTime;
@@ -33,10 +37,13 @@ public class PlayerMovement : MonoBehaviour
         //    transform.position += new Vector3(moveSpeed * 1, 0, 0) * Time.deltaTime;
         //}
 
-        // New input system
-        if (playerData.GetComponent<PlayerData>().gameMenu.gamePaused == false)
-        {
-            transform.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed, Input.GetAxis("Vertical") * moveSpeed, 0) * Time.deltaTime;
-        }
+        // Old input system GetAxis:
+        //if (playerData.GetComponent<PlayerData>().gameMenu.gamePaused == false)
+        //{
+        //    transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0).normalized * Time.deltaTime * moveSpeed;
+        //}
+        // New input sytem movement specifically:
+        Vector2 moveDirection = moveAction.ReadValue<Vector2>(); // Get the direction to move in.
+        transform.position += new Vector3(moveDirection.x, moveDirection.y, 0) * moveSpeed * Time.deltaTime; // Move the player
     }
 }
