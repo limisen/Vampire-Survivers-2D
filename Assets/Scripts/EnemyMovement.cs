@@ -32,7 +32,10 @@ public class EnemyMovement : MonoBehaviour
 
             delta.Normalize(); // Make it so the direaction/point we are moving to doesnt change the speed of the movement based on the distance
 
+            float angle_to_rotate = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg; // Calculate the amount to rotate then convert it from Radiants to degrees
+
             transform.position += delta * moveSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.AngleAxis(angle_to_rotate, Vector3.forward); // Then rotate it so it's forward axis is facing the target (aka the player)
         }
     }
 }

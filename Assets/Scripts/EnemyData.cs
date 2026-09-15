@@ -3,8 +3,8 @@ using UnityEngine;
 public class EnemyData : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 5f;
-    [SerializeField] public int MaxHP = 10;
-    [SerializeField] public int currentHP;
+    [SerializeField] public float MaxHP = 10;
+    [SerializeField] public float currentHP;
 
     [SerializeField] public int DMG = 3;
 

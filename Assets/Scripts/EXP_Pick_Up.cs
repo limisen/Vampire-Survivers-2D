@@ -6,7 +6,7 @@ public class EXP_Pick_Up : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             // If the EXP_ORB and Player collide increase player's exp by the orbs EXP Value and then destroy that EXP orb
             collision.gameObject.GetComponentInParent<PlayerData>().current_EXP += EXP_to_give;

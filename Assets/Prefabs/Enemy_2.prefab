@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4eecbd44d04a84dbd036c0bc1cb931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  gameMenu: {fileID: 0}
 --- !u!70 &8080401244534908828
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
