@@ -41,12 +41,14 @@ public class PlayerData : MonoBehaviour
         }
 
         gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
+
+        On_level_up();
     }
 
     public void On_level_up()
     {
         // IF lvl up with exact EXP
-        if (current_EXP == EXP_to_next_lvl)
+        if (current_EXP == EXP_to_next_lvl && GameManager.singleton.gamePaused == false)
         {
             gameMenu.LvL_Up_Menu.SetActive(true);
             GameManager.singleton.gamePaused = true;
@@ -59,7 +61,7 @@ public class PlayerData : MonoBehaviour
             gameMenu.EXP_slider.value = 0; // Reset the visual progress towards the next lvl
         }
         // IF lvl up with excess EXP
-        else if (current_EXP > EXP_to_next_lvl)
+        else if (current_EXP > EXP_to_next_lvl && GameManager.singleton.gamePaused == false)
         {
             gameMenu.LvL_Up_Menu.SetActive(true);
             GameManager.singleton.gamePaused = true;

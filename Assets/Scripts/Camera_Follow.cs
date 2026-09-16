@@ -26,7 +26,7 @@ public class Camera_Follow : MonoBehaviour
             delta.z = 0;
 
             // Move by the calculated delta distance, per second, amplified by the desired follow speed
-            transform.position += (Time.deltaTime * followSpeed) * delta;                            
+            transform.position += (Time.deltaTime * followSpeed) * delta;                         
         }
     }
 }

@@ -16,6 +16,51 @@ public class GameMenu : MonoBehaviour
     [SerializeField] public UnityEngine.UI.Slider HP_slider;
     [SerializeField] public TextMeshProUGUI Player_Score_UI;
 
+    private PlayerData Player;
+
+    private void Awake()
+    {
+        Player = FindAnyObjectByType<PlayerData>();
+    }
+
+    private void Start()
+    {
+        EXP_slider.maxValue = Player.EXP_to_next_lvl;
+        HP_slider.maxValue = Player.MaxHP;
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == false)
+        // Add New input system pause key pressed (logi) here
+        {
+            Pause_Menu.SetActive(true);
+            Player_UI.SetActive(false);
+            GameManager.singleton.gamePaused = true;
+
+            Debug.Log("Pause button was pressed");
+        }
+        else if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == true)
+        // Add New input system pause key pressed (logi) here
+        {
+            Pause_Menu.SetActive(false);
+            Player_UI.SetActive(true);
+            GameManager.singleton.gamePaused = false;
+
+            Debug.Log("Pause button was pressed");
+        }
+
+        // Keep promting the player to choose another upgrade untill the nr of upgrades matches their lvl
+        //if (Player.GetComponentInParent<PlayerData>().upgrades_Chosen != Player.GetComponentInParent<PlayerData>().current_lvl)
+        //{
+        //    LvL_Up_Menu.SetActive(true);
+        //    Player_UI.SetActive(true);
+        //    gamePaused = true;
+        //}
+    }
+
+
 
     public void StartPressed()
     {
@@ -84,36 +129,5 @@ public class GameMenu : MonoBehaviour
 
         LvL_Up_Menu.SetActive(false);
         GameManager.singleton.gamePaused = false;
-    }
-
-    private void Update()
-    {
-
-        if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == false)
-        // Add New input system pause key pressed (logi) here
-        {
-            Pause_Menu.SetActive(true);
-            Player_UI.SetActive(false);
-            GameManager.singleton.gamePaused = true;
-
-            Debug.Log("Pause button was pressed");
-        }
-        else if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == true)
-        // Add New input system pause key pressed (logi) here
-        {
-            Pause_Menu.SetActive(false);
-            Player_UI.SetActive(true);
-            GameManager.singleton.gamePaused = false;
-
-            Debug.Log("Pause button was pressed");
-        }
-
-        // Keep promting the player to choose another upgrade untill the nr of upgrades matches their lvl
-        //if (Player.GetComponentInParent<PlayerData>().upgrades_Chosen != Player.GetComponentInParent<PlayerData>().current_lvl)
-        //{
-        //    LvL_Up_Menu.SetActive(true);
-        //    Player_UI.SetActive(true);
-        //    gamePaused = true;
-        //}
     }
 }
