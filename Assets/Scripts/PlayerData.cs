@@ -1,28 +1,29 @@
-using TMPro;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 5f;
+
     [SerializeField] public float MaxHP = 10;
     [SerializeField] public float current_HP = 0;
 
-    [SerializeField] public int DMG = 1;
 
-    [SerializeField] public float EXP_to_next_lvl = 5f;
-    [SerializeField] public float current_EXP = 0;
     [SerializeField] public float current_lvl = 1;
-    public int upgrades_Chosen = 1;
+    [SerializeField] public float current_EXP = 0;
+    [SerializeField] public float EXP_to_next_lvl = 5f;
 
-    public int score = 0;
+    [SerializeField] public int score;
 
     [SerializeField] public GameMenu gameMenu;
 
-    void Start()
+    private void Awake()
     {
         current_HP = MaxHP;
 
+        gameMenu = gameMenu.GetComponent<GameMenu>();
         gameMenu.HP_slider.maxValue = MaxHP;
+        gameMenu.EXP_slider.value = current_EXP;
+        gameMenu.HP_slider.value = current_HP;
     }
 
     void Update()
@@ -34,9 +35,9 @@ public class PlayerData : MonoBehaviour
         if (current_HP <= 0)
         {
             Debug.Log("Player Died");
-            gameMenu.gamePaused = true;
+            GameManager.singleton.gamePaused = true;
             gameMenu.Player_UI.SetActive(false);
-            gameMenu.GameOverMenu.SetActive(true);
+            gameMenu.GameOver_Menu.SetActive(true);
         }
 
         gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
@@ -48,7 +49,7 @@ public class PlayerData : MonoBehaviour
         if (current_EXP == EXP_to_next_lvl)
         {
             gameMenu.LvL_Up_Menu.SetActive(true);
-            gameMenu.gamePaused = true;
+            GameManager.singleton.gamePaused = true;
 
             current_lvl++; // increase current lvl
             EXP_to_next_lvl += EXP_to_next_lvl * current_lvl; // raise the EXP needed to levelUP
@@ -61,7 +62,7 @@ public class PlayerData : MonoBehaviour
         else if (current_EXP > EXP_to_next_lvl)
         {
             gameMenu.LvL_Up_Menu.SetActive(true);
-            gameMenu.gamePaused = true;
+            GameManager.singleton.gamePaused = true;
 
             current_lvl++; // increase current lvl
 

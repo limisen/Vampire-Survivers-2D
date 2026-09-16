@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5769028705716477251}
   - component: {fileID: 8541557230062475992}
-  - component: {fileID: 252568707920814544}
   - component: {fileID: 8026883112427240775}
+  - component: {fileID: 252568707920814544}
   - component: {fileID: -724874750902971119}
   - component: {fileID: 8080401244534908828}
   - component: {fileID: -7066378958736640782}
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.7735849, g: 0.18831131, b: 0.15690638, a: 1}
+  m_Color: {r: 0.6509434, g: 0.15921383, b: 0.14431292, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,21 +97,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &252568707920814544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973793669278704617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31973fdc4206d9544b861db9fcccc758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  Player: {fileID: 0}
-  enemyData: {fileID: 0}
-  moveSpeed: 0
 --- !u!114 &8026883112427240775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc672862dd71044eb336dd69e736e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  gamePause: 0
   moveSpeed: 10
   MaxHP: 20
   currentHP: 20
@@ -131,6 +117,27 @@ MonoBehaviour:
   EXP_to_Drop: 5
   EXP_Prefab: {fileID: 4495294543294757013, guid: 56d3ec21444ae1849922ef158e9a9f55, type: 3}
   score_to_give: 20
+  player_data: {fileID: 0}
+--- !u!114 &252568707920814544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973793669278704617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31973fdc4206d9544b861db9fcccc758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gamePause: 0
+  moveSpeed: 0
+  MaxHP: 10
+  currentHP: 0
+  DMG: 3
+  EXP_to_Drop: 1
+  EXP_Prefab: {fileID: 0}
+  score_to_give: 1
   player_data: {fileID: 0}
 --- !u!114 &-724874750902971119
 MonoBehaviour:
@@ -144,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4eecbd44d04a84dbd036c0bc1cb931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gameMenu: {fileID: 0}
+  gamePause: 0
 --- !u!70 &8080401244534908828
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

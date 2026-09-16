@@ -1,37 +1,40 @@
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : EnemyData
 {
+    [SerializeField] GameObject[] enemies;
+    [SerializeField] GameObject[] SpawnPoints;
+
     [SerializeField] float time_between_spawns = 2f;
     private float timeRemaining;
 
-    [SerializeField] GameObject[] list_of_enemies;
-    [SerializeField] GameObject[] list_of_SpawnPoints;
-    [SerializeField] GameMenu gameMenu;
-
-    public void SpawnEnemy()
-    {
-        // Effectivly spawn a clone of the enemy at index a random index, and spawn it at a random position in the spawPoint list.
-        Instantiate<GameObject>(list_of_enemies[Random.Range(0,list_of_enemies.Length)], list_of_SpawnPoints[Random.Range(0,list_of_SpawnPoints.Length)].transform);  
-    }
 
     private void Start()
     {
-        timeRemaining = time_between_spawns; // Starte the timer
+        // Starte the timer
+        timeRemaining = time_between_spawns;
     }
 
     private void Update()
     {
-        if (gameMenu.gamePaused == false)
+        if (GameManager.singleton.gamePaused == false)
         {
-            timeRemaining -= Time.deltaTime; // incriment the timer
+            // incriment the timer
+            timeRemaining -= Time.deltaTime; 
 
             if (timeRemaining < 0)
             {
                 // Spawn the enemy if we have reached 0 on the timer
                 SpawnEnemy();
+                // Then reset the timer in for the next spawn
                 timeRemaining = time_between_spawns;
             }
         }
+    }
+
+    public void SpawnEnemy()
+    {
+        // Effectivly spawn a clone of the enemy at a random index, and spawn it at a random position of the spawnPoint positions, (With 0,0,0 rotation).
+        Instantiate(enemies[Random.Range(0, enemies.Length)], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position, Quaternion.identity);
     }
 }

@@ -2,40 +2,35 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] public GameObject Player;
+    float moveSpeed;
 
-    public EnemyData enemyData;
-    [SerializeField] float moveSpeed;
+    GameObject player;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        enemyData = GetComponent<EnemyData>();
-
-        Player = GameObject.FindWithTag("Player");
+        moveSpeed = GetComponent<EnemyData>().moveSpeed;
+        player = FindAnyObjectByType<PlayerData>().gameObject;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (isActiveAndEnabled && Player.GetComponentInParent<PlayerData>().gameMenu.gamePaused == false)
+        if (GameManager.singleton.gamePaused == false && isActiveAndEnabled)
         {
-            moveSpeed = enemyData.moveSpeed;
-
-
             // calculate the distance between this object (The enemy) and the target object (The Player)
-            // and move a portion of that distance each frame:
+            Vector3 delta = player.transform.position - transform.position;
 
-            Vector3 delta = Player.transform.position - transform.position;
+            // make sure not to move closer on the Z-Axis
+            delta.z = 0;
 
-            delta.z = 0; // make sure the GameObject this script is attached to doesn't (try to) get closer on the Z-Axis
+            // Make it so the direaction/point we are moving to doesnt change the speed of the movement, based on the distance.
+            delta.Normalize();
 
-            delta.Normalize(); // Make it so the direaction/point we are moving to doesnt change the speed of the movement based on the distance
+            // Calculate the amount to rotate in order to face the target, then convert it from Radiants to Degrees
+            float angle_to_rotate = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
 
-            float angle_to_rotate = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg; // Calculate the amount to rotate then convert it from Radiants to degrees
-
-            transform.position += delta * moveSpeed * Time.deltaTime;
-            transform.rotation = Quaternion.AngleAxis(angle_to_rotate, Vector3.forward); // Then rotate it so it's forward axis is facing the target (aka the player)
+            // Now set the position and then rotate so we are facing the target (aka the player)
+            transform.SetPositionAndRotation((transform.position += (Time.deltaTime * moveSpeed) * delta), Quaternion.AngleAxis(angle_to_rotate, Vector3.forward));
         }
     }
 }
