@@ -683,7 +683,7 @@ TextureImporter:
         height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 7, z: 8, w: 7}
+      border: {x: 8, y: 0, z: 8, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -2041,13 +2041,13 @@ TextureImporter:
       name: ui_big_pieces_no_boxes_not_Sliced_73
       rect:
         serializedVersion: 2
-        x: 592
+        x: 600
         y: 370
-        width: 16
+        width: 8
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 0, z: 8, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -2063,13 +2063,13 @@ TextureImporter:
       name: ui_big_pieces_no_boxes_not_Sliced_74
       rect:
         serializedVersion: 2
-        x: 592
+        x: 600
         y: 350
-        width: 16
+        width: 8
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 0, z: 8, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -2196,12 +2196,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 592
-        y: 330
-        width: 16
+        y: 370
+        width: 8
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 0, z: 8, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -2939,6 +2939,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_114
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 350
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c99644528e0ee04a85cfc8449d4f383
+      internalID: 135959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_115
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 330
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45aa971e873b91a4d8fde30b86b9c315
+      internalID: -53794715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_116
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 330
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715a2cad157a5a4499ab600373c7f47f
+      internalID: 1395658392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_117
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 365
+        width: 56
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 3, z: 31, w: 2}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7950b3b92996649ace166955d398b7
+      internalID: 1312069052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2973,6 +3061,10 @@ TextureImporter:
       ui_big_pieces_no_boxes_not_Sliced_111: 227758123
       ui_big_pieces_no_boxes_not_Sliced_112: 1224902519
       ui_big_pieces_no_boxes_not_Sliced_113: 733501026
+      ui_big_pieces_no_boxes_not_Sliced_114: 135959
+      ui_big_pieces_no_boxes_not_Sliced_115: -53794715
+      ui_big_pieces_no_boxes_not_Sliced_116: 1395658392
+      ui_big_pieces_no_boxes_not_Sliced_117: 1312069052
       ui_big_pieces_no_boxes_not_Sliced_12: 5805315674254919147
       ui_big_pieces_no_boxes_not_Sliced_13: 4416612516609702015
       ui_big_pieces_no_boxes_not_Sliced_14: 5033095582270979572
