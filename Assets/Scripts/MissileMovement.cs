@@ -3,28 +3,52 @@ using UnityEngine;
 public class MissileMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
-    GameObject Enemy;
+    GameObject[] Enemies;
+
+    GameObject nearestObj;
+    float distance;
+    float nearestDistance = 100000;
+
     GameObject Player;
 
     private void Awake()
     {
-        Enemy = GameObject.FindWithTag("Enemy");
         Player = GameObject.FindWithTag("Player");
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < Enemies.Length; i++)
+        {
+            distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
+
+            if (distance < nearestDistance)
+            { 
+                nearestObj = Enemies[i];
+                nearestDistance = distance;
+            }
+        }
     }
 
     private void Update()
     {
-        Enemy = GameObject.FindWithTag("Enemy");
-        Player = GameObject.FindWithTag("Player");
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < Enemies.Length; i++)
+        {
+            distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
+
+            if (distance < nearestDistance)
+            {
+                nearestObj = Enemies[i];
+                nearestDistance = distance;
+            }
+        }
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if (GameManager.singleton.gamePaused == false && Enemy != null)
+        if (GameManager.singleton.gamePaused == false && Enemies.Length > 0)
         {
             // calculate(ed) distance between this object and the target object
-            Vector3 delta = Enemy.transform.position - transform.position;
+            Vector3 delta = nearestObj.transform.position - transform.position;
 
             // make sure not to move closer on the Z-Axis
             delta.z = 0;
@@ -38,7 +62,7 @@ public class MissileMovement : MonoBehaviour
             // Now set the position and then rotate so we are facing the target (aka the player)
             transform.SetPositionAndRotation((transform.position += (Time.deltaTime * moveSpeed) * delta), Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1)));
         }
-        if (GameManager.singleton.gamePaused == false && Enemy == null)
+        if (GameManager.singleton.gamePaused == false && Enemies.Length == 0)
         {
             // calculate(ed) distance between this object and the target object
             Vector3 delta = Player.transform.position - transform.position;
@@ -52,7 +76,7 @@ public class MissileMovement : MonoBehaviour
             // Calculate the amount to rotate in order to face the target, then convert it from Radiants to Degrees
             float angle_to_rotate = (Mathf.Atan2(delta.y, delta.x) - (33)) * Mathf.Rad2Deg;
 
-            transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0,0,1), 1f);
+            transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0, 0, 1), 1f);
             gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(Player.GetComponent<PlayerData>().moveSpeed);
             transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));
         }
