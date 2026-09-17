@@ -7,7 +7,7 @@ public class MissileMovement : MonoBehaviour
 
     GameObject nearestObj;
     float distance;
-    float nearestDistance = 100000;
+    float nearestDistance = float.PositiveInfinity;
 
     GameObject Player;
 
@@ -42,7 +42,6 @@ public class MissileMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         if (GameManager.singleton.gamePaused == false && Enemies.Length > 0)
