@@ -22,5 +22,14 @@ public class EnemyData : MonoBehaviour
     private void Awake()
     {
         player_data = FindAnyObjectByType<PlayerData>();
+        currentHP = MaxHP;
+    }
+
+    private void LateUpdate()
+    {
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
