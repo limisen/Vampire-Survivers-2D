@@ -1406,6 +1406,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558199026}
   m_CullTransparentMesh: 1
+--- !u!1001 &569893458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 252568707920814544, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973793669278704617, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_Name
+      value: Target Dumby
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769028705716477251, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1816aac60aa722e40930b55ac9820afa, type: 3}
 --- !u!1 &573093541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &948172260
 Transform:
   m_ObjectHideFlags: 0
@@ -3304,6 +3365,7 @@ GameObject:
   - component: {fileID: 1195997190}
   - component: {fileID: 1195997188}
   - component: {fileID: 1195997189}
+  - component: {fileID: 1195997191}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Player
@@ -3468,7 +3530,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -3482,6 +3544,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1195997191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195997183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80027903d4b1bf24cb9bbb683ba47cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MagicMissile_Spawner
+  missiles_to_fire: 1
+  missle_Prefab: {fileID: 8180061297092482429, guid: 675e812ae2f74214dadd860cd1b10b26, type: 3}
+  time_between_spawns: 1
 --- !u!1 &1290799165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +4847,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 42
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6528,3 +6605,4 @@ SceneRoots:
   - {fileID: 1195997184}
   - {fileID: 948172260}
   - {fileID: 1989090986}
+  - {fileID: 569893458}

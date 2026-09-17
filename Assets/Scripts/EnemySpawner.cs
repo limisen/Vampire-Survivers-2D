@@ -22,7 +22,7 @@ public class EnemySpawner : EnemyData
             // incriment the timer
             timeRemaining -= Time.deltaTime; 
 
-            if (timeRemaining < 0)
+            if (timeRemaining <= 0)
             {
                 // Spawn the enemy if we have reached 0 on the timer
                 SpawnEnemy();
