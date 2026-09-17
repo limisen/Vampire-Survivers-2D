@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7287052501741373571}
   - component: {fileID: 8316387304362228591}
   - component: {fileID: 8249095327157761381}
+  - component: {fileID: 5483552611364690058}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -31,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.33, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2943089221092302596}
   m_Father: {fileID: 8502875078423669365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &7287052501741373571
@@ -120,7 +122,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!60 &8249095327157761381
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +153,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -167,10 +169,23 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
+    - - {x: -0.000000034458935, y: 0.6739937}
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 1
+--- !u!114 &5483552611364690058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493134599516788134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0607b83053b1949819819357d127eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dmg: 5
 --- !u!1 &5182906813110636331
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,12 +211,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5182906813110636331}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 0, z: 0}
-  m_LocalScale: {x: 0.32999998, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.28, z: 0}
+  m_LocalScale: {x: 0.33, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8502875078423669365}
+  m_Father: {fileID: 6348317381359648050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &121350660976150721
 TrailRenderer:
@@ -339,12 +354,11 @@ Transform:
   m_GameObject: {fileID: 8180061297092482429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 9.68, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6348317381359648050}
-  - {fileID: 2943089221092302596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-1152178642676274440
@@ -359,5 +373,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9ed3c5c7a5c9f48b7086f81caa03d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileMovement
-  dmg: 1
-  moveSpeed: 3
+  moveSpeed: 5
