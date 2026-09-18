@@ -26,6 +26,16 @@ public class MissileMovement : MonoBehaviour
 
     void LateUpdate()
     {
+        if (nearestObj == null)
+        {
+            FindNearest();
+        }
+
+        //if (nearestObj == null)
+        //{
+        //    nearestObj = Enemies[0];
+        //}
+
         if (GameManager.singleton.gamePaused == false && Enemies.Count > 0 && nearestObj != null)
         {
             // calculate(ed) distance between this object and the target object
@@ -48,11 +58,6 @@ public class MissileMovement : MonoBehaviour
         {
             Oribit_movement();
         }
-
-        if (nearestObj == null)
-        {
-            FindNearest();
-        }
     }
 
     public void FindNearest()
@@ -68,6 +73,7 @@ public class MissileMovement : MonoBehaviour
                 nearestDistance = distance;
             }
         }
+        nearestDistance = float.PositiveInfinity;
     }
 
     void Oribit_movement()

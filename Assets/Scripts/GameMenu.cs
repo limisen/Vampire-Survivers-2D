@@ -78,18 +78,25 @@ public class GameMenu : MonoBehaviour
 
         Player_UI.SetActive(true);
 
-        // IF there are any Enemies in the scene destroy them
-        GameObject[] Enemies_in_Sceen = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject Enemy in Enemies_in_Sceen)
+        // IF there are any Enemies left in the scene destroy them
+        GameObject[] Enemies_in_Scene = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject Enemy in Enemies_in_Scene)
         {
             Destroy(Enemy);
         }
 
-        // IF there are any EXP orbs in the scene destroy them
-        GameObject[] EXP_in_Sceen = GameObject.FindGameObjectsWithTag("EXP");
-        foreach (GameObject EXP_ORB in EXP_in_Sceen)
+        // IF there are any EXP orbs left in the scene destroy them
+        GameObject[] EXP_in_Scene = GameObject.FindGameObjectsWithTag("EXP");
+        foreach (GameObject EXP_ORB in EXP_in_Scene)
         {
             Destroy(EXP_ORB);
+        }
+        
+        // IF there are any Missiles left in the scene destroy them
+        GameObject[] Missiles_in_Scene = GameObject.FindGameObjectsWithTag("Missile");
+        foreach (GameObject Missile in Missiles_in_Scene)
+        {
+            Destroy(Missile);
         }
 
         // Reseting player data to default values

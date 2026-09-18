@@ -34,7 +34,10 @@ public class PlayerData : MonoBehaviour
 
         if (current_HP <= 0)
         {
-            Debug.Log("Player Died");
+            if (GameManager.singleton.gamePaused == false)
+            {
+                Debug.Log("Player Died");            
+            }
             GameManager.singleton.gamePaused = true;
             gameMenu.Player_UI.SetActive(false);
             gameMenu.GameOver_Menu.SetActive(true);

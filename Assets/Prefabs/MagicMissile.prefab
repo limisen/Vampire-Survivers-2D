@@ -267,7 +267,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Time: 1
+  m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -373,6 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9ed3c5c7a5c9f48b7086f81caa03d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileMovement
-  moveSpeed: 5
+  moveSpeed: 15
   Enemies: []
   nearestObj: {fileID: 0}
