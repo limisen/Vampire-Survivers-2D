@@ -1,11 +1,13 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
-    GameObject[] Enemies;
+    public List<GameObject> Enemies = new List<GameObject>();
 
-    GameObject nearestObj;
+    public GameObject nearestObj;
     float distance;
     float nearestDistance = float.PositiveInfinity;
 
@@ -14,37 +16,17 @@ public class MissileMovement : MonoBehaviour
     private void Awake()
     {
         Player = GameObject.FindWithTag("Player");
-        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        for (int i = 0; i < Enemies.Length; i++)
-        {
-            distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
-
-            if (distance < nearestDistance)
-            { 
-                nearestObj = Enemies[i];
-                nearestDistance = distance;
-            }
-        }
+        FindNearest();
     }
 
     private void Update()
     {
-        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        for (int i = 0; i < Enemies.Length; i++)
-        {
-            distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
-
-            if (distance < nearestDistance)
-            {
-                nearestObj = Enemies[i];
-                nearestDistance = distance;
-            }
-        }
+        FindNearest();
     }
 
     void LateUpdate()
     {
-        if (GameManager.singleton.gamePaused == false && Enemies.Length > 0)
+        if (GameManager.singleton.gamePaused == false && Enemies.Count > 0 && nearestObj != null)
         {
             // calculate(ed) distance between this object and the target object
             Vector3 delta = nearestObj.transform.position - transform.position;
@@ -61,8 +43,35 @@ public class MissileMovement : MonoBehaviour
             // Now set the position and then rotate so we are facing the target (aka the player)
             transform.SetPositionAndRotation((transform.position += (Time.deltaTime * moveSpeed) * delta), Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1)));
         }
-        if (GameManager.singleton.gamePaused == false && Enemies.Length == 0)
+
+        else if (GameManager.singleton.gamePaused == false)
         {
+            Oribit_movement();
+        }
+
+        if (nearestObj == null)
+        {
+            FindNearest();
+        }
+    }
+
+    public void FindNearest()
+    {
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList<GameObject>();
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
+
+            if (distance < nearestDistance)
+            {
+                nearestObj = Enemies[i];
+                nearestDistance = distance;
+            }
+        }
+    }
+
+    void Oribit_movement()
+    {
             // calculate(ed) distance between this object and the target object
             Vector3 delta = Player.transform.position - transform.position;
 
@@ -78,6 +87,5 @@ public class MissileMovement : MonoBehaviour
             transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0, 0, 1), 1f);
             gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(Player.GetComponent<PlayerData>().moveSpeed);
             transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));
-        }
     }
 }

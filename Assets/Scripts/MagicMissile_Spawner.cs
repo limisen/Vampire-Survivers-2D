@@ -25,8 +25,11 @@ public class MagicMissile_Spawner : MonoBehaviour
 
             if (timeRemaining <= 0)
             {
-                // Spawn the enemy if we have reached 0 on the timer
-                Instantiate(missle_Prefab, transform.position, Quaternion.identity);
+                for (int i = 1; i < missiles_to_fire + 1; i++)
+                {
+                    // Spawn the enemy if we have reached 0 on the timer
+                    Instantiate(missle_Prefab, transform.position + new Vector3(1 + (1/i), 1 + (1/i), 0), Quaternion.identity);
+                }
                 // Then reset the timer in for the next spawn
                 timeRemaining = time_between_spawns;
             }

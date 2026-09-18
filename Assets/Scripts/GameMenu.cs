@@ -85,26 +85,31 @@ public class GameMenu : MonoBehaviour
             Destroy(Enemy);
         }
 
-        // Reseting player data to default values
-        //moveSpeed = 5f;
-        //player_data.MaxHP = 100;
-        //player_data.current_HP = player_data.MaxHP;
-        //player_data.DMG = 1;
-        //player_data.EXP_to_next_lvl = 5f;
-        //player_data.current_EXP = 0;
-        //player_data.current_lvl = 1;
-        //player_data.upgrades_Chosen = 1;
-        //player_data.score = 0;
-        //player_data.transform.position = Vector3.zero; // resetting player position
-
-        FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10); // Also reset Camera Position
-
         // IF there are any EXP orbs in the scene destroy them
         GameObject[] EXP_in_Sceen = GameObject.FindGameObjectsWithTag("EXP");
         foreach (GameObject EXP_ORB in EXP_in_Sceen)
         {
             Destroy(EXP_ORB);
         }
+
+        // Reseting player data to default values
+        Player.moveSpeed = 5f;
+        Player.MaxHP = 10;
+        Player.current_HP = Player.MaxHP;
+        Player.EXP_to_next_lvl = 5f;
+        Player.current_EXP = 0;
+        Player.current_lvl = 1;
+        Player.score = 0;
+        Player.transform.position = Vector3.zero; // resetting player position
+
+        // Updating UI to reflect the reset
+        EXP_slider.maxValue = Player.EXP_to_next_lvl;
+        HP_slider.maxValue = Player.MaxHP;
+
+        // Also reset Camera Position
+        FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10);
+
+        
     }
     public void ContinuePressed()
     {
