@@ -1744,7 +1744,7 @@ GameObject:
   - component: {fileID: 6471916298860643564}
   - component: {fileID: 8544266691386958416}
   m_Layer: 0
-  m_Name: New Tile Palette
+  m_Name: RF_Catacomb_TilePalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
