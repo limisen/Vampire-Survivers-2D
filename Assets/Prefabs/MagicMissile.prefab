@@ -376,3 +376,6 @@ MonoBehaviour:
   moveSpeed: 15
   Enemies: []
   nearestObj: {fileID: 0}
+  distance_from_Player: 0
+  maxDistance: 7
+  minDistance: 1.33

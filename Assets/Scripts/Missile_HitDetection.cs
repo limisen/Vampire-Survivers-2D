@@ -18,8 +18,12 @@ public class Missile_HitDetection : MonoBehaviour
             // Remove the enemy from the list of enemies
             ListOfEnemies.Remove(collision.gameObject);
 
-            // Destroy the Missle
-            Destroy(gameObject.GetComponentInParent<MissileMovement>().gameObject);
+            // if the enemy is killed then dont destroy the missile otherwise deal dmg via the next missile. Untill the enemy is dead or no missiles remain
+            if (collision.gameObject.GetComponent<EnemyData>().currentHP > 0)
+            {
+                // Destroy the Missle
+                Destroy(gameObject.GetComponentInParent<MissileMovement>().gameObject);
+            }
         }
     }
 }

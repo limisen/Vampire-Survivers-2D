@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
@@ -8,8 +9,12 @@ public class MissileMovement : MonoBehaviour
     public List<GameObject> Enemies = new List<GameObject>();
 
     public GameObject nearestObj;
-    float distance;
+    float Enemy_distance;
     float nearestDistance = float.PositiveInfinity;
+
+    public float distance_from_Player;
+    [SerializeField] float maxDistance;
+    [SerializeField] float minDistance;
 
     GameObject Player;
 
@@ -65,12 +70,12 @@ public class MissileMovement : MonoBehaviour
         Enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList<GameObject>();
         for (int i = 0; i < Enemies.Count; i++)
         {
-            distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
+            Enemy_distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
 
-            if (distance < nearestDistance)
+            if (Enemy_distance < nearestDistance)
             {
                 nearestObj = Enemies[i];
-                nearestDistance = distance;
+                nearestDistance = Enemy_distance;
             }
         }
         nearestDistance = float.PositiveInfinity;
@@ -78,20 +83,33 @@ public class MissileMovement : MonoBehaviour
 
     void Oribit_movement()
     {
-            // calculate(ed) distance between this object and the target object
-            Vector3 delta = Player.transform.position - transform.position;
+        // calculate(ed) the delta distance between this object and the target object
+        Vector3 delta = Player.transform.position - transform.position;
 
-            // make sure not to move closer on the Z-Axis
-            delta.z = 0;
+        // make sure not to move closer on the Z-Axis
+        delta.z = 0;
 
-            // Make it so the direaction/point we are moving to doesnt change the speed of the movement, based on the distance.
-            delta.Normalize();
+        // Make it so the direaction/point we are moving to doesnt change the speed of the movement, based on the distance.
+        delta.Normalize();
 
-            // Calculate the amount to rotate in order to face the target, then convert it from Radiants to Degrees
-            float angle_to_rotate = (Mathf.Atan2(delta.y, delta.x) - (33)) * Mathf.Rad2Deg;
+        distance_from_Player = Vector3.Distance(Player.transform.position, transform.position);
 
-            transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0, 0, 1), 1f);
-            gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(Player.GetComponent<PlayerData>().moveSpeed);
-            transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));
+        // Calculate the amount to rotate in order to face the target, then convert it from Radiants to Degrees
+        float angle_to_rotate = (Mathf.Atan2(delta.y, delta.x) - (33)) * Mathf.Rad2Deg;
+
+
+        if (distance_from_Player > maxDistance)
+        {
+            transform.position += Time.deltaTime * moveSpeed * delta;
+        }
+
+        if (distance_from_Player < minDistance)
+        {
+            transform.position -= Time.deltaTime * moveSpeed * delta;
+        }
+
+        transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0, 0, 1), 1f);
+        gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(Player.GetComponent<PlayerData>().moveSpeed);
+        transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));
     }
 }
