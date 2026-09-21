@@ -309,10 +309,10 @@ TextureImporter:
       name: 11_fire_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 722
-        width: 23
-        height: 51
+        x: 0
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: 11_fire_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 143
-        y: 722
-        width: 23
-        height: 51
+        x: 100
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,10 +353,10 @@ TextureImporter:
       name: 11_fire_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 243
-        y: 722
-        width: 23
-        height: 52
+        x: 200
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,10 +375,10 @@ TextureImporter:
       name: 11_fire_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 343
-        y: 722
-        width: 23
-        height: 52
+        x: 300
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +397,10 @@ TextureImporter:
       name: 11_fire_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 443
-        y: 722
-        width: 23
-        height: 49
+        x: 400
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +419,10 @@ TextureImporter:
       name: 11_fire_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 543
-        y: 722
-        width: 23
-        height: 50
+        x: 500
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,10 +441,10 @@ TextureImporter:
       name: 11_fire_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 643
-        y: 722
-        width: 22
-        height: 50
+        x: 600
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,10 +463,10 @@ TextureImporter:
       name: 11_fire_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 743
-        y: 722
-        width: 22
-        height: 51
+        x: 700
+        y: 700
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,10 +485,10 @@ TextureImporter:
       name: 11_fire_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 42
-        y: 622
-        width: 23
-        height: 52
+        x: 0
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,10 +507,10 @@ TextureImporter:
       name: 11_fire_spritesheet_9
       rect:
         serializedVersion: 2
-        x: 142
-        y: 622
-        width: 23
-        height: 51
+        x: 100
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -529,10 +529,10 @@ TextureImporter:
       name: 11_fire_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 242
-        y: 622
-        width: 23
-        height: 50
+        x: 200
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,10 +551,10 @@ TextureImporter:
       name: 11_fire_spritesheet_11
       rect:
         serializedVersion: 2
-        x: 342
-        y: 622
-        width: 23
-        height: 51
+        x: 300
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,10 +573,10 @@ TextureImporter:
       name: 11_fire_spritesheet_12
       rect:
         serializedVersion: 2
-        x: 442
-        y: 622
-        width: 23
-        height: 50
+        x: 400
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,10 +595,10 @@ TextureImporter:
       name: 11_fire_spritesheet_14
       rect:
         serializedVersion: 2
-        x: 542
-        y: 622
-        width: 23
-        height: 51
+        x: 600
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -617,10 +617,10 @@ TextureImporter:
       name: 11_fire_spritesheet_15
       rect:
         serializedVersion: 2
-        x: 642
-        y: 622
-        width: 23
-        height: 50
+        x: 700
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -639,10 +639,10 @@ TextureImporter:
       name: 11_fire_spritesheet_16
       rect:
         serializedVersion: 2
-        x: 742
-        y: 622
-        width: 23
-        height: 51
+        x: 0
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -661,10 +661,10 @@ TextureImporter:
       name: 11_fire_spritesheet_17
       rect:
         serializedVersion: 2
-        x: 42
-        y: 522
-        width: 23
-        height: 51
+        x: 100
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,10 +683,10 @@ TextureImporter:
       name: 11_fire_spritesheet_18
       rect:
         serializedVersion: 2
-        x: 142
-        y: 522
-        width: 23
-        height: 50
+        x: 200
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -705,10 +705,10 @@ TextureImporter:
       name: 11_fire_spritesheet_20
       rect:
         serializedVersion: 2
-        x: 242
-        y: 522
-        width: 24
-        height: 52
+        x: 400
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -727,10 +727,10 @@ TextureImporter:
       name: 11_fire_spritesheet_22
       rect:
         serializedVersion: 2
-        x: 342
-        y: 522
-        width: 24
-        height: 50
+        x: 600
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -749,10 +749,10 @@ TextureImporter:
       name: 11_fire_spritesheet_23
       rect:
         serializedVersion: 2
-        x: 441
-        y: 521
-        width: 25
-        height: 52
+        x: 700
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -771,10 +771,10 @@ TextureImporter:
       name: 11_fire_spritesheet_24
       rect:
         serializedVersion: 2
-        x: 541
-        y: 522
-        width: 25
-        height: 50
+        x: 0
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -793,10 +793,10 @@ TextureImporter:
       name: 11_fire_spritesheet_25
       rect:
         serializedVersion: 2
-        x: 641
-        y: 522
-        width: 25
-        height: 51
+        x: 100
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -815,10 +815,10 @@ TextureImporter:
       name: 11_fire_spritesheet_26
       rect:
         serializedVersion: 2
-        x: 741
-        y: 522
-        width: 25
-        height: 50
+        x: 200
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -837,10 +837,10 @@ TextureImporter:
       name: 11_fire_spritesheet_27
       rect:
         serializedVersion: 2
-        x: 41
-        y: 422
-        width: 25
-        height: 51
+        x: 300
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -859,10 +859,10 @@ TextureImporter:
       name: 11_fire_spritesheet_28
       rect:
         serializedVersion: 2
-        x: 141
-        y: 422
-        width: 25
-        height: 51
+        x: 400
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -881,10 +881,10 @@ TextureImporter:
       name: 11_fire_spritesheet_29
       rect:
         serializedVersion: 2
-        x: 241
-        y: 422
-        width: 24
-        height: 52
+        x: 500
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,10 +903,10 @@ TextureImporter:
       name: 11_fire_spritesheet_30
       rect:
         serializedVersion: 2
-        x: 341
-        y: 421
-        width: 24
-        height: 52
+        x: 600
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -925,10 +925,10 @@ TextureImporter:
       name: 11_fire_spritesheet_31
       rect:
         serializedVersion: 2
-        x: 441
-        y: 421
-        width: 24
-        height: 52
+        x: 700
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -947,10 +947,10 @@ TextureImporter:
       name: 11_fire_spritesheet_32
       rect:
         serializedVersion: 2
-        x: 541
-        y: 422
-        width: 24
-        height: 51
+        x: 0
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -969,10 +969,10 @@ TextureImporter:
       name: 11_fire_spritesheet_33
       rect:
         serializedVersion: 2
-        x: 641
-        y: 422
-        width: 24
-        height: 52
+        x: 100
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -991,10 +991,10 @@ TextureImporter:
       name: 11_fire_spritesheet_34
       rect:
         serializedVersion: 2
-        x: 741
-        y: 422
-        width: 23
-        height: 50
+        x: 200
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1013,10 +1013,10 @@ TextureImporter:
       name: 11_fire_spritesheet_36
       rect:
         serializedVersion: 2
-        x: 41
-        y: 321
-        width: 21
-        height: 51
+        x: 400
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1035,10 +1035,10 @@ TextureImporter:
       name: 11_fire_spritesheet_37
       rect:
         serializedVersion: 2
-        x: 140
-        y: 321
-        width: 23
-        height: 51
+        x: 500
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1057,10 +1057,10 @@ TextureImporter:
       name: 11_fire_spritesheet_38
       rect:
         serializedVersion: 2
-        x: 240
-        y: 322
-        width: 23
-        height: 51
+        x: 600
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1079,10 +1079,10 @@ TextureImporter:
       name: 11_fire_spritesheet_39
       rect:
         serializedVersion: 2
-        x: 341
-        y: 322
-        width: 22
-        height: 50
+        x: 700
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1101,10 +1101,10 @@ TextureImporter:
       name: 11_fire_spritesheet_40
       rect:
         serializedVersion: 2
-        x: 440
-        y: 322
-        width: 23
-        height: 51
+        x: 0
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1123,10 +1123,10 @@ TextureImporter:
       name: 11_fire_spritesheet_41
       rect:
         serializedVersion: 2
-        x: 540
-        y: 322
-        width: 23
-        height: 51
+        x: 100
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1145,10 +1145,10 @@ TextureImporter:
       name: 11_fire_spritesheet_42
       rect:
         serializedVersion: 2
-        x: 640
-        y: 322
-        width: 23
-        height: 52
+        x: 200
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1167,10 +1167,10 @@ TextureImporter:
       name: 11_fire_spritesheet_43
       rect:
         serializedVersion: 2
-        x: 740
-        y: 322
-        width: 23
-        height: 51
+        x: 300
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1189,10 +1189,10 @@ TextureImporter:
       name: 11_fire_spritesheet_44
       rect:
         serializedVersion: 2
-        x: 40
-        y: 221
-        width: 23
-        height: 52
+        x: 400
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1211,10 +1211,10 @@ TextureImporter:
       name: 11_fire_spritesheet_45
       rect:
         serializedVersion: 2
-        x: 140
-        y: 222
-        width: 24
-        height: 50
+        x: 500
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1233,10 +1233,10 @@ TextureImporter:
       name: 11_fire_spritesheet_46
       rect:
         serializedVersion: 2
-        x: 240
-        y: 222
-        width: 24
-        height: 50
+        x: 600
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1255,10 +1255,10 @@ TextureImporter:
       name: 11_fire_spritesheet_47
       rect:
         serializedVersion: 2
-        x: 340
-        y: 222
-        width: 24
-        height: 51
+        x: 700
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1277,10 +1277,10 @@ TextureImporter:
       name: 11_fire_spritesheet_49
       rect:
         serializedVersion: 2
-        x: 441
-        y: 222
-        width: 23
-        height: 51
+        x: 100
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1299,10 +1299,10 @@ TextureImporter:
       name: 11_fire_spritesheet_50
       rect:
         serializedVersion: 2
-        x: 540
-        y: 222
-        width: 24
-        height: 51
+        x: 200
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1321,10 +1321,10 @@ TextureImporter:
       name: 11_fire_spritesheet_51
       rect:
         serializedVersion: 2
-        x: 640
-        y: 222
-        width: 24
-        height: 51
+        x: 300
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1343,10 +1343,10 @@ TextureImporter:
       name: 11_fire_spritesheet_53
       rect:
         serializedVersion: 2
-        x: 741
-        y: 222
-        width: 23
-        height: 51
+        x: 500
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1365,10 +1365,10 @@ TextureImporter:
       name: 11_fire_spritesheet_54
       rect:
         serializedVersion: 2
-        x: 40
-        y: 122
-        width: 24
-        height: 52
+        x: 600
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1387,10 +1387,10 @@ TextureImporter:
       name: 11_fire_spritesheet_55
       rect:
         serializedVersion: 2
-        x: 140
-        y: 122
-        width: 24
-        height: 49
+        x: 700
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1409,10 +1409,10 @@ TextureImporter:
       name: 11_fire_spritesheet_56
       rect:
         serializedVersion: 2
-        x: 240
-        y: 122
-        width: 25
-        height: 50
+        x: 0
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1431,10 +1431,10 @@ TextureImporter:
       name: 11_fire_spritesheet_57
       rect:
         serializedVersion: 2
-        x: 340
-        y: 122
-        width: 25
-        height: 51
+        x: 100
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1453,10 +1453,10 @@ TextureImporter:
       name: 11_fire_spritesheet_58
       rect:
         serializedVersion: 2
-        x: 441
-        y: 122
-        width: 24
-        height: 51
+        x: 200
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1475,10 +1475,10 @@ TextureImporter:
       name: 11_fire_spritesheet_59
       rect:
         serializedVersion: 2
-        x: 539
-        y: 122
-        width: 25
-        height: 52
+        x: 300
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1494,155 +1494,155 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_61
+      name: 11_fire_spritesheet_13
       rect:
         serializedVersion: 2
-        x: 639
-        y: 122
-        width: 25
-        height: 52
+        x: 500
+        y: 600
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a29201f0c51a70dc0800000000000000
-      internalID: -3672789554335569622
+      spriteID: 38e288a523ee72e40a152f4e9c8fa756
+      internalID: -1707306446062294834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_63
+      name: 11_fire_spritesheet_19
       rect:
         serializedVersion: 2
-        x: 739
-        y: 122
-        width: 26
-        height: 50
+        x: 300
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8abf14ba18fe986d0800000000000000
-      internalID: -2987593537580565592
+      spriteID: 96ebf3f189830f246abf788300cc4442
+      internalID: 7580396248766979199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_64
+      name: 11_fire_spritesheet_21
       rect:
         serializedVersion: 2
-        x: 40
-        y: 22
-        width: 25
-        height: 51
+        x: 500
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62739816e92426f40800000000000000
-      internalID: 5720207724722599718
+      spriteID: 12637e84b4b9af647b23cfbb107b6ee7
+      internalID: -6754943851843618222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_65
+      name: 11_fire_spritesheet_35
       rect:
         serializedVersion: 2
-        x: 140
-        y: 22
-        width: 25
-        height: 51
+        x: 300
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 952675cca910a1720800000000000000
-      internalID: 2817566281238536793
+      spriteID: c76f58910b2eb47429909b57c49680ea
+      internalID: 1581339984863894476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_66
+      name: 11_fire_spritesheet_48
       rect:
         serializedVersion: 2
-        x: 240
-        y: 22
-        width: 25
-        height: 51
+        x: 0
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0bcc92ab93750c8a0800000000000000
-      internalID: -6286929174361158480
+      spriteID: 9c9f93b7205e6a544bdc20869cd4830a
+      internalID: 7599269426721945533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_67
+      name: 11_fire_spritesheet_52
       rect:
         serializedVersion: 2
-        x: 343
-        y: 22
-        width: 23
-        height: 51
+        x: 400
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ef50e9027efce44e0800000000000000
-      internalID: -1995428993286928898
+      spriteID: 500d603273a47d541b0043cae27c16c3
+      internalID: -7806451424422437116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_fire_spritesheet_68
+      name: 11_fire_spritesheet_60
       rect:
         serializedVersion: 2
-        x: 443
-        y: 22
-        width: 23
-        height: 51
+        x: 400
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d399c1ef27304d4f0800000000000000
-      internalID: -805014640968033987
+      spriteID: d0fd957bf5b9ba743b9ed7ef7de71530
+      internalID: -5907586989629806168
       vertices: []
       indices: 
       edges: []
@@ -1659,7 +1659,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       11_fire_spritesheet_0: 7867246230245463418
       11_fire_spritesheet_1: -1419493236054300103
@@ -1719,14 +1721,6 @@ TextureImporter:
       11_fire_spritesheet_59: 6098497418827211521
       11_fire_spritesheet_6: -1506460399340645616
       11_fire_spritesheet_60: -5907586989629806168
-      11_fire_spritesheet_61: -3672789554335569622
-      11_fire_spritesheet_62: -5013391761827827407
-      11_fire_spritesheet_63: -2987593537580565592
-      11_fire_spritesheet_64: 5720207724722599718
-      11_fire_spritesheet_65: 2817566281238536793
-      11_fire_spritesheet_66: -6286929174361158480
-      11_fire_spritesheet_67: -1995428993286928898
-      11_fire_spritesheet_68: -805014640968033987
       11_fire_spritesheet_7: -6381828615892921256
       11_fire_spritesheet_8: 4193278859550803050
       11_fire_spritesheet_9: 4845468296927605761
