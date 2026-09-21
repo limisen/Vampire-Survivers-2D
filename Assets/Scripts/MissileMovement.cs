@@ -5,14 +5,18 @@ using UnityEngine;
 
 public class MissileMovement : MonoBehaviour
 {
+    // How fast to move towards enemies
     [SerializeField] float moveSpeed;
-    public List<GameObject> Enemies = new List<GameObject>();
+    public float rotation_Speed;
 
+    // FindNearest() releavent variables
+    public List<GameObject> Enemies = new List<GameObject>();
     public GameObject nearestObj;
     float Enemy_distance;
     float nearestDistance = float.PositiveInfinity;
 
-    public float distance_from_Player;
+    // Orbiting relavent distances
+    public float distance_from_Player = 1;
     [SerializeField] float maxDistance;
     [SerializeField] float minDistance;
 
@@ -21,27 +25,17 @@ public class MissileMovement : MonoBehaviour
     private void Awake()
     {
         Player = GameObject.FindWithTag("Player");
-        FindNearest();
     }
 
     private void Update()
     {
+        // Look for enemies
         FindNearest();
     }
 
     void LateUpdate()
     {
-        if (nearestObj == null)
-        {
-            FindNearest();
-        }
-
-        //if (nearestObj == null)
-        //{
-        //    nearestObj = Enemies[0];
-        //}
-
-        if (GameManager.singleton.gamePaused == false && Enemies.Count > 0 && nearestObj != null)
+        if (GameManager.singleton.gamePaused == false && nearestObj != null)
         {
             // calculate(ed) distance between this object and the target object
             Vector3 delta = nearestObj.transform.position - transform.position;
@@ -97,7 +91,7 @@ public class MissileMovement : MonoBehaviour
         // Calculate the amount to rotate in order to face the target, then convert it from Radiants to Degrees
         float angle_to_rotate = (Mathf.Atan2(delta.y, delta.x) - (33)) * Mathf.Rad2Deg;
 
-
+        // Move into the defined max- and minimum-range 
         if (distance_from_Player > maxDistance)
         {
             transform.position += Time.deltaTime * moveSpeed * delta;
@@ -108,8 +102,13 @@ public class MissileMovement : MonoBehaviour
             transform.position -= Time.deltaTime * moveSpeed * delta;
         }
 
-        transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0, 0, 1), 1f);
-        gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(distance_from_Player);
+        // get the rotation speed based on the normal moveSpeed towards enemies. Convert to Degrees and scale it to be Per Second
+        rotation_Speed = Mathf.Atan(moveSpeed) * Mathf.Rad2Deg * Time.deltaTime;
+
+        // Last argument is the amount in degrees to rotate
+        transform.RotateAround(Player.transform.position, new Vector3(0, 0, 1), rotation_Speed);
+
+        // Apply the rotation to face the direction the missile is moving in
         transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));
     }
 }

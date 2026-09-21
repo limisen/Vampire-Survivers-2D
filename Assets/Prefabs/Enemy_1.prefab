@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   moveSpeed: 5
   MaxHP: 5
-  currentHP: 10
+  currentHP: 5
   DMG: 3
   EXP_to_Drop: 1
   EXP_Prefab: {fileID: 4495294543294757013, guid: 56d3ec21444ae1849922ef158e9a9f55, type: 3}
