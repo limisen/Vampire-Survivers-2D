@@ -100,7 +100,7 @@ public class GameMenu : MonoBehaviour
         }
 
         // Reseting player data to default values
-        Player.moveSpeed = 15f;
+        Player.moveSpeed = 20f;
         Player.MaxHP = 10;
         Player.current_HP = Player.MaxHP;
         Player.EXP_to_next_lvl = 5f;

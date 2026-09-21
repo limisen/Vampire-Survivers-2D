@@ -9,6 +9,7 @@ public class EnemySpawner : EnemyData
     [SerializeField] float Enemies_to_spawn = 2f;
     private float timeRemaining;
 
+    [SerializeField] bool scale_With_Time;
 
     private void Start()
     {
@@ -35,6 +36,11 @@ public class EnemySpawner : EnemyData
 
     public void SpawnEnemy()
     {
+        if (scale_With_Time)
+        {
+            Enemies_to_spawn += 2;
+        }
+
         for (int i = 0; i < Enemies_to_spawn; i++)
         {
             // Effectivly spawn a clone of the enemy at a random index, and spawn it at a random position of the spawnPoint positions, (With 0,0,0 rotation).

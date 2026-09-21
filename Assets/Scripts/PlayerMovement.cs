@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float minX, maxX, minY, maxY; 
 
-    float moveSpeed;
+    private float moveSpeed;
     private void Awake()
     {
         moveSpeed = gameObject.GetComponent<PlayerData>().moveSpeed;

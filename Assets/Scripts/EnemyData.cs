@@ -32,6 +32,8 @@ public class EnemyData : MonoBehaviour
             Destroy(gameObject);
 
             Instantiate(EXP_Prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+
+            player_data.score += score_to_give;
         }
     }
 }

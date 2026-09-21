@@ -109,7 +109,7 @@ public class MissileMovement : MonoBehaviour
         }
 
         transform.RotateAround(FindAnyObjectByType<PlayerData>().transform.position, new Vector3(0, 0, 1), 1f);
-        gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(Player.GetComponent<PlayerData>().moveSpeed);
+        gameObject.GetComponentInChildren<Rigidbody2D>().AddForceY(distance_from_Player);
         transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));
     }
 }
