@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
@@ -116,8 +117,10 @@ public class GameMenu : MonoBehaviour
         // Also reset Camera Position
         FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10);
 
-        
+        FindAnyObjectByType<EnemySpawner>().Enemies_to_spawn = 2;
     }
+
+
     public void ContinuePressed()
     {
         GameManager.singleton.gamePaused = false;
@@ -126,20 +129,26 @@ public class GameMenu : MonoBehaviour
         Debug.Log("Continue Pressed");
     }
 
+
     public void SettingsPressed()
     {
         Debug.Log("Settings Pressed");
     }
+
+
     public void QuitPressed()
     {
         Debug.Log("Quit Pressed");
     }
 
-    public void LvL_UP_Choice()
+    public void Close_LVL_Up_Menu()
     {
-        Debug.Log("Choice was chosen");
-
-        LvL_Up_Menu.SetActive(false);
         GameManager.singleton.gamePaused = false;
+        LvL_Up_Menu.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        
     }
 }

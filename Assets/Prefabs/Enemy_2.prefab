@@ -109,9 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc672862dd71044eb336dd69e736e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  gamePause: 0
   moveSpeed: 10
-  MaxHP: 20
+  MaxHP: 10
   currentHP: 20
   DMG: 6
   EXP_to_Drop: 5
@@ -130,15 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31973fdc4206d9544b861db9fcccc758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gamePause: 0
-  moveSpeed: 0
-  MaxHP: 10
-  currentHP: 0
-  DMG: 3
-  EXP_to_Drop: 1
-  EXP_Prefab: {fileID: 0}
-  score_to_give: 1
-  player_data: {fileID: 0}
 --- !u!114 &-724874750902971119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4eecbd44d04a84dbd036c0bc1cb931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gamePause: 0
 --- !u!70 &8080401244534908828
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

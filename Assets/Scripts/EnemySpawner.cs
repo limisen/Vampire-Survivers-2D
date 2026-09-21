@@ -6,7 +6,7 @@ public class EnemySpawner : EnemyData
     [SerializeField] GameObject[] SpawnPoints;
 
     [SerializeField] float time_between_spawns = 2f;
-    [SerializeField] float Enemies_to_spawn = 2f;
+    [SerializeField] public float Enemies_to_spawn = 2f;
     private float timeRemaining;
 
     [SerializeField] bool scale_With_Time;
@@ -38,7 +38,7 @@ public class EnemySpawner : EnemyData
     {
         if (scale_With_Time)
         {
-            Enemies_to_spawn += 2;
+            Enemies_to_spawn += 0.3f;
         }
 
         for (int i = 0; i < Enemies_to_spawn; i++)
