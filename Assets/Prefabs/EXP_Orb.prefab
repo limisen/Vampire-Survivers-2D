@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8244985303748533755}
   - component: {fileID: 2203170954776919802}
   - component: {fileID: 7494768640623418400}
+  - component: {fileID: 623304479564990622}
   m_Layer: 0
   m_Name: EXP_Orb
   m_TagString: EXP
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 2836480152517601870, guid: 3555eb377f781a346ba69c9071d71213, type: 3}
   m_Color: {r: 0.5319509, g: 0.8113208, b: 0.8113208, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,3 +144,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   EXP_to_give: 1
+--- !u!95 &623304479564990622
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4495294543294757013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2339814794017e4589c7bdc0059c53f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

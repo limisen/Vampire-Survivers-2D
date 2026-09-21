@@ -6,6 +6,7 @@ public class EnemySpawner : EnemyData
     [SerializeField] GameObject[] SpawnPoints;
 
     [SerializeField] float time_between_spawns = 2f;
+    [SerializeField] float Enemies_to_spawn = 2f;
     private float timeRemaining;
 
 
@@ -34,7 +35,10 @@ public class EnemySpawner : EnemyData
 
     public void SpawnEnemy()
     {
-        // Effectivly spawn a clone of the enemy at a random index, and spawn it at a random position of the spawnPoint positions, (With 0,0,0 rotation).
-        Instantiate(enemies[Random.Range(0, enemies.Length)], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position, Quaternion.identity);
+        for (int i = 0; i < Enemies_to_spawn; i++)
+        {
+            // Effectivly spawn a clone of the enemy at a random index, and spawn it at a random position of the spawnPoint positions, (With 0,0,0 rotation).
+            Instantiate(enemies[Random.Range(0, enemies.Length)], SpawnPoints[Random.Range(0, SpawnPoints.Length)].transform.position, Quaternion.identity);
+        }
     }
 }

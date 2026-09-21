@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = gameObject.GetComponent<PlayerData>().moveSpeed;
     }
 
+    private void Update()
+    {
+        moveSpeed = gameObject.GetComponent<PlayerData>().moveSpeed;
+    }
+
     void LateUpdate()
     {
         // IF the game is unpaused and the player is active(andEnabled) then allow the player to move
