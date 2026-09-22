@@ -52,6 +52,11 @@ public class GameMenu : MonoBehaviour
             Debug.Log("Pause button was pressed");
         }
 
+        if (Start_Menu.activeSelf || Settings_Menu.activeSelf || GameOver_Menu.activeSelf || Pause_Menu.activeSelf || LvL_Up_Menu.activeSelf)
+        {
+            GameManager.singleton.gamePaused = true;
+        }
+
         // Keep promting the player to choose another upgrade untill the nr of upgrades matches their lvl
         //if (Player.GetComponentInParent<PlayerData>().upgrades_Chosen != Player.GetComponentInParent<PlayerData>().current_lvl)
         //{
