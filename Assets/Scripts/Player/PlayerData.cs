@@ -19,7 +19,7 @@ public class PlayerData : MonoBehaviour
 
         public class MagicMissile_Data : Weapon
         {
-            [SerializeField] public float DMG = 1;
+            [SerializeField] public float DMG = 5;
             [SerializeField] public float MoveSpeed = 10;
             [SerializeField] public float amount_to_spawn = 1;
             [SerializeField] public float time_between_launch = 1;

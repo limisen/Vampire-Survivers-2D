@@ -31,7 +31,7 @@ public class MagicMissile_Spawner : PlayerData.Weapon.MagicMissile_Data
                 for (int i = 1; i < amount_to_spawn + 1; i++)
                 {
                     // Spawn the enemy if we have reached 0 on the timer
-                    GameObject spawned_Missile = Instantiate(missile_Prefab, transform.position + new Vector3(Random.Range(-1,1), Random.Range(-1, 1), 0), Quaternion.identity);
+                    GameObject spawned_Missile = Instantiate(missile_Prefab, transform.position + new Vector3(Random.Range(-1,2), Random.Range(-1, 2), 0), Quaternion.identity);
                     spawned_Missile.GetComponentInChildren<Missile_HitDetection>().DMG = DMG;
                     spawned_Missile.GetComponent<MissileMovement>().MoveSpeed = MoveSpeed;
                 }
