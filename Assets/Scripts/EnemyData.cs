@@ -29,10 +29,16 @@ public class EnemyData : MonoBehaviour
     {
         if (currentHP <= 0)
         {
+            // Destroy the Enemy
             Destroy(gameObject);
 
-            Instantiate(EXP_Prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            // Instansiate a EXP_orb at the current enemy position
+            GameObject EXP_Orb = Instantiate(EXP_Prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
 
+            // Set the EXP this orb gives when picked up to be equal to the enemy's EXP_to_Drop
+            EXP_Orb.GetComponent<EXP_Pick_Up>().EXP_to_give = EXP_to_Drop;
+
+            // Increase the player's score for killing this enemy.
             player_data.score += score_to_give;
         }
     }

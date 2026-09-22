@@ -105,7 +105,7 @@ public class MissileMovement : MonoBehaviour
         // get the rotation speed based on the normal moveSpeed towards enemies. Convert to Degrees and scale it to be Per Second
         rotation_Speed = Mathf.Atan(moveSpeed) * Mathf.Rad2Deg * Time.deltaTime;
 
-        // Last argument is the amount in degrees to rotate
+        // Last argument (rotation_Speed) is the amount in degrees to rotate
         transform.RotateAround(Player.transform.position, new Vector3(0, 0, 1), rotation_Speed);
 
         // Apply the rotation to face the direction the missile is moving in

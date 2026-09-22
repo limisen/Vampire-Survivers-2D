@@ -146,9 +146,4 @@ public class GameMenu : MonoBehaviour
         GameManager.singleton.gamePaused = false;
         LvL_Up_Menu.SetActive(false);
     }
-
-    private void OnEnable()
-    {
-        
-    }
 }

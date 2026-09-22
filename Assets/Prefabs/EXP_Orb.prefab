@@ -142,8 +142,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c8f46e746e00e545a56141c7dda935b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  EXP_to_give: 1
+  m_EditorClassIdentifier: Assembly-CSharp::EXP_Pick_Up
+  EXP_to_give: 0
 --- !u!95 &623304479564990622
 Animator:
   serializedVersion: 7

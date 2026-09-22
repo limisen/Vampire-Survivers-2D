@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
         // IF the game is unpaused and the player is active(andEnabled) then allow the player to move
         if (GameManager.singleton.gamePaused == false && isActiveAndEnabled)
         {
+            // Move the Player
             transform.position += (moveSpeed * Time.deltaTime) * new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0).normalized;
+
 
             // out of bounds check and handeling
             if (transform.position.x < minX)
