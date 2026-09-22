@@ -12,6 +12,35 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public float current_EXP = 0;
     [SerializeField] public float EXP_to_next_lvl = 5f;
 
+    // Weapons and their Data
+    public class Weapon : MonoBehaviour
+    {
+        //public float dmg = 1;
+
+        public class MagicMissile_Data : Weapon
+        {
+            [SerializeField] public float DMG = 1;
+            [SerializeField] public float MoveSpeed = 10;
+            [SerializeField] public float amount_to_spawn = 1;
+            [SerializeField] public float time_between_launch = 1;
+        }
+
+        public class ChainLightning_Data : Weapon
+        {
+            [SerializeField] public float DMG = 1;
+            [SerializeField] public float amount_to_chain = 1;
+            [SerializeField] public float time_between_launch = 1;
+        }
+
+        public class Aura_Data : Weapon
+        {
+            [SerializeField] public float DMG = 1;
+            [SerializeField] public float radius = 10;
+        }
+    }
+    
+
+
     [SerializeField] public int score;
 
     [SerializeField] public GameMenu gameMenu;
@@ -40,6 +69,7 @@ public class PlayerData : MonoBehaviour
             }
             GameManager.singleton.gamePaused = true;
             gameMenu.Player_UI.SetActive(false);
+            StateMachine.singleton.SwitchState<GameOver>();
             gameMenu.GameOver_Menu.SetActive(true);
         }
 

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Aura : weapon
+public class Aura : PlayerData.Weapon.Aura_Data
 {
-    [SerializeField] float radius;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

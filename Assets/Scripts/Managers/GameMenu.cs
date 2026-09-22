@@ -108,12 +108,20 @@ public class GameMenu : MonoBehaviour
 
         // Reseting player data to default values
         Player.moveSpeed = 20f;
+
         Player.MaxHP = 10;
         Player.current_HP = Player.MaxHP;
+        
         Player.EXP_to_next_lvl = 5f;
         Player.current_EXP = 0;
         Player.current_lvl = 1;
+
+        //Player.Magic_Missile_DMG = 1;
+        //Player.Chain_Lightning_DMG = 1;
+        //Player.Aura_DMG = 1;
+
         Player.score = 0;
+        
         Player.transform.position = Vector3.zero; // resetting player position
 
         // Updating UI to reflect the reset

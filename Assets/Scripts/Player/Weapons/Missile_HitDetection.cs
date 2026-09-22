@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile_HitDetection : MonoBehaviour
+public class Missile_HitDetection : PlayerData.Weapon.MagicMissile_Data
 {
-    [SerializeField] float dmg;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Deal the dmg to the enemy
-            collision.gameObject.GetComponent<EnemyData>().currentHP -= dmg;
+            collision.gameObject.GetComponent<EnemyData>().currentHP -= DMG;
 
             // save it to a variable for easier access
             List<GameObject> ListOfEnemies = gameObject.GetComponentInParent<MissileMovement>().Enemies;
@@ -20,5 +19,6 @@ public class Missile_HitDetection : MonoBehaviour
             // Destroy the Missle
             Destroy(gameObject.GetComponentInParent<MissileMovement>().gameObject);
         }
+
     }
 }

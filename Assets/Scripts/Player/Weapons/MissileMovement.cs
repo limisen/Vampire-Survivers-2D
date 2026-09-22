@@ -3,12 +3,8 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class MissileMovement : MonoBehaviour
+public class MissileMovement : PlayerData.Weapon.MagicMissile_Data
 {
-    // How fast to move towards enemies
-    [SerializeField] float moveSpeed;
-    public float rotation_Speed;
-
     // FindNearest() releavent variables
     public List<GameObject> Enemies = new List<GameObject>();
     public GameObject nearestObj;
@@ -17,14 +13,15 @@ public class MissileMovement : MonoBehaviour
 
     // Orbiting relavent distances
     public float distance_from_Player = 1;
+    public float rotation_Speed;
     [SerializeField] float maxDistance;
     [SerializeField] float minDistance;
 
-    GameObject Player;
+    PlayerData Player;
 
     private void Awake()
     {
-        Player = GameObject.FindWithTag("Player");
+        Player = FindAnyObjectByType<PlayerData>();
     }
 
     private void Update()
@@ -50,7 +47,7 @@ public class MissileMovement : MonoBehaviour
             float angle_to_rotate = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
 
             // Now set the position and then rotate so we are facing the target (aka the player)
-            transform.SetPositionAndRotation((transform.position += (Time.deltaTime * moveSpeed) * delta), Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1)));
+            transform.SetPositionAndRotation((transform.position += (Time.deltaTime * MoveSpeed) * delta), Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1)));
         }
 
         else if (GameManager.singleton.gamePaused == false)
@@ -94,16 +91,16 @@ public class MissileMovement : MonoBehaviour
         // Move into the defined max- and minimum-range 
         if (distance_from_Player > maxDistance)
         {
-            transform.position += Time.deltaTime * moveSpeed * delta;
+            transform.position += Time.deltaTime * MoveSpeed * delta;
         }
 
         if (distance_from_Player < minDistance)
         {
-            transform.position -= Time.deltaTime * moveSpeed * delta;
+            transform.position -= Time.deltaTime * MoveSpeed * delta;
         }
 
         // get the rotation speed based on the normal moveSpeed towards enemies. Convert to Degrees and scale it to be Per Second
-        rotation_Speed = Mathf.Atan(moveSpeed) * Mathf.Rad2Deg * Time.deltaTime;
+        rotation_Speed = Mathf.Atan(MoveSpeed) * Mathf.Rad2Deg * Time.deltaTime;
 
         // Last argument (rotation_Speed) is the amount in degrees to rotate
         transform.RotateAround(Player.transform.position, new Vector3(0, 0, 1), rotation_Speed);

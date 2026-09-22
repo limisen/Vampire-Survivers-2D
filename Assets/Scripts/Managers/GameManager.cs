@@ -25,5 +25,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         StateMachine.singleton.UpdateStateMachine();
+        if (gamePaused == false) StateMachine.singleton.SwitchState<IsPlaying>();
     }
 }
