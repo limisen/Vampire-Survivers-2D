@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
         player = FindAnyObjectByType<PlayerData>().gameObject;
     }
 
-    // Update is called once per frame
+
     void LateUpdate()
     {
         if (GameManager.singleton.gamePaused == false && isActiveAndEnabled)

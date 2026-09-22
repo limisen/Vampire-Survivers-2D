@@ -52,6 +52,7 @@ public class GameMenu : MonoBehaviour
             Debug.Log("Pause button was pressed");
         }
 
+        // If there's any meny active make sure the game is paused
         if (Start_Menu.activeSelf || Settings_Menu.activeSelf || GameOver_Menu.activeSelf || Pause_Menu.activeSelf || LvL_Up_Menu.activeSelf)
         {
             GameManager.singleton.gamePaused = true;
@@ -124,6 +125,7 @@ public class GameMenu : MonoBehaviour
 
         FindAnyObjectByType<EnemySpawner>().Enemies_to_spawn = 2;
     }
+
 
 
     public void ContinuePressed()

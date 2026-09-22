@@ -15,4 +15,15 @@ public class GameManager : MonoBehaviour
 
         singleton = this;
     }
+
+    private void Start()
+    {
+        // set the state we to be the state we should be in at the launch of the game.
+        StateMachine.singleton.SwitchState<Viewing_a_Menu>();
+    }
+
+    private void Update()
+    {
+        StateMachine.singleton.UpdateStateMachine();
+    }
 }
