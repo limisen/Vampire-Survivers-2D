@@ -3,24 +3,27 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] public float moveSpeed = 5f;
-
+    [Space]
+    [Space]
     [SerializeField] public float MaxHP = 10;
     [SerializeField] public float current_HP = 0;
-
-
+    [Space]
+    [Space]
     [SerializeField] public float current_lvl = 1;
     [SerializeField] public float current_EXP = 0;
     [SerializeField] public float EXP_to_next_lvl = 5f;
-
+    [Space]
+    [Space]
     [SerializeField] public bool Magic_Missile_Unlocked = false;
     [SerializeField] public GameObject Magic_Missile_object_Reference;
-    [SerializeField] public bool Chain_Lightning_Unlocked = false;
-    [SerializeField] public GameObject Chain_Lightning_object_Reference;
     [SerializeField] public bool Aura_Unlocked = false;
     [SerializeField] public GameObject Aura_object_Reference;
-
+    [SerializeField] public bool Chain_Lightning_Unlocked = false;
+    [SerializeField] public GameObject Chain_Lightning_object_Reference;
+    [Space]
+    [Space]
     [SerializeField] public int score;
-
+    [Space]
     [SerializeField] public GameMenu gameMenu;
 
     private void Awake()
