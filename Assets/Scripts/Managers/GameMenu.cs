@@ -114,7 +114,7 @@ public class GameMenu : MonoBehaviour
         
         Player.EXP_to_next_lvl = 5f;
         Player.current_EXP = 0;
-        Player.current_lvl = 1;
+        Player.current_lvl = 0;
 
         //Player.Magic_Missile_DMG = 1;
         //Player.Chain_Lightning_DMG = 1;

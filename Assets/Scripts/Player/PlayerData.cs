@@ -9,7 +9,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public float current_HP = 0;
     [Space]
     [Space]
-    [SerializeField] public float current_lvl = 1;
+    [SerializeField] public float current_lvl = 0;
     [SerializeField] public float current_EXP = 0;
     [SerializeField] public float EXP_to_next_lvl = 5f;
     [Space]
