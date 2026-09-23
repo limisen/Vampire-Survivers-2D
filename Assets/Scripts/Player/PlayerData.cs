@@ -10,8 +10,11 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] public float current_lvl = 1;
     [SerializeField] public float current_EXP = 0;
-    [SerializeField] public float EXP_to_next_lvl = 5f;   
+    [SerializeField] public float EXP_to_next_lvl = 5f;
 
+    [SerializeField] public bool Magic_Missile_Unlocked = false;
+    [SerializeField] public bool Chain_Lightning_Unlocked = false;
+    [SerializeField] public bool Aura_Unlocked = false;
 
     [SerializeField] public int score;
 

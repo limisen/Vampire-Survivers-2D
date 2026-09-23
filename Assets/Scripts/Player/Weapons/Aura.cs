@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class Aura : Weapons.Aura_Data
 {
+    private void Awake()
+    {
+        gameObject.GetComponent<CircleCollider2D>().radius = radius;
+    }
+
+    private void Update()
+    {
+        gameObject.GetComponent<CircleCollider2D>().radius = radius;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
