@@ -116,9 +116,9 @@ public class GameMenu : MonoBehaviour
         Player.current_EXP = 0;
         Player.current_lvl = 0;
 
-        //Player.Magic_Missile_DMG = 1;
-        //Player.Chain_Lightning_DMG = 1;
-        //Player.Aura_DMG = 1;
+        Player.Magic_Missile_Unlocked = false;
+        Player.Aura_Unlocked = false;
+        Player.Chain_Lightning_Unlocked = false;
 
         Player.score = 0;
         
