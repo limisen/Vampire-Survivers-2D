@@ -1,18 +1,14 @@
 using UnityEngine;
 
-public class Aura : PlayerData.Weapon.Aura_Data
+public class Aura : Weapons.Aura_Data
 {
-    
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (GameManager.singleton.gamePaused == false && collision.gameObject.CompareTag("Enemy"))
+        {
+            // Deal dmg to the Enemy whilst inside of the Aura, do so over time (scaled to be per second not per frame)
+            collision.gameObject.GetComponent<EnemyData>().currentHP -= DMG * Time.deltaTime;
+        }
     }
 }

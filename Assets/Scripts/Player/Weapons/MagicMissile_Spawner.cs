@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class MagicMissile_Spawner : PlayerData.Weapon.MagicMissile_Data
+public class MagicMissile_Spawner : Weapons.MagicMissile_Data
 {
     [SerializeField] GameObject missile_Prefab;
 
     private float timeRemaining;
 
-    private PlayerData Player;
+    private MagicMissile_Data MissileData;
 
     private void Awake()
     {
-        Player = FindAnyObjectByType<PlayerData>();
+        MissileData = FindAnyObjectByType<MagicMissile_Data>();
     }
 
     private void Start()
@@ -32,8 +32,8 @@ public class MagicMissile_Spawner : PlayerData.Weapon.MagicMissile_Data
                 {
                     // Spawn the enemy if we have reached 0 on the timer
                     GameObject spawned_Missile = Instantiate(missile_Prefab, transform.position + new Vector3(Random.Range(-1,2), Random.Range(-1, 2), 0), Quaternion.identity);
-                    spawned_Missile.GetComponentInChildren<Missile_HitDetection>().DMG = DMG;
-                    spawned_Missile.GetComponent<MissileMovement>().MoveSpeed = MoveSpeed;
+                    spawned_Missile.GetComponentInChildren<Missile_HitDetection>().DMG = MissileData.DMG;
+                    spawned_Missile.GetComponent<MissileMovement>().MoveSpeed = MissileData.MoveSpeed;
                 }
                 // Then reset the timer in for the next spawn
                 timeRemaining = time_between_launch;

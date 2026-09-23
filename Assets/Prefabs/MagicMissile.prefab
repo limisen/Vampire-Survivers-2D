@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0607b83053b1949819819357d127eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dmg: 5
+  DMG: 1
 --- !u!1 &5182906813110636331
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,10 +382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9ed3c5c7a5c9f48b7086f81caa03d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileMovement
-  moveSpeed: 20
-  rotation_Speed: 0
+  DMG: 5
+  MoveSpeed: 10
+  amount_to_spawn: 1
+  time_between_launch: 1
   Enemies: []
   nearestObj: {fileID: 0}
   distance_from_Player: 0
+  rotation_Speed: 0
   maxDistance: 7
   minDistance: 1.33

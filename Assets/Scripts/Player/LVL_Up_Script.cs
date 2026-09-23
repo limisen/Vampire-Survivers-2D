@@ -30,6 +30,7 @@ public class LVL_Up_Script : MonoBehaviour
         Player = FindAnyObjectByType<PlayerData>();
     }
 
+    // Upgrade Choices, first what to upgrade, Which weapon or player stats, then decide based on that previous choice what relates to it and which atribute of it to increase or decrease
     public void Choice(int option)
     {
         int RNG;

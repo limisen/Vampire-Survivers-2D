@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 
-public class MissileMovement : PlayerData.Weapon.MagicMissile_Data
+public class MissileMovement : Weapons.MagicMissile_Data
 {
     // FindNearest() releavent variables
     public List<GameObject> Enemies = new List<GameObject>();

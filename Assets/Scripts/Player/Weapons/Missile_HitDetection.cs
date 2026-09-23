@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile_HitDetection : PlayerData.Weapon.MagicMissile_Data
+public class Missile_HitDetection : MonoBehaviour
 {
+    public float DMG;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

@@ -1,12 +1,7 @@
 using UnityEngine;
 
-public class ChainLightning : MonoBehaviour
+public class ChainLightning : Weapons.ChainLightning_Data
 {
-    [SerializeField] int amount_to_chain = 1;
-
-    [SerializeField] int dmg = 1;
-
-    [SerializeField] float time_between_Lightning = 2f;
     private float timeRemaining;
 
     GameObject[] Enemies;
@@ -21,7 +16,7 @@ public class ChainLightning : MonoBehaviour
 
     private void Awake()
     {
-        timeRemaining = time_between_Lightning;
+        timeRemaining = time_between_lightning;
 
         Player = GameObject.FindWithTag("Player");
     }
@@ -38,7 +33,7 @@ public class ChainLightning : MonoBehaviour
                 // Spawn the enemy if we have reached 0 on the timer
                 causeLightning();
                 // Then reset the timer in for the next spawn
-                timeRemaining = time_between_Lightning;
+                timeRemaining = time_between_lightning;
             }
         }
     }
@@ -62,7 +57,7 @@ public class ChainLightning : MonoBehaviour
             }
 
             transform.position = nearestObj.transform.position;
-            nearestObj.GetComponent<EnemyData>().currentHP -= dmg;
+            nearestObj.GetComponent<EnemyData>().currentHP -= DMG;
 
             for (int i = 1; i < amount_to_chain - 1; i++)
             {
@@ -71,7 +66,7 @@ public class ChainLightning : MonoBehaviour
                     return;
                 }
                 transform.position = Enemies[i].gameObject.transform.position;
-                Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= dmg;
+                Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= DMG;
             }
             transform.localPosition = new Vector3(0,0,0);
         }
