@@ -20,6 +20,6 @@ public class Weapons : MonoBehaviour
     public class Aura_Data : Weapons
     {
         [SerializeField] public float DMG = 1;
-        [SerializeField] public float radius = 10;
+        [SerializeField] public float radius = 5;
     }
 }

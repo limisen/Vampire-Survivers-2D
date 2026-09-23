@@ -13,8 +13,11 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public float EXP_to_next_lvl = 5f;
 
     [SerializeField] public bool Magic_Missile_Unlocked = false;
+    [SerializeField] public GameObject Magic_Missile_object_Reference;
     [SerializeField] public bool Chain_Lightning_Unlocked = false;
+    [SerializeField] public GameObject Chain_Lightning_object_Reference;
     [SerializeField] public bool Aura_Unlocked = false;
+    [SerializeField] public GameObject Aura_object_Reference;
 
     [SerializeField] public int score;
 
@@ -51,6 +54,34 @@ public class PlayerData : MonoBehaviour
         gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
 
         On_level_up();
+
+        // IF weapon is unlocked turn the corresponding weapon GameObject ON or OFF
+        if (Magic_Missile_Unlocked == true && Magic_Missile_object_Reference.activeSelf == false)
+        {
+            Magic_Missile_object_Reference.SetActive(true);
+        }
+        else if (Magic_Missile_Unlocked == false && Magic_Missile_object_Reference.activeSelf == true) 
+        {
+            Magic_Missile_object_Reference.SetActive(false);
+        }
+
+        if (Aura_Unlocked == true && Aura_object_Reference.activeSelf == false)
+        {
+            Aura_object_Reference.SetActive(true);
+        }
+        else if (Aura_Unlocked == false && Aura_object_Reference.activeSelf == true) 
+        {
+            Aura_object_Reference.SetActive(false);
+        }
+
+        if (Chain_Lightning_Unlocked == true && Chain_Lightning_object_Reference.activeSelf == false)
+        {
+            Chain_Lightning_object_Reference.SetActive(true);
+        }
+        else if (Chain_Lightning_Unlocked == false && Chain_Lightning_object_Reference.activeSelf == true) 
+        {
+            Chain_Lightning_object_Reference.SetActive(false);
+        }
     }
 
     public void On_level_up()

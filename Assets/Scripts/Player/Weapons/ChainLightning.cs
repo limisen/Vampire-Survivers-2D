@@ -10,15 +10,10 @@ public class ChainLightning : Weapons.ChainLightning_Data
     float distance;
     float nearestDistance = float.PositiveInfinity;
 
-    GameObject Player;
-
-    
 
     private void Awake()
     {
         timeRemaining = time_between_lightning;
-
-        Player = GameObject.FindWithTag("Player");
     }
 
     private void Update()
@@ -31,14 +26,14 @@ public class ChainLightning : Weapons.ChainLightning_Data
             if (timeRemaining <= 0)
             {
                 // Spawn the enemy if we have reached 0 on the timer
-                causeLightning();
+                CauseLightning();
                 // Then reset the timer in for the next spawn
                 timeRemaining = time_between_lightning;
             }
         }
     }
 
-    void causeLightning()
+    void CauseLightning()
     {
         Enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
