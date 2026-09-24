@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using static Weapons;
 
 public class GameMenu : MonoBehaviour
 {
@@ -19,9 +19,17 @@ public class GameMenu : MonoBehaviour
 
     private PlayerData Player;
 
+    private ChainLightning_Data ChainLightningData;
+    private Aura_Data AuraData;
+    private MagicMissile_Data MagicMissileData;
+
     private void Awake()
     {
         Player = FindAnyObjectByType<PlayerData>();
+
+        MagicMissileData = Player.GetComponentInChildren<MagicMissile_Data>(true);
+        AuraData = Player.GetComponentInChildren<Aura_Data>(true);
+        ChainLightningData = Player.GetComponentInChildren<ChainLightning_Data>(true);
     }
 
     private void Start()
@@ -98,7 +106,7 @@ public class GameMenu : MonoBehaviour
         {
             Destroy(EXP_ORB);
         }
-        
+
         // IF there are any Missiles left in the scene destroy them
         GameObject[] Missiles_in_Scene = GameObject.FindGameObjectsWithTag("Missile");
         foreach (GameObject Missile in Missiles_in_Scene)
@@ -111,7 +119,7 @@ public class GameMenu : MonoBehaviour
 
         Player.MaxHP = 10;
         Player.current_HP = Player.MaxHP;
-        
+
         Player.EXP_to_next_lvl = 5f;
         Player.current_EXP = 0;
         Player.current_lvl = 0;
@@ -121,8 +129,22 @@ public class GameMenu : MonoBehaviour
         Player.Chain_Lightning_Unlocked = false;
 
         Player.score = 0;
-        
+
         Player.transform.position = Vector3.zero; // resetting player position
+
+        // reseting the weapon data
+        MagicMissileData.DMG = 5;
+        MagicMissileData.MoveSpeed = 10;
+        MagicMissileData.amount_to_spawn = 1;
+        MagicMissileData.time_between_launch = 2;
+
+        ChainLightningData.DMG = 5;
+        ChainLightningData.amount_to_chain = 1;
+        ChainLightningData.time_between_lightning = 2;
+
+        AuraData.DMG = 5;
+        AuraData.radius = 5;
+
 
         // Updating UI to reflect the reset
         EXP_slider.maxValue = Player.EXP_to_next_lvl;

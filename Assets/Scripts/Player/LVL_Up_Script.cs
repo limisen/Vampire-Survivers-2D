@@ -1,112 +1,186 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static Upgrades;
 using static Weapons;
 
 public class LVL_Up_Script : MonoBehaviour
 {
-    private PlayerData Player;
-    private ChainLightning_Data ChainLightningData;
-    private Aura_Data AuraData;
-    private MagicMissile_Data MagicMissileData;
+    PlayerData Player;
+    ChainLightning_Data ChainLightningData;
+    Aura_Data AuraData;
+    MagicMissile_Data MagicMissileData;
 
+    Upgrades Upgrades_ObjRef;
+    List<Upgrades> choices;
+    Upgrades UpgradeOption_1 = null;
+    Upgrades UpgradeOption_2 = null;
+    Upgrades UpgradeOption_3 = null;
+    Upgrades.UpgradeableStats Option_1_statToUpgrade = UpgradeableStats.Damage; // Temporary assignment
+    Upgrades.UpgradeableStats Option_2_statToUpgrade = UpgradeableStats.Damage; // Temporary assignment
+    Upgrades.UpgradeableStats Option_3_statToUpgrade = UpgradeableStats.Damage; // Temporary assignment
+
+
+    TextMeshProUGUI LVL_up_button_1_TextComponent;
+    TextMeshProUGUI LVL_up_button_2_TextComponent;
+    TextMeshProUGUI LVL_up_button_3_TextComponent;
     private void Awake()
     {
         Player = FindAnyObjectByType<PlayerData>();
 
+        Upgrades_ObjRef = Player.GetComponent<Upgrades>();
+
+        // Get the Data Components
         MagicMissileData = Player.GetComponentInChildren<MagicMissile_Data>(true);
         AuraData = Player.GetComponentInChildren<Aura_Data>(true);
         ChainLightningData = Player.GetComponentInChildren<ChainLightning_Data>(true);
-    }
 
-    private void Start()
-    {
-        if (Player.current_lvl == 1)
-        {
-            for (int i = 0; i < gameObject.transform.childCount; i++)
-            {
-                string weapon = "";
-
-                switch (i)
-                {
-                    case 0:
-                        weapon = "Magic Missile";
-                        break;
-                    case 1:
-                        weapon = "Aura";
-                        break;
-                    case 2:
-                        weapon = "Chain Lightning";
-                        break;
-                }
-                gameObject.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Unlock " + weapon + "!");
-                gameObject.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 13;
-            }
-        }
-    }
-
-    private void OnDisable()
-    {
         // Get the button TextComponents
-        TextMeshProUGUI LVL_up_button_1_TextComponent = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI LVL_up_button_2_TextComponent = gameObject.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI LVL_up_button_3_TextComponent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-
-        // Default Values:
-        LVL_up_button_1_TextComponent.SetText("Choose This!");
-        LVL_up_button_1_TextComponent.fontSize = 20;
-        LVL_up_button_2_TextComponent.SetText("Choose This!");
-        LVL_up_button_2_TextComponent.fontSize = 20;
-        LVL_up_button_3_TextComponent.SetText("Choose This!");
-        LVL_up_button_3_TextComponent.fontSize = 20;
+        LVL_up_button_1_TextComponent = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        LVL_up_button_2_TextComponent = gameObject.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        LVL_up_button_3_TextComponent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
-    // Upgrade Choices, first what to upgrade, Which weapon or player stats, then decide based on that previous choice what relates to it and which atribute of it to increase or decrease
+    private void OnEnable()
+    {
+        // Get three unique choices of upgrades
+        choices = Upgrades_ObjRef.GetRandomUpgrades(3);
+
+        // Define what each upgrade option is and which stat it changes
+        UpgradeOption_1 = choices[0];
+        Option_1_statToUpgrade = UpgradeOption_1.AvailableStats[Random.Range(0, UpgradeOption_1.AvailableStats.Length)];
+
+        UpgradeOption_2 = choices[1];
+        Option_2_statToUpgrade = UpgradeOption_2.AvailableStats[Random.Range(0, UpgradeOption_2.AvailableStats.Length)];
+
+        UpgradeOption_3 = choices[2];
+        Option_3_statToUpgrade = UpgradeOption_3.AvailableStats[Random.Range(0, UpgradeOption_3.AvailableStats.Length)];
+
+        LVL_up_button_1_TextComponent.text = UpgradeOption_1.Type.ToString() + " " + Option_1_statToUpgrade.ToString();
+        LVL_up_button_2_TextComponent.text = UpgradeOption_2.Type.ToString() + " " + Option_2_statToUpgrade.ToString();
+        LVL_up_button_3_TextComponent.text = UpgradeOption_3.Type.ToString() + " " + Option_3_statToUpgrade.ToString();
+    }
+
     public void Choice(int option)
     {
-        
-        if (Player.current_lvl == 1)
+        switch (option)
         {
-            switch (option)
-            {
-                case 0:
-                    Debug.Log("Unlocking 'Magic Missile'...");
-                    Player.Magic_Missile_Unlocked = true;
-                    break;
+            case 0:
 
-                case 1:
-                    Debug.Log("Unlocking 'Aura'...");
-                    Player.Aura_Unlocked = true;
-                    break;
+                ApplyUpgrade(0);
+                break;
+            case 1:
 
-                case 2:
-                    Debug.Log("Unlocking 'Chain Lightning'...");
-                    Player.Chain_Lightning_Unlocked = true;
-                    break;
-            }
+                ApplyUpgrade(1);
+                break;
+            case 2:
+
+                ApplyUpgrade(2);
+                break;
+        }
+    }
+
+    void ApplyUpgrade(int index)
+    {
+        Upgrades selectedUpgrade = null;
+        UpgradeableStats statToUpgrade = UpgradeableStats.Damage; // temporary assignment
+
+        switch (index)
+        {
+            case 0:
+                selectedUpgrade = UpgradeOption_1;
+                statToUpgrade = Option_1_statToUpgrade;
+                break;
+            case 1:
+                selectedUpgrade = UpgradeOption_2;
+                statToUpgrade = Option_2_statToUpgrade;
+                break;
+            case 2:
+                selectedUpgrade = UpgradeOption_3;
+                statToUpgrade = Option_3_statToUpgrade;
+                break;
         }
 
-        else
+
+        switch (selectedUpgrade.Type)
         {
-            
+            case UpgradeType.MagicMissile:
+                switch (statToUpgrade)
+                {
+                    case UpgradeableStats.Damage:
+                        MagicMissileData.DMG += 2.5f;
+                        break;
 
+                    case UpgradeableStats.MoveSpeed:
+                        MagicMissileData.MoveSpeed += 2.5f;
+                        break;
 
-            switch (option)
-            {
-                case 0:
-                    Debug.Log("Increasing DMG of 'Magic Missile'...");
-                    MagicMissileData.DMG += 5;
-                    MagicMissileData.amount_to_spawn += 1;
-                    break;
-                case 1:
-                    Debug.Log("Increasing DMG of 'Aura'...");
-                    AuraData.DMG += 1;
-                    AuraData.radius += 5;
-                    break;
-                case 2:
-                    Debug.Log("Increasing DMG of 'Chaing Lightning'...");
-                    ChainLightningData.DMG += 1;
-                    break;
-            }
+                    case UpgradeableStats.AmountToSpawn:
+                        MagicMissileData.amount_to_spawn += 1;
+                        break;
+
+                    case UpgradeableStats.TimeBetweenSpawns:
+                        MagicMissileData.time_between_launch -= 0.5f;
+                        break;
+                    case UpgradeableStats.Unlocked:
+                        Player.Magic_Missile_Unlocked = true;
+                        break;
+                }
+                break;
+
+            case UpgradeType.Aura:
+                switch (statToUpgrade)
+                {
+                    case UpgradeableStats.Damage:
+                        AuraData.DMG += 2.5f;
+                        break;
+
+                    case UpgradeableStats.Radius:
+                        AuraData.radius += 2.5f;
+                        break;
+                    case UpgradeableStats.Unlocked:
+                        Player.Aura_Unlocked = true;
+                        break;
+                }
+                break;
+
+            case UpgradeType.ChainLightning:
+
+                switch (statToUpgrade)
+                {
+                    case UpgradeableStats.Damage:
+                        ChainLightningData.DMG += 10;
+                        break;
+
+                    case UpgradeableStats.AmountToChain:
+                        ChainLightningData.amount_to_chain += 1;
+                        break;
+
+                    case UpgradeableStats.TimeBetweenSpawns:
+                        ChainLightningData.time_between_lightning -= 0.1f;
+                        break;
+                    case UpgradeableStats.Unlocked:
+                        Player.Chain_Lightning_Unlocked = true;
+                        break;
+                }
+
+                break;
+
+            case UpgradeType.Player:
+
+                switch (statToUpgrade)
+                {
+                    case UpgradeableStats.MoveSpeed:
+                        Player.moveSpeed += 2.5f;
+                        break;
+
+                    case UpgradeableStats.MaxHP:
+                        Player.MaxHP += 10;
+                        Player.current_HP += 10;
+                        break;
+                }
+
+                break;
         }
     }
 }
