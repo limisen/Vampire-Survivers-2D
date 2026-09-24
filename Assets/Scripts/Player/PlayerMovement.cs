@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         if (GameManager.singleton.gamePaused == false && isActiveAndEnabled)
         {
             // Move the Player
-            transform.position += (moveSpeed * Time.deltaTime) * new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0).normalized;
+            transform.position += (moveSpeed * Time.deltaTime) * new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
 
 
             // out of bounds check and handeling
