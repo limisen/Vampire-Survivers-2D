@@ -182,5 +182,6 @@ public class GameMenu : MonoBehaviour
     {
         GameManager.singleton.gamePaused = false;
         LvL_Up_Menu.SetActive(false);
+        HP_slider.maxValue = Player.MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
     }
 }

@@ -28,14 +28,14 @@ public class Upgrades : MonoBehaviour
     public UpgradeType Type { get; set; }
     public UpgradeableStats[] AvailableStats { get; set; }
 
-    Upgrades(UpgradeType type, params UpgradeableStats[] stats)
+    public Upgrades(UpgradeType type, params UpgradeableStats[] stats)
     {
         Type = type;
         AvailableStats = stats;
     }
 
     // Dependant on which type only certain attributes/stats are allowed to change
-    List<Upgrades> UpgradesList;
+    public List<Upgrades> UpgradesList;
     private void Awake()
     {
         UpgradesList = new()

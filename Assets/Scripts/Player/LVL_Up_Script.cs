@@ -16,9 +16,9 @@ public class LVL_Up_Script : MonoBehaviour
     Upgrades UpgradeOption_1 = null;
     Upgrades UpgradeOption_2 = null;
     Upgrades UpgradeOption_3 = null;
-    Upgrades.UpgradeableStats Option_1_statToUpgrade = UpgradeableStats.Damage; // Temporary assignment
-    Upgrades.UpgradeableStats Option_2_statToUpgrade = UpgradeableStats.Damage; // Temporary assignment
-    Upgrades.UpgradeableStats Option_3_statToUpgrade = UpgradeableStats.Damage; // Temporary assignment
+    UpgradeableStats Option_1_statToUpgrade = UpgradeableStats.Unlocked; // Temporary assignment
+    UpgradeableStats Option_2_statToUpgrade = UpgradeableStats.Unlocked; // Temporary assignment
+    UpgradeableStats Option_3_statToUpgrade = UpgradeableStats.Unlocked; // Temporary assignment
 
 
     TextMeshProUGUI LVL_up_button_1_TextComponent;
@@ -43,22 +43,35 @@ public class LVL_Up_Script : MonoBehaviour
 
     private void OnEnable()
     {
-        // Get three unique choices of upgrades
-        choices = Upgrades_ObjRef.GetRandomUpgrades(3);
+        if (Player.current_lvl == 1)
+        {
+            UpgradeOption_1 = Upgrades_ObjRef.UpgradesList[0];
+            UpgradeOption_2 = Upgrades_ObjRef.UpgradesList[1];
+            UpgradeOption_3 = Upgrades_ObjRef.UpgradesList[2];
 
-        // Define what each upgrade option is and which stat it changes
-        UpgradeOption_1 = choices[0];
-        Option_1_statToUpgrade = UpgradeOption_1.AvailableStats[Random.Range(0, UpgradeOption_1.AvailableStats.Length)];
+            LVL_up_button_1_TextComponent.text = UpgradeOption_1.Type.ToString() + " " + Option_1_statToUpgrade.ToString();
+            LVL_up_button_2_TextComponent.text = UpgradeOption_2.Type.ToString() + " " + Option_2_statToUpgrade.ToString();
+            LVL_up_button_3_TextComponent.text = UpgradeOption_3.Type.ToString() + " " + Option_3_statToUpgrade.ToString();
+        }
+        else
+        {
+            //    Get three unique choices of upgrades
+            choices = Upgrades_ObjRef.GetRandomUpgrades(3);
 
-        UpgradeOption_2 = choices[1];
-        Option_2_statToUpgrade = UpgradeOption_2.AvailableStats[Random.Range(0, UpgradeOption_2.AvailableStats.Length)];
+            //Define what each upgrade option is and which stat it changes
+            UpgradeOption_1 = choices[0];
+            Option_1_statToUpgrade = UpgradeOption_1.AvailableStats[Random.Range(0, UpgradeOption_1.AvailableStats.Length)];
 
-        UpgradeOption_3 = choices[2];
-        Option_3_statToUpgrade = UpgradeOption_3.AvailableStats[Random.Range(0, UpgradeOption_3.AvailableStats.Length)];
+            UpgradeOption_2 = choices[1];
+            Option_2_statToUpgrade = UpgradeOption_2.AvailableStats[Random.Range(0, UpgradeOption_2.AvailableStats.Length)];
 
-        LVL_up_button_1_TextComponent.text = UpgradeOption_1.Type.ToString() + " " + Option_1_statToUpgrade.ToString();
-        LVL_up_button_2_TextComponent.text = UpgradeOption_2.Type.ToString() + " " + Option_2_statToUpgrade.ToString();
-        LVL_up_button_3_TextComponent.text = UpgradeOption_3.Type.ToString() + " " + Option_3_statToUpgrade.ToString();
+            UpgradeOption_3 = choices[2];
+            Option_3_statToUpgrade = UpgradeOption_3.AvailableStats[Random.Range(0, UpgradeOption_3.AvailableStats.Length)];
+
+            LVL_up_button_1_TextComponent.text = UpgradeOption_1.Type.ToString() + " " + Option_1_statToUpgrade.ToString();
+            LVL_up_button_2_TextComponent.text = UpgradeOption_2.Type.ToString() + " " + Option_2_statToUpgrade.ToString();
+            LVL_up_button_3_TextComponent.text = UpgradeOption_3.Type.ToString() + " " + Option_3_statToUpgrade.ToString();
+        }
     }
 
     public void Choice(int option)
@@ -124,6 +137,15 @@ public class LVL_Up_Script : MonoBehaviour
                         break;
                     case UpgradeableStats.Unlocked:
                         Player.Magic_Missile_Unlocked = true;
+                        Debug.Log("Pre modification: " + Upgrades_ObjRef.UpgradesList[0]);
+                        Upgrades_ObjRef.UpgradesList[0] = new Upgrades
+                            (
+                                UpgradeType.ChainLightning,
+                                UpgradeableStats.Damage,
+                                UpgradeableStats.AmountToChain,
+                                UpgradeableStats.TimeBetweenSpawns
+                            );
+                        Debug.Log("Post modification: " + Upgrades_ObjRef.UpgradesList[0]);
                         break;
                 }
                 break;
@@ -140,6 +162,15 @@ public class LVL_Up_Script : MonoBehaviour
                         break;
                     case UpgradeableStats.Unlocked:
                         Player.Aura_Unlocked = true;
+                        Debug.Log("Pre modification: " + Upgrades_ObjRef.UpgradesList[1]);
+                        Upgrades_ObjRef.UpgradesList[1] = new Upgrades
+                            (
+                                UpgradeType.ChainLightning,
+                                UpgradeableStats.Damage,
+                                UpgradeableStats.AmountToChain,
+                                UpgradeableStats.TimeBetweenSpawns
+                            );
+                        Debug.Log("Post modification: " + Upgrades_ObjRef.UpgradesList[1]);
                         break;
                 }
                 break;
@@ -161,6 +192,15 @@ public class LVL_Up_Script : MonoBehaviour
                         break;
                     case UpgradeableStats.Unlocked:
                         Player.Chain_Lightning_Unlocked = true;
+                        Debug.Log("Pre modification: " + Upgrades_ObjRef.UpgradesList[2]);
+                        Upgrades_ObjRef.UpgradesList[2] = new Upgrades
+                            (
+                                UpgradeType.ChainLightning,
+                                UpgradeableStats.Damage,
+                                UpgradeableStats.AmountToChain,
+                                UpgradeableStats.TimeBetweenSpawns
+                            );
+                        Debug.Log("Post modification: " + Upgrades_ObjRef.UpgradesList[2]);
                         break;
                 }
 
