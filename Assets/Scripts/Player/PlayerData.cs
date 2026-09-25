@@ -96,7 +96,7 @@ public class PlayerData : MonoBehaviour
             GameManager.singleton.gamePaused = true;
 
             current_lvl++; // increase current lvl
-            EXP_to_next_lvl += EXP_to_next_lvl * current_lvl; // raise the EXP needed to levelUP
+            EXP_to_next_lvl += EXP_to_next_lvl /** current_lvl*/; // raise the EXP needed to levelUP
             current_EXP = 0; // Reset the progress towards the next lvl
 
             gameMenu.EXP_slider.maxValue = EXP_to_next_lvl; // Set the max value to the new value
@@ -112,7 +112,7 @@ public class PlayerData : MonoBehaviour
 
             current_EXP -= EXP_to_next_lvl; // Reset the progress towards the next lvl BUT keep the excess exp
 
-            EXP_to_next_lvl += EXP_to_next_lvl * current_lvl; // raise the EXP needed to levelUP
+            EXP_to_next_lvl += EXP_to_next_lvl /** current_lvl*/; // raise the EXP needed to levelUP
 
             gameMenu.EXP_slider.maxValue = EXP_to_next_lvl; // Set the max value to the new value
             gameMenu.EXP_slider.value = current_EXP; // Reset the visual progress towards the next lvl

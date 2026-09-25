@@ -26,6 +26,7 @@ public class EnemySpawner : EnemyData
 
             if (timeRemaining <= 0)
             {
+                Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length);
                 // Spawn the enemy if we have reached 0 on the timer
                 SpawnEnemy();
                 // Then reset the timer in for the next spawn
