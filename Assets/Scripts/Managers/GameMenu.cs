@@ -65,14 +65,6 @@ public class GameMenu : MonoBehaviour
         {
             GameManager.singleton.gamePaused = true;
         }
-
-        // Keep promting the player to choose another upgrade untill the nr of upgrades matches their lvl
-        //if (Player.GetComponentInParent<PlayerData>().upgrades_Chosen != Player.GetComponentInParent<PlayerData>().current_lvl)
-        //{
-        //    LvL_Up_Menu.SetActive(true);
-        //    Player_UI.SetActive(true);
-        //    gamePaused = true;
-        //}
     }
 
 
