@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float minX, maxX, minY, maxY; 
+    [SerializeField] float minX, maxX, minY, maxY; // Max Positional bounds (cant go beyond these values)
 
     private float moveSpeed;
     private void Awake()
     {
-        moveSpeed = gameObject.GetComponent<PlayerData>().moveSpeed;
+        moveSpeed = FindAnyObjectByType<GameManager>().Player_MoveSpeed;
     }
 
     private void Update()
     {
-        moveSpeed = gameObject.GetComponent<PlayerData>().moveSpeed;
+        //moveSpeed = GameManager.singleton.Player_MoveSpeed;
     }
 
     void LateUpdate()

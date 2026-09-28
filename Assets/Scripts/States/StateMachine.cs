@@ -3,47 +3,49 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    // A list of GameStates as set via the Unity Inspector
-    public List<State> GameStates = new List<State>();
-    public State Current_GameState = null;
+    public readonly State Root;
+    public readonly TransitionSequencer Sequencer;
 
-    public static StateMachine singleton;
-    private void Awake()
+    bool started;
+
+    public StateMachine(State root)
     {
-        if (singleton != null)
-        {
-            Destroy(this);
-            return;
-        }
-
-        singleton = this;
+        Root = root;
+        Sequencer = new TransitionSequencer(this);
     }
 
-    // Switch the current state to the provided state as long as it exists
-    public void SwitchState<A_GameState>()
-    {
-        foreach (State state in GameStates)
-        {
-            if (state.GetType() == typeof(A_GameState))
-            {
-                Current_GameState?.ExitState();
-                Current_GameState = state;
-                Current_GameState.EnterState();
-                return;
-            }
-        }
 
-        Debug.LogError("State does NOT exist");
+    private void Start()
+    {
+        if (started) return;
+
+        started = true;
+        Root.Enter();
     }
 
-    public virtual void UpdateStateMachine()
+    public void Tick(float deltaTime)
     {
-        Current_GameState?.UpdateState();
+        if (!started) Start();
+
+        InternalTick(deltaTime);
     }
 
-    public bool Is_GameState<A_GameState>()
+    internal void InternalTick(float deltaTime) => Root.Update(deltaTime);
+
+
+    // Preform the actual switch 'from' to 'to' by exiting up to the shared ancestor, then entering down to the target
+    public void ChangeState(State from, State to)
     {
-        if (!Current_GameState) return false;
-        return Current_GameState.GetType() == typeof(A_GameState);
+        if (from == to || from == null || to == null) return;
+
+        State lca = TransitionSequencer.LCA(from, to);
+
+        // Exit current branch up to (but not including) LCA
+        for (State s = from; s != lca; s = s.Parent) s.Exit();
+
+        // Enter target branch from LCA down to the target
+        var stack = new Stack<State>();
+        for (State s = to; s != lca; s = s.Parent, stack.Push(s));
+        while (stack.Count > 0) stack.Pop().Enter();
     }
 }

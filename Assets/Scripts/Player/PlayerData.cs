@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] public float moveSpeed;
     [Space]
     [Space]
-    [SerializeField] public float MaxHP = 10;
-    [SerializeField] public float current_HP = 0;
+    [SerializeField] public float MaxHP;
+    [SerializeField] public float current_HP = 1;
     [Space]
     [Space]
-    [SerializeField] public float current_lvl = 0;
-    [SerializeField] public float current_EXP = 0;
-    [SerializeField] public float EXP_to_next_lvl = 5f;
+    [SerializeField] public float current_lvl;
+    [SerializeField] public float current_EXP;
+    [SerializeField] public float EXP_to_next_lvl;
     [Space]
     [Space]
     [SerializeField] public bool Magic_Missile_Unlocked = false;
@@ -28,12 +28,29 @@ public class PlayerData : MonoBehaviour
 
     private void Awake()
     {
-        current_HP = MaxHP;
+        moveSpeed = GameManager.singleton.Player_MoveSpeed;
+
+
+        MaxHP = GameManager.singleton.Player_MaxHP;
+        current_HP = GameManager.singleton.Player_current_HP;
+
+
+        current_lvl = GameManager.singleton.Player_current_lvl;
+        current_EXP = GameManager.singleton.current_EXP;
+        EXP_to_next_lvl = GameManager.singleton.EXP_to_next_lvl;
+
+
+        score = GameManager.singleton.score;
 
         gameMenu = gameMenu.GetComponent<GameMenu>();
         gameMenu.HP_slider.maxValue = MaxHP;
         gameMenu.EXP_slider.value = current_EXP;
         gameMenu.HP_slider.value = current_HP;
+    }
+
+    private void Start()
+    {
+        current_HP = MaxHP;
     }
 
     void Update()
@@ -46,11 +63,11 @@ public class PlayerData : MonoBehaviour
         {
             if (GameManager.singleton.gamePaused == false)
             {
-                Debug.Log("Player Died");            
+                Debug.Log("Player Died");
             }
             GameManager.singleton.gamePaused = true;
             gameMenu.Player_UI.SetActive(false);
-            StateMachine.singleton.SwitchState<GameOver>();
+
             gameMenu.GameOver_Menu.SetActive(true);
         }
 
@@ -63,7 +80,7 @@ public class PlayerData : MonoBehaviour
         {
             Magic_Missile_object_Reference.SetActive(true);
         }
-        else if (Magic_Missile_Unlocked == false && Magic_Missile_object_Reference.activeSelf == true) 
+        else if (Magic_Missile_Unlocked == false && Magic_Missile_object_Reference.activeSelf == true)
         {
             Magic_Missile_object_Reference.SetActive(false);
         }
@@ -72,7 +89,7 @@ public class PlayerData : MonoBehaviour
         {
             Aura_object_Reference.SetActive(true);
         }
-        else if (Aura_Unlocked == false && Aura_object_Reference.activeSelf == true) 
+        else if (Aura_Unlocked == false && Aura_object_Reference.activeSelf == true)
         {
             Aura_object_Reference.SetActive(false);
         }
@@ -81,7 +98,7 @@ public class PlayerData : MonoBehaviour
         {
             Chain_Lightning_object_Reference.SetActive(true);
         }
-        else if (Chain_Lightning_Unlocked == false && Chain_Lightning_object_Reference.activeSelf == true) 
+        else if (Chain_Lightning_Unlocked == false && Chain_Lightning_object_Reference.activeSelf == true)
         {
             Chain_Lightning_object_Reference.SetActive(false);
         }

@@ -31,8 +31,8 @@ public class EnemySpawner : EnemyData
                 // Then reset the timer in for the next spawn
                 timeRemaining = time_between_spawns;
 
-                Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length);
             }
+            Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length);
         }
     }
 

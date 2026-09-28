@@ -1,17 +1,79 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class State : MonoBehaviour
+public abstract class State
 {
-    public virtual void EnterState()
-    {
+    public readonly StateMachine Machine;
 
+    public readonly State Parent;
+
+    public State ActiveState;
+
+
+    public State(StateMachine stateMachine, State Parent = null)
+    {
+        this.Machine = stateMachine;
+        this.Parent = Parent;
     }
-    public virtual void ExitState()
-    {
 
+    // Which child should we enter first? This decides the answer to that.
+    protected virtual State GetInitialState() => null; // Inital child to enter when this state starts (IF (state = null) then this is the "leaf" of the tree)
+    // Do we want to switch this frame? This decides the answer to that.
+    protected virtual State GetTransition() => null; // Target state to switch to this frame (IF (state = null) then stay in the current state)
+
+
+    public virtual void OnEnter() { }
+    public virtual void OnExit() { }
+    public virtual void OnUpdate(float deltaTime) { }
+
+
+    internal void Enter()
+    {
+        // Making sure the Parent OnEnter() runs first before the child's
+        if (Parent != null) Parent.ActiveState = this;
+
+        OnEnter(); 
+        State init = GetInitialState();
+        if (init != null) init.Enter();
     }
-    public virtual void UpdateState()
+    internal void Exit()
     {
+        // Making sure the Child's OnExit() runs first before the Parent's
+        if (ActiveState != null) ActiveState.Exit();
 
+        ActiveState = null;
+        OnExit();
+    }
+    internal void Update(float deltaTime)
+    {
+        State t = GetTransition();
+        if (t != null)
+        {
+            Machine.Sequencer.RequestTransition(this, t);
+            return;
+        }
+
+        if (ActiveState != null) ActiveState.Update(deltaTime);
+        OnUpdate(deltaTime);
+    }
+
+    // Return the deepest currently-active decendant state (aka the "leaf" of this branch)
+    public State Leaf()
+    {
+        State s = this;
+        while (s.ActiveState != null) s = s.ActiveState;
+        return s;
+    }
+
+    // Get the path to the root through each state (this -> parent -> ... -> root)
+    public IEnumerable<State> PathToRoot()
+    {
+        for (State s = this; s != null; s = s.Parent) yield return s;
+    }
+
+    public static string StatePath(State s)
+    {
+        return string.Join(" > ", s.PathToRoot().Reverse().Select(n => n.GetType().Name));
     }
 }

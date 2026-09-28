@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using static Weapons;
 
 public class GameMenu : MonoBehaviour
 {
@@ -19,17 +18,9 @@ public class GameMenu : MonoBehaviour
 
     private PlayerData Player;
 
-    private ChainLightning_Data ChainLightningData;
-    private Aura_Data AuraData;
-    private MagicMissile_Data MagicMissileData;
-
     private void Awake()
     {
         Player = FindAnyObjectByType<PlayerData>();
-
-        MagicMissileData = Player.GetComponentInChildren<MagicMissile_Data>(true);
-        AuraData = Player.GetComponentInChildren<Aura_Data>(true);
-        ChainLightningData = Player.GetComponentInChildren<ChainLightning_Data>(true);
     }
 
     private void Start()
@@ -125,17 +116,17 @@ public class GameMenu : MonoBehaviour
         Player.transform.position = Vector3.zero; // resetting player position
 
         // reseting the weapon data
-        MagicMissileData.DMG = 5;
-        MagicMissileData.MoveSpeed = 10;
-        MagicMissileData.amount_to_spawn = 1;
-        MagicMissileData.time_between_launch = 2;
+        GameManager.singleton.Missile_DMG = 5;
+        GameManager.singleton.Missile_MoveSpeed = 10;
+        GameManager.singleton.amount_to_spawn = 1;
+        GameManager.singleton.time_between_launch = 2;
 
-        ChainLightningData.DMG = 5;
-        ChainLightningData.amount_to_chain = 1;
-        ChainLightningData.time_between_lightning = 2;
+        GameManager.singleton.Aura_DMG = 5;
+        GameManager.singleton.amount_to_chain = 1;
+        GameManager.singleton.time_between_lightning = 2;
 
-        AuraData.DMG = 5;
-        AuraData.radius = 5;
+        GameManager.singleton.Chain_Lightning_DMG = 5;
+        GameManager.singleton.radius = 5;
 
 
         // Updating UI to reflect the reset

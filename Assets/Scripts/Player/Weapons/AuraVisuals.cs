@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class AuraVisuals : Weapons.Aura_Data
+public class AuraVisuals : MonoBehaviour
 {
     void Update()
     {
-        radius = GetComponentInParent<Aura>().radius;
+        float radius = GameManager.singleton./*Aura*/radius;
 
         radius *= 1.15f;
 

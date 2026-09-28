@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChainLightning : Weapons.ChainLightning_Data
+public class ChainLightning : MonoBehaviour
 {
     private float timeRemaining;
 
@@ -13,7 +13,7 @@ public class ChainLightning : Weapons.ChainLightning_Data
 
     private void Awake()
     {
-        timeRemaining = time_between_lightning;
+        timeRemaining = GameManager.singleton.time_between_lightning;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class ChainLightning : Weapons.ChainLightning_Data
                 // Spawn the enemy if we have reached 0 on the timer
                 CauseLightning();
                 // Then reset the timer in for the next spawn
-                timeRemaining = time_between_lightning;
+                timeRemaining = GameManager.singleton.time_between_lightning;
             }
         }
     }
@@ -52,16 +52,16 @@ public class ChainLightning : Weapons.ChainLightning_Data
             }
 
             transform.position = nearestObj.transform.position;
-            nearestObj.GetComponent<EnemyData>().currentHP -= DMG;
+            nearestObj.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Chain_Lightning_DMG;
 
-            for (int i = 1; i < amount_to_chain - 1; i++)
+            for (int i = 1; i < GameManager.singleton.amount_to_chain - 1; i++)
             {
                 if (i >= Enemies.Length)
                 {
                     return;
                 }
                 transform.position = Enemies[i].gameObject.transform.position;
-                Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= DMG;
+                Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Chain_Lightning_DMG;
             }
             transform.localPosition = new Vector3(0,0,0);
         }
