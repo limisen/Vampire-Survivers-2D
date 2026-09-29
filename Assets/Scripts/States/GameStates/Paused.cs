@@ -18,6 +18,8 @@ public class Paused : State
         gameOver = new GameOver(stateMachine, this);
     }
 
+    protected override State GetInitialState() => mainMenu;
+
     public override void OnEnter()
     {
         // Pause the Game

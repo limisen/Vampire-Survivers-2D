@@ -71,9 +71,4 @@ public abstract class State
     {
         for (State s = this; s != null; s = s.Parent) yield return s;
     }
-
-    public static string StatePath(State s)
-    {
-        return string.Join(" > ", s.PathToRoot().Reverse().Select(n => n.GetType().Name));
-    }
 }
