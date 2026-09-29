@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool gamePaused = true;
 
     [Header("GameMenu(s)")]
-    [SerializeField] GameMenu gameMenu;
+    [SerializeField] public GameMenu gameMenu;
 
     #region Player Data
     [Header("Player Data")]
@@ -91,7 +91,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
+        gameMenu.HP_slider.value = Player_current_HP;
+
         if (Player_current_HP <= 0)
         {
             if (gamePaused == false)
@@ -141,35 +142,15 @@ public class GameManager : MonoBehaviour
 
     public void On_level_up()
     {
-        // IF lvl up with exact EXP
-        if (current_EXP == EXP_to_next_lvl && GameManager.singleton.gamePaused == false)
+        if (current_EXP >= EXP_to_next_lvl)
         {
             gameMenu.LvL_Up_Menu.SetActive(true);
             gamePaused = true;
-
-            Player_current_lvl++; // increase current lvl
-            EXP_to_next_lvl += EXP_to_next_lvl; // raise the EXP needed to levelUP
-            current_EXP = 0; // Reset the progress towards the next lvl
-
-            gameMenu.EXP_slider.maxValue = EXP_to_next_lvl; // Set the max value to the new value
-            gameMenu.EXP_slider.value = 0; // Reset the visual progress towards the next lvl
         }
-        // IF lvl up with excess EXP
-        else if (current_EXP > EXP_to_next_lvl && gamePaused == false)
+        else
         {
-            gameMenu.LvL_Up_Menu.SetActive(true);
-            gamePaused = true;
-
-            Player_current_lvl++; // increase current lvl
-
-            current_EXP -= EXP_to_next_lvl; // Reset the progress towards the next lvl BUT keep the excess exp
-
-            EXP_to_next_lvl += EXP_to_next_lvl; // raise the EXP needed to levelUP
-
-            gameMenu.EXP_slider.maxValue = EXP_to_next_lvl; // Set the max value to the new value
-            gameMenu.EXP_slider.value = current_EXP; // Reset the visual progress towards the next lvl
-
-            On_level_up(); // Incase we still have enough EXP to lvl up again, recursivly call this same function
+            gameMenu.EXP_slider.value = current_EXP;
+            gameMenu.EXP_slider.maxValue = EXP_to_next_lvl;
         }
     }
 

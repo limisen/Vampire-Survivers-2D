@@ -56,5 +56,12 @@ public class LVL_Up_Script : MonoBehaviour
                 else GameManager.singleton.Chain_Lightning_DMG += 5;
                 break;
         }
+        GameManager.singleton.Player_current_lvl++; // increase current lvl
+
+        GameManager.singleton.current_EXP -= GameManager.singleton.EXP_to_next_lvl; // Reset the progress towards the next lvl BUT keep the excess exp (if there is any)
+        GameManager.singleton.EXP_to_next_lvl += GameManager.singleton.EXP_to_next_lvl; // raise the EXP needed to levelUP
+
+        GameManager.singleton.gameMenu.EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl; // Set the slider.maxValue to the new value
+        GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP; // Reflect new visual representation of the progress towards the next lvl
     }
 }

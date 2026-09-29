@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySpawner : EnemyData
+public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] enemies;
     [SerializeField] GameObject[] SpawnPoints;
@@ -10,6 +10,8 @@ public class EnemySpawner : EnemyData
     private float timeRemaining;
 
     [SerializeField] bool scale_With_Time;
+
+    private int nr_of_enemies_in_scene;
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class EnemySpawner : EnemyData
                 timeRemaining = time_between_spawns;
 
             }
+            if (nr_of_enemies_in_scene != GameObject.FindGameObjectsWithTag("Enemy").Length)
             Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length);
         }
     }
