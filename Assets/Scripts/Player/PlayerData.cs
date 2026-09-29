@@ -2,139 +2,18 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] public float moveSpeed;
-    [Space]
-    [Space]
-    [SerializeField] public float MaxHP;
-    [SerializeField] public float current_HP = 1;
-    [Space]
-    [Space]
-    [SerializeField] public float current_lvl;
-    [SerializeField] public float current_EXP;
-    [SerializeField] public float EXP_to_next_lvl;
-    [Space]
-    [Space]
-    [SerializeField] public bool Magic_Missile_Unlocked = false;
-    [SerializeField] public GameObject Magic_Missile_object_Reference;
-    [SerializeField] public bool Aura_Unlocked = false;
-    [SerializeField] public GameObject Aura_object_Reference;
-    [SerializeField] public bool Chain_Lightning_Unlocked = false;
-    [SerializeField] public GameObject Chain_Lightning_object_Reference;
-    [Space]
-    [Space]
-    [SerializeField] public int score;
-    [Space]
-    [SerializeField] public GameMenu gameMenu;
-
     private void Awake()
     {
-        moveSpeed = GameManager.singleton.Player_MoveSpeed;
-
-
-        MaxHP = GameManager.singleton.Player_MaxHP;
-        current_HP = GameManager.singleton.Player_current_HP;
-
-
-        current_lvl = GameManager.singleton.Player_current_lvl;
-        current_EXP = GameManager.singleton.current_EXP;
-        EXP_to_next_lvl = GameManager.singleton.EXP_to_next_lvl;
-
-
-        score = GameManager.singleton.score;
-
-        gameMenu = gameMenu.GetComponent<GameMenu>();
-        gameMenu.HP_slider.maxValue = MaxHP;
-        gameMenu.EXP_slider.value = current_EXP;
-        gameMenu.HP_slider.value = current_HP;
+        
     }
 
     private void Start()
     {
-        current_HP = MaxHP;
+
     }
 
     void Update()
     {
-        gameMenu.EXP_slider.value = current_EXP;
-        gameMenu.HP_slider.value = current_HP;
-
-
-        if (current_HP <= 0)
-        {
-            if (GameManager.singleton.gamePaused == false)
-            {
-                Debug.Log("Player Died");
-            }
-            GameManager.singleton.gamePaused = true;
-            gameMenu.Player_UI.SetActive(false);
-
-            gameMenu.GameOver_Menu.SetActive(true);
-        }
-
-        gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
-
-        On_level_up();
-
-        // IF weapon is unlocked turn the corresponding weapon GameObject ON or OFF
-        if (Magic_Missile_Unlocked == true && Magic_Missile_object_Reference.activeSelf == false)
-        {
-            Magic_Missile_object_Reference.SetActive(true);
-        }
-        else if (Magic_Missile_Unlocked == false && Magic_Missile_object_Reference.activeSelf == true)
-        {
-            Magic_Missile_object_Reference.SetActive(false);
-        }
-
-        if (Aura_Unlocked == true && Aura_object_Reference.activeSelf == false)
-        {
-            Aura_object_Reference.SetActive(true);
-        }
-        else if (Aura_Unlocked == false && Aura_object_Reference.activeSelf == true)
-        {
-            Aura_object_Reference.SetActive(false);
-        }
-
-        if (Chain_Lightning_Unlocked == true && Chain_Lightning_object_Reference.activeSelf == false)
-        {
-            Chain_Lightning_object_Reference.SetActive(true);
-        }
-        else if (Chain_Lightning_Unlocked == false && Chain_Lightning_object_Reference.activeSelf == true)
-        {
-            Chain_Lightning_object_Reference.SetActive(false);
-        }
-    }
-
-    public void On_level_up()
-    {
-        // IF lvl up with exact EXP
-        if (current_EXP == EXP_to_next_lvl && GameManager.singleton.gamePaused == false)
-        {
-            gameMenu.LvL_Up_Menu.SetActive(true);
-            GameManager.singleton.gamePaused = true;
-
-            current_lvl++; // increase current lvl
-            EXP_to_next_lvl += EXP_to_next_lvl /** current_lvl*/; // raise the EXP needed to levelUP
-            current_EXP = 0; // Reset the progress towards the next lvl
-
-            gameMenu.EXP_slider.maxValue = EXP_to_next_lvl; // Set the max value to the new value
-            gameMenu.EXP_slider.value = 0; // Reset the visual progress towards the next lvl
-        }
-        // IF lvl up with excess EXP
-        else if (current_EXP > EXP_to_next_lvl && GameManager.singleton.gamePaused == false)
-        {
-            gameMenu.LvL_Up_Menu.SetActive(true);
-            GameManager.singleton.gamePaused = true;
-
-            current_lvl++; // increase current lvl
-
-            current_EXP -= EXP_to_next_lvl; // Reset the progress towards the next lvl BUT keep the excess exp
-
-            EXP_to_next_lvl += EXP_to_next_lvl /** current_lvl*/; // raise the EXP needed to levelUP
-
-            gameMenu.EXP_slider.maxValue = EXP_to_next_lvl; // Set the max value to the new value
-            gameMenu.EXP_slider.value = current_EXP; // Reset the visual progress towards the next lvl
-
-            On_level_up(); // Incase we still have enough EXP to lvl up again, recursivly call this same function
-        }
+        
     }
 }

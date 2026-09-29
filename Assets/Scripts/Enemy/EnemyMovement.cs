@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (moveSpeed == 0) moveSpeed = GetComponent<EnemyData>().moveSpeed;
         
-        player = FindAnyObjectByType<PlayerData>().gameObject;
+        player = GameObject.FindGameObjectWithTag("Player").gameObject;
     }
 
 

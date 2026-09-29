@@ -10,7 +10,7 @@ public class Camera_Follow : MonoBehaviour
     {
         if (objectToFollow.CompareTag("Player"))
         {
-            followSpeed = objectToFollow.GetComponent<PlayerData>().moveSpeed / 2;
+            followSpeed = GameManager.singleton.Player_MoveSpeed / 2;
         }
 
         // otherwise followspeed is set in the inspector

@@ -16,17 +16,10 @@ public class GameMenu : MonoBehaviour
     [SerializeField] public UnityEngine.UI.Slider HP_slider;
     [SerializeField] public TextMeshProUGUI Player_Score_UI;
 
-    private PlayerData Player;
-
-    private void Awake()
-    {
-        Player = FindAnyObjectByType<PlayerData>();
-    }
-
     private void Start()
     {
-        EXP_slider.maxValue = Player.EXP_to_next_lvl;
-        HP_slider.maxValue = Player.MaxHP;
+        EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
+        HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
     }
 
     private void Update()
@@ -57,7 +50,6 @@ public class GameMenu : MonoBehaviour
             GameManager.singleton.gamePaused = true;
         }
     }
-
 
 
     public void StartPressed()
@@ -98,22 +90,22 @@ public class GameMenu : MonoBehaviour
         }
 
         // Reseting player data to default values
-        Player.moveSpeed = 20f;
+        GameManager.singleton.Player_MoveSpeed= 15f;
 
-        Player.MaxHP = 10;
-        Player.current_HP = Player.MaxHP;
+        GameManager.singleton.Player_MaxHP = 10;
+        GameManager.singleton.Player_current_HP = GameManager.singleton.Player_MaxHP;
 
-        Player.EXP_to_next_lvl = 5f;
-        Player.current_EXP = 0;
-        Player.current_lvl = 0;
+        GameManager.singleton.EXP_to_next_lvl = 5f;
+        GameManager.singleton.current_EXP = 0;
+        GameManager.singleton.Player_current_lvl = 0;
 
-        Player.Magic_Missile_Unlocked = false;
-        Player.Aura_Unlocked = false;
-        Player.Chain_Lightning_Unlocked = false;
+        GameManager.singleton.Magic_Missile_Unlocked = false;
+        GameManager.singleton.Aura_Unlocked = false;
+        GameManager.singleton.Chain_Lightning_Unlocked = false;
 
-        Player.score = 0;
+        GameManager.singleton.score = 0;
 
-        Player.transform.position = Vector3.zero; // resetting player position
+        GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.zero; // resetting player position
 
         // reseting the weapon data
         GameManager.singleton.Missile_DMG = 5;
@@ -130,8 +122,9 @@ public class GameMenu : MonoBehaviour
 
 
         // Updating UI to reflect the reset
-        EXP_slider.maxValue = Player.EXP_to_next_lvl;
-        HP_slider.maxValue = Player.MaxHP;
+        EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
+        HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
+        HP_slider.value = GameManager.singleton.Player_current_HP;
 
         // Also reset Camera Position
         FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10);
@@ -165,6 +158,6 @@ public class GameMenu : MonoBehaviour
     {
         GameManager.singleton.gamePaused = false;
         LvL_Up_Menu.SetActive(false);
-        HP_slider.maxValue = Player.MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
+        HP_slider.maxValue = GameManager.singleton.Player_MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
     }
 }

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class LVL_Up_Script : MonoBehaviour
 {
-    PlayerData Player;
-
     TextMeshProUGUI LVL_up_button_1_TextComponent;
     TextMeshProUGUI LVL_up_button_2_TextComponent;
     TextMeshProUGUI LVL_up_button_3_TextComponent;
     private void Awake()
     {
-        Player = FindAnyObjectByType<PlayerData>();
-
         // Get the button TextComponents
         LVL_up_button_1_TextComponent = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
         LVL_up_button_2_TextComponent = gameObject.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -23,7 +19,7 @@ public class LVL_Up_Script : MonoBehaviour
     {
         // Randomly pick 3 unique upgrade options.
 
-        if (Player.current_lvl == 1)
+        if (GameManager.singleton.Player_current_lvl == 0)
         {
             // Give the player a choice of which weapon to start with.
 
@@ -33,6 +29,8 @@ public class LVL_Up_Script : MonoBehaviour
         }
         else
         {
+            // generate 3 unique upgrades by getting a random item from a list and per generation deleting the chosen item
+
             LVL_up_button_1_TextComponent.text = "Missile DMG +5";
             LVL_up_button_2_TextComponent.text = "Aura DMG +5";
             LVL_up_button_3_TextComponent.text = "Chain Lightning DMG +5";
@@ -44,14 +42,17 @@ public class LVL_Up_Script : MonoBehaviour
         {
             case 0:
                 if (GameManager.singleton.Player_current_lvl == 1) GameManager.singleton.Magic_Missile_Unlocked= true;
+                // Delete the option to get this unlock choice when next generating the upgrade choices
                 else GameManager.singleton.Missile_DMG += 5;
                 break;
             case 1:
                 if (GameManager.singleton.Player_current_lvl == 1) GameManager.singleton.Aura_Unlocked = true;
+                // Delete the option to get this unlock choice when next generating the upgrade choices
                 else GameManager.singleton.Aura_DMG += 5;
                 break;
             case 2:
                 if (GameManager.singleton.Player_current_lvl == 1) GameManager.singleton.Chain_Lightning_Unlocked = true;
+                // Delete the option to get this unlock choice when next generating the upgrade choices
                 else GameManager.singleton.Chain_Lightning_DMG += 5;
                 break;
         }

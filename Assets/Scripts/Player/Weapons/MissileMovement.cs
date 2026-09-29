@@ -17,13 +17,13 @@ public class MissileMovement : MonoBehaviour
     [SerializeField] float maxDistance;
     [SerializeField] float minDistance;
 
-    PlayerData Player;
+    GameObject Player;
     #endregion
 
 
     private void Awake()
     {
-        Player = FindAnyObjectByType<PlayerData>();
+        Player = GameObject.FindGameObjectWithTag("Player").gameObject;
     }
 
     private void Update()

@@ -17,11 +17,8 @@ public class EnemyData : MonoBehaviour
 
     [SerializeField] public int score_to_give = 1;
 
-    [SerializeField] public PlayerData player_data;
-
     private void Awake()
     {
-        player_data = FindAnyObjectByType<PlayerData>();
         currentHP = MaxHP;
     }
 
@@ -39,7 +36,7 @@ public class EnemyData : MonoBehaviour
             EXP_Orb.GetComponent<EXP_Pick_Up>().EXP_to_give = EXP_to_Drop;
 
             // Increase the player's score for killing this enemy.
-            player_data.score += score_to_give;
+            GameManager.singleton.score += score_to_give;
         }
     }
 }
