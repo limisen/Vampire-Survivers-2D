@@ -19,13 +19,13 @@ public class TransitionSequencer
     public static State LCA(State a, State b)
     {
         // Create a set of all parents of 'a'
-        var ap = new HashSet<State>();
-        for (var s = a; s != null; s = s.Parent) ap.Add(s);
+        var ancestralParents = new HashSet<State>();
+        for (var state = a; state != null; state = state.Parent) ancestralParents.Add(state);
 
         // Find the first parent of 'b' that is also a parent of 'a'
-        for (var s = b; s != null; s = s.Parent)
+        for (var state = b; state != null; state = state.Parent)
         {
-            if (ap.Contains(s)) return s;
+            if (ancestralParents.Contains(state)) return state;
         }
 
         // If no common ancestor is found, return null

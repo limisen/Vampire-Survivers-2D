@@ -26,7 +26,6 @@ public class GameMenu : MonoBehaviour
     {
 
         if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == false)
-        // Add New input system pause key pressed (logi) here
         {
             Pause_Menu.SetActive(true);
             Player_UI.SetActive(false);
@@ -35,7 +34,6 @@ public class GameMenu : MonoBehaviour
             Debug.Log("Pause button was pressed");
         }
         else if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == true)
-        // Add New input system pause key pressed (logi) here
         {
             Pause_Menu.SetActive(false);
             Player_UI.SetActive(true);

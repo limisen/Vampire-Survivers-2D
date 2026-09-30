@@ -8,7 +8,7 @@ public abstract class State
 
     public readonly State Parent;
 
-    public State ActiveState;
+    public State ActiveChild;
 
 
     public State(StateMachine stateMachine, State Parent = null)
@@ -31,18 +31,20 @@ public abstract class State
     internal void Enter()
     {
         // Making sure the Parent OnEnter() runs first before the child's
-        if (Parent != null) Parent.ActiveState = this;
+        if (Parent != null) Parent.ActiveChild = this;
 
-        OnEnter(); 
-        State init = GetInitialState();
+        OnEnter();
+
+        // IF a init state exists and is defined enter that state
+        State init = GetInitialState(); 
         if (init != null) init.Enter();
     }
     internal void Exit()
     {
         // Making sure the Child's OnExit() runs first before the Parent's
-        if (ActiveState != null) ActiveState.Exit();
+        if (ActiveChild != null) ActiveChild.Exit();
 
-        ActiveState = null;
+        ActiveChild = null;
         OnExit();
     }
     internal void Update(float deltaTime)
@@ -54,21 +56,21 @@ public abstract class State
             return;
         }
 
-        if (ActiveState != null) ActiveState.Update(deltaTime);
+        if (ActiveChild != null) ActiveChild.Update(deltaTime);
         OnUpdate(deltaTime);
     }
 
     // Return the deepest currently-active decendant state (aka the "leaf" of this branch)
     public State Leaf()
     {
-        State s = this;
-        while (s.ActiveState != null) s = s.ActiveState;
-        return s;
+        State state = this;
+        while (state.ActiveChild != null) state = state.ActiveChild;
+        return state;
     }
 
     // Get the path to the root through each state (this -> parent -> ... -> root)
     public IEnumerable<State> PathToRoot()
     {
-        for (State s = this; s != null; s = s.Parent) yield return s;
+        for (State state = this; state != null; state = state.Parent) yield return state;
     }
 }

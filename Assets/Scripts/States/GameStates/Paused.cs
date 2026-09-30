@@ -1,8 +1,9 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class Paused : State
 {
-    // Define it's childStates
+    // Declaring it's childStates
     public readonly MainMenu mainMenu;
     public readonly Upgrading upgrading;
     public readonly ViewingInventory viewingInventory;
@@ -16,16 +17,35 @@ public class Paused : State
         viewingInventory = new ViewingInventory(stateMachine, this);
         settings = new Settings(stateMachine, this);
         gameOver = new GameOver(stateMachine, this);
+
+        ActiveChild = mainMenu;
     }
 
     protected override State GetInitialState() => mainMenu;
 
     public override void OnEnter()
     {
+        base.OnEnter();
+
         // Pause the Game
         GameManager.singleton.gamePaused = true;
 
         // Open the pause menu
+    }
+
+    protected override State GetTransition()
+    {
+        if (GameManager.singleton.Player_current_HP <= 0)
+        {
+            ActiveChild = gameOver;
+            return gameOver;
+        }
+
+        else
+        {
+            ActiveChild = null;
+            return null;
+        }
     }
 
 

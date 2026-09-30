@@ -6,4 +6,9 @@ public class GameOver : State
     {
 
     }
+
+    public override void OnEnter()
+    {
+        GameManager.singleton.gamePaused = true;
+    }
 }

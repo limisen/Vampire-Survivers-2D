@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Player_current_HP = Player_MaxHP;
+        
     }
 
     private void Update()

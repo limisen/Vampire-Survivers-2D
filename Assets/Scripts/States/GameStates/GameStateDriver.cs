@@ -6,6 +6,7 @@ public class GameStateDriver : MonoBehaviour
     StateMachine stateMachine;
     State root;
     [SerializeField] string LastPath;
+
     private void Awake()
     {
         root = new GameStateRoot(stateMachine);

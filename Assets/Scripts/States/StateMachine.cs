@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine
 {
     public readonly State Root;
     public readonly TransitionSequencer Sequencer;
@@ -41,11 +41,11 @@ public class StateMachine : MonoBehaviour
         State lca = TransitionSequencer.LCA(from, to);
 
         // Exit current branch up to (but not including) LCA
-        for (State s = from; s != lca; s = s.Parent) s.Exit();
+        for (State state = from; state != lca; state = state.Parent) state.Exit();
 
         // Enter target branch from LCA down to the target
         var stack = new Stack<State>();
-        for (State s = to; s != lca; s = s.Parent, stack.Push(s));
+        for (State state = to; state != lca; state = state.Parent, stack.Push(state));
         while (stack.Count > 0) stack.Pop().Enter();
     }
 }
