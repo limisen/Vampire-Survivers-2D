@@ -41,17 +41,17 @@ public class LVL_Up_Script : MonoBehaviour
         switch (choice)
         {
             case 0:
-                if (GameManager.singleton.Player_current_lvl == 1) GameManager.singleton.Magic_Missile_Unlocked= true;
+                if (GameManager.singleton.Player_current_lvl == 0) GameManager.singleton.Magic_Missile_Unlocked= true;
                 // Delete the option to get this unlock choice when next generating the upgrade choices
                 else GameManager.singleton.Missile_DMG += 5;
                 break;
             case 1:
-                if (GameManager.singleton.Player_current_lvl == 1) GameManager.singleton.Aura_Unlocked = true;
+                if (GameManager.singleton.Player_current_lvl == 0) GameManager.singleton.Aura_Unlocked = true;
                 // Delete the option to get this unlock choice when next generating the upgrade choices
                 else GameManager.singleton.Aura_DMG += 5;
                 break;
             case 2:
-                if (GameManager.singleton.Player_current_lvl == 1) GameManager.singleton.Chain_Lightning_Unlocked = true;
+                if (GameManager.singleton.Player_current_lvl == 0) GameManager.singleton.Chain_Lightning_Unlocked = true;
                 // Delete the option to get this unlock choice when next generating the upgrade choices
                 else GameManager.singleton.Chain_Lightning_DMG += 5;
                 break;

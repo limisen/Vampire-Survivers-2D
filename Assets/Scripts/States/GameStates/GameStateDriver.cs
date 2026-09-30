@@ -14,6 +14,11 @@ public class GameStateDriver : MonoBehaviour
         stateMachine = builder.Build();
     }
 
+    private void Start()
+    {
+        root.Enter();
+    }
+
     private void Update()
     {
         LastPath = StatePath(root.Leaf());

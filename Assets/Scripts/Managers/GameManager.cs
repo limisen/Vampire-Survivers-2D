@@ -154,5 +154,4 @@ public class GameManager : MonoBehaviour
             gameMenu.EXP_slider.maxValue = EXP_to_next_lvl;
         }
     }
-
 }

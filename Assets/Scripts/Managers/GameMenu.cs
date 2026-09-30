@@ -3,18 +3,24 @@ using UnityEngine;
 
 public class GameMenu : MonoBehaviour
 {
+    [Header("Menus")]
     [SerializeField] public GameObject Start_Menu;
     [SerializeField] public GameObject Settings_Menu;
     [SerializeField] public GameObject GameOver_Menu;
     [SerializeField] public GameObject Pause_Menu;
     [SerializeField] public GameObject LvL_Up_Menu;
 
+    // Arguably Player UI too so I'll keep it here in the middle
     [SerializeField] public GameObject Inventory;
 
+    [Header("Player UI")]
     [SerializeField] public GameObject Player_UI;
     [SerializeField] public UnityEngine.UI.Slider EXP_slider;
     [SerializeField] public UnityEngine.UI.Slider HP_slider;
     [SerializeField] public TextMeshProUGUI Player_Score_UI;
+
+    [Header("EXP")]
+    [SerializeField] GameObject EXP_Prefab;
 
     private void Start()
     {
@@ -62,10 +68,16 @@ public class GameMenu : MonoBehaviour
     {
         GameManager.singleton.gamePaused = false;
         GameOver_Menu.SetActive(false);
+        LvL_Up_Menu.SetActive(false);
+        Pause_Menu.SetActive(false);
+        Settings_Menu.SetActive(false);
+        Start_Menu.SetActive(false);
+
         Debug.Log("Restart Pressed");
 
         Player_UI.SetActive(true);
 
+        #region Destroying spawned GameObjects
         // IF there are any Enemies left in the scene destroy them
         GameObject[] Enemies_in_Scene = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject Enemy in Enemies_in_Scene)
@@ -86,7 +98,9 @@ public class GameMenu : MonoBehaviour
         {
             Destroy(Missile);
         }
+        #endregion
 
+        #region Player Data Reset
         // Reseting player data to default values
         GameManager.singleton.Player_MoveSpeed= 15f;
 
@@ -117,17 +131,25 @@ public class GameMenu : MonoBehaviour
 
         GameManager.singleton.Chain_Lightning_DMG = 5;
         GameManager.singleton.radius = 5;
+        #endregion
 
-
+        #region Updating UI values
         // Updating UI to reflect the reset
         EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
         HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
         HP_slider.value = GameManager.singleton.Player_current_HP;
+        #endregion
 
         // Also reset Camera Position
         FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10);
 
+        // Reset the amount the Spawner starts to spawn
         FindAnyObjectByType<EnemySpawner>().Enemies_to_spawn = 2;
+
+        // Spawn the starting EXP orb (otherwise the player doesnt get the choice to LVL up and choose their starting weapon
+        GameObject EXP_orb = Instantiate(EXP_Prefab, new Vector3(0, 4, 0), Quaternion.identity);
+        // Then set the amount it should give
+        EXP_orb.GetComponent<EXP_Pick_Up>().EXP_to_give = (int)GameManager.singleton.EXP_to_next_lvl;
     }
 
 

@@ -1,2 +1,22 @@
 fileFormatVersion: 2
 guid: b249b65a87d22734c826c804867dbd7d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Start_Menu: {instanceID: 0}
+  - Settings_Menu: {instanceID: 0}
+  - GameOver_Menu: {instanceID: 0}
+  - Pause_Menu: {instanceID: 0}
+  - LvL_Up_Menu: {instanceID: 0}
+  - Inventory: {instanceID: 0}
+  - Player_UI: {instanceID: 0}
+  - EXP_slider: {instanceID: 0}
+  - HP_slider: {instanceID: 0}
+  - Player_Score_UI: {instanceID: 0}
+  - EXP_Prefab: {fileID: 4495294543294757013, guid: 56d3ec21444ae1849922ef158e9a9f55, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
