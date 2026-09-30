@@ -7,7 +7,9 @@ public class LVL_Up_Script : MonoBehaviour
     Dictionary<string, Dictionary<string, object>> UpgradeOptions;
     Dictionary<string, Dictionary<string, object>> PermanentUpgradeOptions;
 
-    Dictionary<string, object> upgardeOption_1 = new Dictionary<string, object>();
+    List<object> upgradeOption_1;
+    List<object> upgradeOption_2;
+    List<object> upgradeOption_3;
 
 
     TextMeshProUGUI LVL_up_button_1_TextComponent;
@@ -62,34 +64,12 @@ public class LVL_Up_Script : MonoBehaviour
 
     private void OnEnable()
     {
-        // Get a enumeratior so we can go through the upgrade options Types
-        var enumerator = UpgradeOptions.GetEnumerator();
-        
-        // Randomly pick a type of upgrade.
-        for (int i = 0; i < Random.Range(1, UpgradeOptions.Count + 1); i++)
-        {
-            enumerator.MoveNext();
-        }
-        var randomTypeOfUpgrade = enumerator.Current.Key;
-        var attributes = enumerator.Current.Value;
-        // Get a enumeratior so we can go through the upgrade option attributes
-        var innerEnumerator = attributes.GetEnumerator();
-
-        for (int i = 0; i < Random.Range(1, attributes.Count + 1); i++)
-        {
-            innerEnumerator.MoveNext();
-        }
-
-        var randomUpgradeAttribute = innerEnumerator.Current.Key;
-
-        var randomUpgradeValue = innerEnumerator.Current.Value;
-        //var choosenUpgrade = UpgradeOptions[randomTypeOfUpgrade, randomUpgradeAttribute];
-
-        //upgardeOption_1 = ??;
-
         if (GameManager.singleton.Player_current_lvl == 0)
         {
             // Give the player a choice of which weapon to start with.
+            upgradeOption_1 = new List<object>() { "Magic Missile", "Unlocked", false };
+            upgradeOption_2 = new List<object>() { "Aura", "Unlocked", false };
+            upgradeOption_3 = new List<object>() { "Chain Lightning", "Unlocked", false };
 
             LVL_up_button_1_TextComponent.text = "Unlock Magic Missle";
             LVL_up_button_2_TextComponent.text = "Unlock Aura";
@@ -97,33 +77,237 @@ public class LVL_Up_Script : MonoBehaviour
         }
         else
         {
-            // generate 3 unique upgrades by getting a random item from a list and per generation deleting the chosen item
+            // generate 3 unique upgrades
+            upgradeOption_1 = GenerateUpgradeOption();
+            upgradeOption_2 = GenerateUpgradeOption();
+            upgradeOption_3 = GenerateUpgradeOption();
 
-            LVL_up_button_1_TextComponent.text = randomTypeOfUpgrade + " " + randomUpgradeAttribute;
-            LVL_up_button_2_TextComponent.text = randomTypeOfUpgrade + " " + randomUpgradeAttribute;
-            LVL_up_button_3_TextComponent.text = randomTypeOfUpgrade + " " + randomUpgradeAttribute;
+            // Set the text on the button to be what the upgrade is
+            LVL_up_button_1_TextComponent.text = upgradeOption_1[0] + " " + upgradeOption_1[1];
+            LVL_up_button_2_TextComponent.text = upgradeOption_2[0] + " " + upgradeOption_2[1];
+            LVL_up_button_3_TextComponent.text = upgradeOption_3[0] + " " + upgradeOption_3[1];
         }
     }
     public void upgradeChoice(int choice)
     {
+        // Depending on the chosen upgrade perform that upgrade
         switch (choice)
         {
             case 0:
-                if (GameManager.singleton.Player_current_lvl == 0) GameManager.singleton.Magic_Missile_Unlocked = true;
-                // Delete the option to get this unlock choice when next generating the upgrade choices
-                else GameManager.singleton.Missile_DMG += 5;
+                // Upgrade application happens here
+                switch (upgradeOption_1[0].ToString())
+                {
+                    case "Magic Missile":
+                        switch (upgradeOption_1[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Missile_DMG += 5;
+                                break;
+                            case "MoveSpeed":
+                                GameManager.singleton.Missile_MoveSpeed += 5;
+                                break;
+                            case "Amount To Spawn":
+                                GameManager.singleton.amount_to_spawn += 1;
+                                break;
+                            case "Time Between Launch":
+                                GameManager.singleton.time_between_launch -= 0.25f;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Magic_Missile_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_1[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "Aura":
+                        switch (upgradeOption_1[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Aura_DMG += 5;
+                                break;
+                            case "Radius":
+                                GameManager.singleton.radius += 2;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Aura_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_1[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "Chain Lightning":
+                        switch (upgradeOption_1[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Chain_Lightning_DMG += 5;
+                                break;
+                            case "Amount To Chain":
+                                GameManager.singleton.radius += 1;
+                                break;
+                            case "Time Between Lightning":
+                                GameManager.singleton.time_between_lightning -= 0.2f;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Chain_Lightning_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_1[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "PlayerStats":
+                        switch (upgradeOption_1[0].ToString())
+                        {
+                            case "Max HP":
+                                GameManager.singleton.Player_MaxHP += 5;
+                                GameManager.singleton.Player_current_HP += 5;
+                                break;
+                            case "MoveSpeed":
+                                GameManager.singleton.Player_MoveSpeed += 2.5f;
+                                break;
+                        }
+                        break;
+                }
                 break;
             case 1:
-                if (GameManager.singleton.Player_current_lvl == 0) GameManager.singleton.Aura_Unlocked = true;
-                // Delete the option to get this unlock choice when next generating the upgrade choices
-                else GameManager.singleton.Aura_DMG += 5;
+                switch (upgradeOption_2[0].ToString())
+                {
+                    case "Magic Missile":
+                        switch (upgradeOption_2[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Missile_DMG += 5;
+                                break;
+                            case "MoveSpeed":
+                                GameManager.singleton.Missile_MoveSpeed += 5;
+                                break;
+                            case "Amount To Spawn":
+                                GameManager.singleton.amount_to_spawn += 1;
+                                break;
+                            case "Time Between Launch":
+                                GameManager.singleton.time_between_launch -= 0.25f;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Magic_Missile_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_2[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "Aura":
+                        switch (upgradeOption_2[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Aura_DMG += 5;
+                                break;
+                            case "Radius":
+                                GameManager.singleton.radius += 2;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Aura_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_2[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "Chain Lightning":
+                        switch (upgradeOption_2[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Chain_Lightning_DMG += 5;
+                                break;
+                            case "Amount To Chain":
+                                GameManager.singleton.radius += 1;
+                                break;
+                            case "Time Between Lightning":
+                                GameManager.singleton.time_between_lightning -= 0.2f;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Chain_Lightning_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_2[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "PlayerStats":
+                        switch (upgradeOption_2[0].ToString())
+                        {
+                            case "Max HP":
+                                GameManager.singleton.Player_MaxHP += 5;
+                                GameManager.singleton.Player_current_HP += 5;
+                                break;
+                            case "MoveSpeed":
+                                GameManager.singleton.Player_MoveSpeed += 2.5f;
+                                break;
+                        }
+                        break;
+                }
                 break;
             case 2:
-                if (GameManager.singleton.Player_current_lvl == 0) GameManager.singleton.Chain_Lightning_Unlocked = true;
-                // Delete the option to get this unlock choice when next generating the upgrade choices
-                else GameManager.singleton.Chain_Lightning_DMG += 5;
+                switch (upgradeOption_3[0].ToString())
+                {
+                    case "Magic Missile":
+                        switch (upgradeOption_3[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Missile_DMG += 5;
+                                break;
+                            case "MoveSpeed":
+                                GameManager.singleton.Missile_MoveSpeed += 5;
+                                break;
+                            case "Amount To Spawn":
+                                GameManager.singleton.amount_to_spawn += 1;
+                                break;
+                            case "Time Between Launch":
+                                GameManager.singleton.time_between_launch -= 0.25f;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Magic_Missile_Unlocked = true;
+                                break;
+                        }
+                        break;
+                    case "Aura":
+                        switch (upgradeOption_3[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Aura_DMG += 5;
+                                break;
+                            case "Radius":
+                                GameManager.singleton.radius += 2;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Aura_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_3[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "Chain Lightning":
+                        switch (upgradeOption_3[1].ToString())
+                        {
+                            case "DMG":
+                                GameManager.singleton.Chain_Lightning_DMG += 5;
+                                break;
+                            case "Amount To Chain":
+                                GameManager.singleton.radius += 1;
+                                break;
+                            case "Time Between Lightning":
+                                GameManager.singleton.time_between_lightning -= 0.2f;
+                                break;
+                            case "Unlocked":
+                                GameManager.singleton.Chain_Lightning_Unlocked = true;
+                                PermanentUpgradeOptions[upgradeOption_3[0].ToString()].Remove("Unlocked");
+                                break;
+                        }
+                        break;
+                    case "PlayerStats":
+                        switch (upgradeOption_3[0].ToString())
+                        {
+                            case "Max HP":
+                                GameManager.singleton.Player_MaxHP += 5;
+                                GameManager.singleton.Player_current_HP += 5;
+                                break;
+                            case "MoveSpeed":
+                                GameManager.singleton.Player_MoveSpeed += 2.5f;
+                                break;
+                        }
+                        break;
+                }
                 break;
         }
+
         GameManager.singleton.Player_current_lvl++; // increase current lvl
 
         GameManager.singleton.current_EXP -= GameManager.singleton.EXP_to_next_lvl; // Reset the progress towards the next lvl BUT keep the excess exp (if there is any)
@@ -134,5 +318,53 @@ public class LVL_Up_Script : MonoBehaviour
 
         // Reset the options of upgrades infor the next random upgrade choice.
         UpgradeOptions = PermanentUpgradeOptions;
+    }
+
+    // Generates a random upgrade option and returns List<object>(upgradeType, UpgradeAttribute, UpgradeCurrentValue)
+    private List<object> GenerateUpgradeOption()
+    {
+        // Get a enumeratior so we can go through the upgrade options Types
+        var enumerator = UpgradeOptions.GetEnumerator();
+
+        // Randomly pick a type of upgrade.
+        for (int i = 0; i < Random.Range(1, UpgradeOptions.Count + 1); i++) // Make sure to move at least once as GetEnumerator() starts one step outside the index and can go on step outside the index
+        {
+            enumerator.MoveNext();
+        }
+
+        // Save the type of upgrade to a variable
+        var randomTypeOfUpgrade = enumerator.Current.Key;
+
+        // gets the inner dictionary (of UpgradeOptions)
+        var attributes = enumerator.Current.Value;
+
+        // Get a enumeratior so we can go through the "upgrade option"'s attributes
+        var innerEnumerator = attributes.GetEnumerator();
+
+        // Randomly pick a attribute to upgrade
+        for (int i = 0; i < Random.Range(1, attributes.Count + 1); i++)
+        {
+            innerEnumerator.MoveNext();
+        }
+
+        // Save the choosen attribute
+        var randomUpgradeAttribute = innerEnumerator.Current.Key;
+
+        // Save the Value of the choosen attribute
+        var randomUpgradeValue = innerEnumerator.Current.Value;
+
+        // Save the Entire generated option (type, attribute and value)
+        var upgardeOption = new List<object>();
+
+        upgardeOption.Add(randomTypeOfUpgrade);
+        upgardeOption.Add(randomUpgradeAttribute);
+        upgardeOption.Add(randomUpgradeValue);
+
+        // Delete this specifc upgrade choice form possibilites infor next generation
+        UpgradeOptions[randomTypeOfUpgrade].Remove(randomUpgradeAttribute);
+        // If (somehow) all the attributes are used up delete that upgrade type
+        if (UpgradeOptions[randomTypeOfUpgrade].Count == 0) UpgradeOptions.Remove(randomTypeOfUpgrade);
+
+        return upgardeOption;
     }
 }
