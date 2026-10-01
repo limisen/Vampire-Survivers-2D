@@ -12,7 +12,7 @@ public class EnemyData : MonoBehaviour
     [SerializeField] public int DMG = 3;
 
 
-    [SerializeField] public int EXP_to_Drop = 1;
+    [SerializeField] public float EXP_to_Drop = 1;
     [SerializeField] GameObject EXP_Prefab;
 
     [SerializeField] public int score_to_give = 1;
@@ -33,7 +33,7 @@ public class EnemyData : MonoBehaviour
             GameObject EXP_Orb = Instantiate(EXP_Prefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
 
             // Set the EXP this orb gives when picked up to be equal to the enemy's EXP_to_Drop
-            EXP_Orb.GetComponent<EXP_Pick_Up>().EXP_to_give = EXP_to_Drop;
+            EXP_Orb.GetComponent<EXP_Pick_Up>().EXP_to_give = EXP_to_Drop * (1 + GameManager.singleton.Player_current_lvl);
 
             // Increase the player's score for killing this enemy.
             GameManager.singleton.score += score_to_give;

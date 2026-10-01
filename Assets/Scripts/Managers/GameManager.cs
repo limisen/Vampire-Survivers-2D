@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
     [Header("Player Data")]
     [SerializeField] public float Player_MoveSpeed = 15f;
     [Space]
-    [Space]
     [SerializeField] public float Player_MaxHP = 10;
     [SerializeField] public float Player_current_HP = 0;
+    [SerializeField] public float Player_HP_regen = 0.025f;
     [Space]
     [Space]
     [SerializeField] public float Player_current_lvl = 0;
@@ -87,12 +87,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Player_current_HP = Player_MaxHP;
-        
+
     }
 
     private void Update()
     {
-        gameMenu.HP_slider.value = Player_current_HP;
 
         if (Player_current_HP <= 0)
         {
@@ -139,6 +138,13 @@ public class GameManager : MonoBehaviour
             Chain_Lightning_objRef.SetActive(false);
         }
         #endregion
+
+        if (Player_current_HP < Player_MaxHP && gamePaused == false)
+        {
+            Player_current_HP += Player_HP_regen * Time.deltaTime;
+        }
+        gameMenu.HP_slider.value = Player_current_HP;
+
     }
 
     public void On_level_up()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EXP_Pick_Up : MonoBehaviour
 {
-    public int EXP_to_give;
+    public float EXP_to_give;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

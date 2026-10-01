@@ -144,7 +144,7 @@ public class GameMenu : MonoBehaviour
         FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10);
 
         // Reset the amount the Spawner starts to spawn
-        FindAnyObjectByType<EnemySpawner>().Enemies_to_spawn = 2;
+        FindAnyObjectByType<EnemySpawner>().Enemies_to_spawn = 1;
 
         // Spawn the starting EXP orb (otherwise the player doesnt get the choice to LVL up and choose their starting weapon
         GameObject EXP_orb = Instantiate(EXP_Prefab, new Vector3(0, 4, 0), Quaternion.identity);

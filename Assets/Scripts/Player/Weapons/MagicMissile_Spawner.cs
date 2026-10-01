@@ -3,8 +3,9 @@ using UnityEngine;
 public class MagicMissile_Spawner : MonoBehaviour
 {
     [SerializeField] GameObject missile_Prefab;
-
+    private int amountSpawned;
     private float timeRemaining;
+    private float delay;
 
     private void Start()
     {
@@ -18,18 +19,25 @@ public class MagicMissile_Spawner : MonoBehaviour
         {
             // incriment the timer
             timeRemaining -= Time.deltaTime;
-
+            delay -= Time.deltaTime;
             if (timeRemaining <= 0)
             {
-                for (int i = 1; i < GameManager.singleton.amount_to_spawn + 1; i++)
+                if (delay <= 0)
                 {
-                    // Spawn the enemy if we have reached 0 on the timer
-                    GameObject spawned_Missile = Instantiate(missile_Prefab, transform.position + new Vector3(Random.Range(-1,2), Random.Range(-1, 2), 0), Quaternion.identity);
+                    GameObject spawned_Missile = Instantiate(missile_Prefab, transform.position + new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), 0), Quaternion.identity);
                     spawned_Missile.GetComponentInChildren<Missile_HitDetection>().DMG = GameManager.singleton.Missile_DMG;
-                    //spawned_Missile.GetComponent<MissileMovement>().MoveSpeed = GameManager.singleton./*MagicMissile*/MoveSpeed;
+
+                    amountSpawned++;
+                    delay = 0.1f;
                 }
-                // Then reset the timer in for the next spawn
-                timeRemaining = GameManager.singleton.time_between_launch;
+
+
+                if (amountSpawned == GameManager.singleton.amount_to_spawn)
+                {
+                    amountSpawned = 0;
+                    // Then reset the timer in for the next spawn
+                    timeRemaining = GameManager.singleton.time_between_launch;
+                }
             }
         }
     }
