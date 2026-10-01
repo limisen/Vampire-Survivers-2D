@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool Chain_Lightning_Unlocked = false;
     [SerializeField] public GameObject Chain_Lightning_objRef;
     [SerializeField] public float Chain_Lightning_DMG = 5;
-    [SerializeField] public float amount_to_chain = 1;
+    [SerializeField] public int amount_to_chain = 1;
     [SerializeField] public float time_between_lightning = 2;
     #endregion
 

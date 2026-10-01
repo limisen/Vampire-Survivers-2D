@@ -1,19 +1,25 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ChainLightning : MonoBehaviour
 {
     private float timeRemaining;
 
-    GameObject[] Enemies;
+    private int amountChained;
+    private int MAXamountToChain;
 
-    GameObject nearestObj;
-    float distance;
+    public List<GameObject> Enemies = new List<GameObject>();
+
+    public GameObject nearestObj;
+    float Enemy_distance;
     float nearestDistance = float.PositiveInfinity;
 
 
     private void Awake()
     {
         timeRemaining = GameManager.singleton.time_between_lightning;
+        MAXamountToChain = GameManager.singleton.amount_to_chain;
     }
 
     private void Update()
@@ -25,45 +31,102 @@ public class ChainLightning : MonoBehaviour
 
             if (timeRemaining <= 0)
             {
-                // Spawn the enemy if we have reached 0 on the timer
+                
                 CauseLightning();
-                // Then reset the timer in for the next spawn
-                timeRemaining = GameManager.singleton.time_between_lightning;
             }
         }
     }
 
     void CauseLightning()
     {
-        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        // Find all enemies in the scene
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList<GameObject>();
 
-        if (Enemies.Length > 0)
+        // If there are enemies in the scene, start the chain lightning effect
+        if (Enemies.Count > 0)
         {
-
-            for (int i = 0; i < Enemies.Length; i++)
+            // If the number of enemies is less than the max amount to chain, set the max amount to chain to the number of enemies (so we don't try to chain to more enemies than exist)
+            if (Enemies.Count < MAXamountToChain)
             {
-                distance = Vector3.Distance(transform.position, Enemies[i].transform.position);
-
-                if (distance < nearestDistance)
-                {
-                    nearestObj = Enemies[i];
-                    nearestDistance = distance;
-                }
+                MAXamountToChain = Enemies.Count;
+            }
+            else
+            {   
+                // otherwise, set the max amount to chain to the value in the GameManager
+                MAXamountToChain = GameManager.singleton.amount_to_chain;
             }
 
-            transform.position = nearestObj.transform.position;
-            nearestObj.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Chain_Lightning_DMG;
-
-            for (int i = 1; i < GameManager.singleton.amount_to_chain - 1; i++)
+            // Continue chaining until we reach the max amount to chain
+            if (amountChained != MAXamountToChain)
             {
-                if (i >= Enemies.Length)
+                if (this.transform.GetChild(0).gameObject.activeSelf == false)
                 {
-                    return;
+                    this.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position; // make sure we origniate from the player
+
+                    this.transform.GetChild(0).gameObject.SetActive(true);
+                    this.transform.GetChild(0).GetComponent<TrailRenderer>().Clear(); // Clear the trail renderer so we don't see the trail from the place it stopped at.
                 }
-                transform.position = Enemies[i].gameObject.transform.position;
-                Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Chain_Lightning_DMG;
+
+                // Find the nearest enemy to the current position of the chain lightning
+                FindNearest();
+
+                // move towards enemy
+                this.transform.position += 0.1f * (nearestObj.transform.position - this.transform.position);
+
+                // Check if we are close enough to the enemy to deal damage
+                float Am_I_Close_Enough = Vector3.Distance(this.transform.position, nearestObj.transform.position);
+                if (Am_I_Close_Enough < 1)
+                {
+                    nearestObj.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Chain_Lightning_DMG;
+                    amountChained++;
+
+                    // If we have reached the max amount to chain, reset the chain lightning effect
+                    if (amountChained == MAXamountToChain)
+                    {
+                        this.transform.GetChild(0).gameObject.SetActive(false);
+                        amountChained = 0;
+                        timeRemaining = GameManager.singleton.time_between_lightning;
+                        this.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+                        this.transform.GetChild(0).GetComponent<TrailRenderer>().Clear();
+                    }
+                }
+
+                // double check if there are still enemies in the scene, if not, reset the chain lightning effect
+                Enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList<GameObject>();
+                if (Enemies.Count < amountChained || Enemies.Count == 0)
+                {
+                    this.transform.GetChild(0).gameObject.SetActive(false);
+                    amountChained = 0;
+                    timeRemaining = GameManager.singleton.time_between_lightning;
+                    this.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+                    this.transform.GetChild(0).GetComponent<TrailRenderer>().Clear();
+
+                }
             }
-            transform.localPosition = new Vector3(0,0,0);
         }
+    }
+
+    // Debugging function to draw a red wire sphere around the chain lightning object in the scene view, so we can see where it is and how close it is
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, 1f);
+    }
+
+    // Function to find the nearest enemy
+    public void FindNearest()
+    {
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList<GameObject>();
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            Enemy_distance = Vector3.Distance(this.transform.position, Enemies[i].transform.position);
+
+            if (Enemy_distance < nearestDistance)
+            {
+                nearestObj = Enemies[i];
+                nearestDistance = Enemy_distance;
+            }
+        }
+        nearestDistance = float.PositiveInfinity;
     }
 }
