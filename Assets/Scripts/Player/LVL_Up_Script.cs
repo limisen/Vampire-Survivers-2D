@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class LVL_Up_Script : MonoBehaviour
 {
     Dictionary<string, Dictionary<string, object>> UpgradeOptions;
-    Dictionary<string, Dictionary<string, object>> PermanentUpgradeOptions;
+    static Dictionary<string, Dictionary<string, object>> PermanentUpgradeOptions;
 
     List<object> upgradeOption_1;
     List<object> upgradeOption_2;
@@ -22,7 +23,7 @@ public class LVL_Up_Script : MonoBehaviour
         LVL_up_button_2_TextComponent = gameObject.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
         LVL_up_button_3_TextComponent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 
-        UpgradeOptions = new Dictionary<string, Dictionary<string, object>>
+        PermanentUpgradeOptions = new Dictionary<string, Dictionary<string, object>>
         {
             {"Magic Missile", new Dictionary<string, object>()
                 {
@@ -59,7 +60,11 @@ public class LVL_Up_Script : MonoBehaviour
             },
         };
 
-        PermanentUpgradeOptions = UpgradeOptions;
+        // Create a DEEP copy of the PermanentUpgradeOptions to be used for generating random upgrades
+        UpgradeOptions = PermanentUpgradeOptions.ToDictionary(
+        outer => outer.Key,
+        outer => new Dictionary<string, object>(outer.Value)
+    );
     }
 
     private void OnEnable()
@@ -157,6 +162,8 @@ public class LVL_Up_Script : MonoBehaviour
                             case "Max HP":
                                 GameManager.singleton.Player_MaxHP += 5;
                                 GameManager.singleton.Player_current_HP += 5;
+                                GameManager.singleton.gameMenu.HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
+                                GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
                                 break;
                             case "MoveSpeed":
                                 GameManager.singleton.Player_MoveSpeed += 2.5f;
@@ -228,6 +235,8 @@ public class LVL_Up_Script : MonoBehaviour
                             case "Max HP":
                                 GameManager.singleton.Player_MaxHP += 5;
                                 GameManager.singleton.Player_current_HP += 5;
+                                GameManager.singleton.gameMenu.HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
+                                GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
                                 break;
                             case "MoveSpeed":
                                 GameManager.singleton.Player_MoveSpeed += 2.5f;
@@ -298,6 +307,8 @@ public class LVL_Up_Script : MonoBehaviour
                             case "Max HP":
                                 GameManager.singleton.Player_MaxHP += 5;
                                 GameManager.singleton.Player_current_HP += 5;
+                                GameManager.singleton.gameMenu.HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
+                                GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
                                 break;
                             case "MoveSpeed":
                                 GameManager.singleton.Player_MoveSpeed += 2.5f;
@@ -316,8 +327,12 @@ public class LVL_Up_Script : MonoBehaviour
         GameManager.singleton.gameMenu.EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl; // Set the slider.maxValue to the new value
         GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP; // Reflect new visual representation of the progress towards the next lvl
 
-        // Reset the options of upgrades infor the next random upgrade choice.
-        UpgradeOptions = PermanentUpgradeOptions;
+
+        // Reset the options of upgrades infor the next random upgrade choice BY creating a DEEP copy of the PermanentUpgradeOptions
+        UpgradeOptions = PermanentUpgradeOptions.ToDictionary(
+        outer => outer.Key,
+        outer => new Dictionary<string, object>(outer.Value)
+        );
     }
 
     // Generates a random upgrade option and returns List<object>(upgradeType, UpgradeAttribute, UpgradeCurrentValue)
@@ -363,7 +378,7 @@ public class LVL_Up_Script : MonoBehaviour
         // Delete this specifc upgrade choice form possibilites infor next generation
         UpgradeOptions[randomTypeOfUpgrade].Remove(randomUpgradeAttribute);
         // If (somehow) all the attributes are used up delete that upgrade type
-        if (UpgradeOptions[randomTypeOfUpgrade].Count == 0) UpgradeOptions.Remove(randomTypeOfUpgrade);
+        if (UpgradeOptions[randomTypeOfUpgrade].Count == 0) { UpgradeOptions.Remove(randomTypeOfUpgrade); }
 
         return upgardeOption;
     }

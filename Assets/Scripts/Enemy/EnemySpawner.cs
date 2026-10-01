@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (scale_With_Time)
         {
-            Enemies_to_spawn += 0.3f;
+            Enemies_to_spawn += 0.1f;
         }
 
         for (int i = 0; i < Enemies_to_spawn; i++)
