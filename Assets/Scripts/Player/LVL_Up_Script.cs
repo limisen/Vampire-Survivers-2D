@@ -55,7 +55,8 @@ public class LVL_Up_Script : MonoBehaviour
             {"Player Stats", new Dictionary<string, object>()
                 {
                     { "Max HP", 5},
-                    { "MoveSpeed", false}
+                    { "Regenerate", 5 },
+                    { "MoveSpeed", true }
                 }
             },
         };
@@ -156,14 +157,17 @@ public class LVL_Up_Script : MonoBehaviour
                                 break;
                         }
                         break;
-                    case "PlayerStats":
-                        switch (upgradeOption_1[0].ToString())
+                    case "Player Stats":
+                        switch (upgradeOption_1[1].ToString())
                         {
                             case "Max HP":
                                 GameManager.singleton.Player_MaxHP += 5;
                                 GameManager.singleton.Player_current_HP += 5;
                                 GameManager.singleton.gameMenu.HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
                                 GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
+                                break;
+                            case "Regenerate":
+                                GameManager.singleton.Player_HP_regen += 0.25f;
                                 break;
                             case "MoveSpeed":
                                 GameManager.singleton.Player_MoveSpeed += 2.5f;
@@ -229,14 +233,17 @@ public class LVL_Up_Script : MonoBehaviour
                                 break;
                         }
                         break;
-                    case "PlayerStats":
-                        switch (upgradeOption_2[0].ToString())
+                    case "Player Stats":
+                        switch (upgradeOption_2[1].ToString())
                         {
                             case "Max HP":
                                 GameManager.singleton.Player_MaxHP += 5;
                                 GameManager.singleton.Player_current_HP += 5;
                                 GameManager.singleton.gameMenu.HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
                                 GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
+                                break;
+                            case "Regenerate":
+                                GameManager.singleton.Player_HP_regen += 0.25f;
                                 break;
                             case "MoveSpeed":
                                 GameManager.singleton.Player_MoveSpeed += 2.5f;
@@ -301,14 +308,17 @@ public class LVL_Up_Script : MonoBehaviour
                                 break;
                         }
                         break;
-                    case "PlayerStats":
-                        switch (upgradeOption_3[0].ToString())
+                    case "Player Stats":
+                        switch (upgradeOption_3[1].ToString())
                         {
                             case "Max HP":
                                 GameManager.singleton.Player_MaxHP += 5;
                                 GameManager.singleton.Player_current_HP += 5;
                                 GameManager.singleton.gameMenu.HP_slider.maxValue = GameManager.singleton.Player_MaxHP;
                                 GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
+                                break;
+                            case "Regenerate":
+                                GameManager.singleton.Player_HP_regen += 0.25f;
                                 break;
                             case "MoveSpeed":
                                 GameManager.singleton.Player_MoveSpeed += 2.5f;
@@ -342,7 +352,7 @@ public class LVL_Up_Script : MonoBehaviour
         var enumerator = UpgradeOptions.GetEnumerator();
 
         // Randomly pick a type of upgrade.
-        for (int i = 0; i < Random.Range(1, UpgradeOptions.Count); i++) // Make sure to move at least once as GetEnumerator() starts one step outside the index and can go on step outside the index
+        for (int i = 0; i < Random.Range(UpgradeOptions.Count, UpgradeOptions.Count); i++) // Make sure to move at least once as GetEnumerator() starts one step outside the index and can go on step outside the index
         {
             enumerator.MoveNext();
         }
