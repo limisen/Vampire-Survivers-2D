@@ -9,6 +9,9 @@ public class ChainLightning : MonoBehaviour
     private int amountChained;
     private int MAXamountToChain;
 
+    private GameObject Trail;
+    private GameObject Player;
+
     public List<GameObject> Enemies = new List<GameObject>();
 
     public GameObject nearestObj;
@@ -20,6 +23,8 @@ public class ChainLightning : MonoBehaviour
     {
         timeRemaining = GameManager.singleton.time_between_lightning;
         MAXamountToChain = GameManager.singleton.amount_to_chain;
+        Trail = this.transform.GetChild(0).gameObject;
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -59,12 +64,12 @@ public class ChainLightning : MonoBehaviour
             // Continue chaining until we reach the max amount to chain
             if (amountChained != MAXamountToChain)
             {
-                if (this.transform.GetChild(0).gameObject.activeSelf == false)
+                if (Trail.activeSelf == false)
                 {
-                    this.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position; // make sure we origniate from the player
+                    this.transform.position = Player.transform.position; // make sure we origniate from the player
 
-                    this.transform.GetChild(0).gameObject.SetActive(true);
-                    this.transform.GetChild(0).GetComponent<TrailRenderer>().Clear(); // Clear the trail renderer so we don't see the trail from the place it stopped at.
+                    Trail.SetActive(true);
+                    Trail.GetComponent<TrailRenderer>().Clear(); // Clear the trail renderer so we don't see the trail from the place it stopped at.
                 }
 
                 // Find the nearest enemy to the current position of the chain lightning
@@ -83,11 +88,10 @@ public class ChainLightning : MonoBehaviour
                     // If we have reached the max amount to chain, reset the chain lightning effect
                     if (amountChained == MAXamountToChain)
                     {
-                        this.transform.GetChild(0).gameObject.SetActive(false);
+                        Trail.SetActive(false);
                         amountChained = 0;
                         timeRemaining = GameManager.singleton.time_between_lightning;
-                        this.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
-                        this.transform.GetChild(0).GetComponent<TrailRenderer>().Clear();
+                        Trail.GetComponent<TrailRenderer>().Clear();
                     }
                 }
 
@@ -95,11 +99,10 @@ public class ChainLightning : MonoBehaviour
                 Enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList<GameObject>();
                 if (Enemies.Count < amountChained || Enemies.Count == 0)
                 {
-                    this.transform.GetChild(0).gameObject.SetActive(false);
+                    Trail.SetActive(false);
                     amountChained = 0;
                     timeRemaining = GameManager.singleton.time_between_lightning;
-                    this.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
-                    this.transform.GetChild(0).GetComponent<TrailRenderer>().Clear();
+                    Trail.GetComponent<TrailRenderer>().Clear();
 
                 }
             }
