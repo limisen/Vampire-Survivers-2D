@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //moveSpeed = GameManager.singleton.Player_MoveSpeed;
+        moveSpeed = GameManager.singleton.Player_MoveSpeed;
     }
 
     void LateUpdate()
