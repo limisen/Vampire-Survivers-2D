@@ -151,9 +151,6 @@ public class GameMenu : MonoBehaviour
         // Then set the amount it should give
         EXP_orb.GetComponent<EXP_Pick_Up>().EXP_to_give = (int)GameManager.singleton.EXP_to_next_lvl;
     }
-
-
-
     public void ContinuePressed()
     {
         GameManager.singleton.gamePaused = false;
@@ -161,19 +158,14 @@ public class GameMenu : MonoBehaviour
         Player_UI.SetActive(true);
         Debug.Log("Continue Pressed");
     }
-
-
     public void SettingsPressed()
     {
         Debug.Log("Settings Pressed");
     }
-
-
     public void QuitPressed()
     {
         Debug.Log("Quit Pressed");
     }
-
     public void Close_LVL_Up_Menu()
     {
         GameManager.singleton.gamePaused = false;
