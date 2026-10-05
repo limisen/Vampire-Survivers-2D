@@ -2,31 +2,41 @@ using UnityEngine;
 
 public class MainMenuState : State
 {
-    //public readonly SettingsState settings;
-    //public MainMenuState(StateMachine stateMachine, State Parent) : base(stateMachine, Parent)
-    //{
-    //    settings = new SettingsState(stateMachine, this);
-    //}
+    public MainMenuState(StateMachine stateMachine, GameStateFactory gameStateFactory)
+        : base(stateMachine, gameStateFactory)
+    {
+    }
 
-    //protected override State GetTransition()
-    //{
-    //    // Main menu logic here
+    public override void OnEnter()
+    {
+        // Enter logic for main menu state
+        GameManager.singleton.gameMenu.Start_Menu.SetActive(true);
+        GameManager.singleton.gamePaused = true;
+        InitializeChildState();
+    }
 
-    //    // if settings pressed go into settings
-    //    // return Parent.settings;
+    public override void OnUpdate()
+    {
+        // Update logic for main menu state
+        CheckForTransition();
+    }
 
-    //    return null;
-    //}
+    public override void OnExit()
+    {
+        // Exit logic for main menu state
+        GameManager.singleton.gameMenu.Start_Menu.SetActive(false);
+    }
 
-    //public override void OnUpdate(float deltaTime)
-    //{
-    //    base.OnUpdate(deltaTime);
+    public override void CheckForTransition()
+    {
+        // Transition checks for main menu state
+        
+    }
 
-    //    GameManager.singleton.gameMenu.Start_Menu.SetActive(true);
-    //}
+    public override void InitializeChildState()
+    {
+        // Initialize any substates if applicable
+        SetChildState(gameStateFactory.Settings());
+    }
 
-    //public override void OnExit()
-    //{
-    //    GameManager.singleton.gameMenu.Start_Menu.SetActive(false);
-    //}
 }

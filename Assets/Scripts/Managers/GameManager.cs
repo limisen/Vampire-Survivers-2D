@@ -70,11 +70,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int score_to_give = 1;
     #endregion
 
-    #region Game State Data
-    [Header("Game State Data")]
-    [SerializeField] GameStateDriver gameStateDriver;
-    #endregion
-
     private void Awake()
     {
         #region Make(ing) GameManager a singleton

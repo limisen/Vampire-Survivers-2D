@@ -22,10 +22,6 @@ public class GameMenu : MonoBehaviour
     [Header("EXP")]
     [SerializeField] GameObject EXP_Prefab;
 
-    #region Game State Data
-    [Header("Game State Data")]
-    [SerializeField] GameStateDriver gameStateDriver;
-    #endregion
 
     private void Start()
     {

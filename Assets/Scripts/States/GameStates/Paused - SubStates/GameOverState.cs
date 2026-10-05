@@ -2,33 +2,40 @@ using UnityEngine;
 
 public class GameOverState : State
 {
-    //public GameOverState(StateMachine stateMachine, State Parent) : base(stateMachine, Parent)
-    //{
+    public GameOverState(StateMachine stateMachine, GameStateFactory gameStateFactory)
+    : base(stateMachine, gameStateFactory)
+    {
+    }
 
-    //}
+    public override void OnEnter()
+    {
+        // Enter logic for game over state
+        GameManager.singleton.gameMenu.GameOver_Menu.SetActive(true);
+        InitializeChildState();
+    }
 
-    //public override void OnEnter()
-    //{
-    //    GameManager.singleton.gamePaused = true;
-    //}
+    public override void OnUpdate()
+    {
+        // Update logic for game over state
+        CheckForTransition();
+        GameManager.singleton.gamePaused = true;
+    }
 
-    //protected override State GetTransition()
-    //{
-    //    // Game over logic here
-    //    // Transition logic for the GameOver state
-    //    if (GameManager.singleton.gamePaused == false)
-    //    {
-    //        return Parent; // Transition back to the parent state if the game is unpaused
-    //    }
-    //    else
-    //    {
-    //        GameManager.singleton.gameMenu.GameOver_Menu.SetActive(true);
-    //        return null; // Stay in the Paused state if the game is still paused
-    //    }
-    //}
 
-    //public override void OnExit()
-    //{
-    //    GameManager.singleton.gameMenu.GameOver_Menu.SetActive(false);
-    //}
+    public override void OnExit()
+    {
+        // Exit logic for game over state
+        GameManager.singleton.gameMenu.GameOver_Menu.SetActive(false);
+    }
+
+    public override void CheckForTransition()
+    {
+        // Transition checks for game over state
+    }
+
+    public override void InitializeChildState()
+    {
+        // Initialize any substates if applicable
+    }
+
 }
