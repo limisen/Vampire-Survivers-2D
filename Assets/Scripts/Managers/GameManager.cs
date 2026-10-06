@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        #region Make(ing) GameManager a singleton
+        #region Makeing sure GameManager is the ONLY GameManager singleton
         if (singleton != null)
         {
             Destroy(this);
@@ -103,13 +103,13 @@ public class GameManager : MonoBehaviour
 
         //    gameMenu.GameOver_Menu.SetActive(true);
         //}
-
-        gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
+        if (gameMenu.Player_Score_UI.text != score.ToString()) { gameMenu.Player_Score_UI.text = "Score: " + score.ToString(); }
 
         //On_level_up();
 
         #region Weapon Active state change check and corresponding logic
         // IF weapon is unlocked turn the corresponding weapon GameObject ON or OFF
+        // The LVL up script/function should already do this but if you enable it in the editor this makes sure the correct game object is also turned on.
         if (Magic_Missile_Unlocked == true)
         {
             Magic_Missile_objRef.SetActive(true);

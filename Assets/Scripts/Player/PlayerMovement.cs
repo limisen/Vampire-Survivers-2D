@@ -5,10 +5,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float minX, maxX, minY, maxY; // Max Positional bounds (cant go beyond these values)
 
     private float moveSpeed;
-    private void Awake()
-    {
-        moveSpeed = FindAnyObjectByType<GameManager>().Player_MoveSpeed;
-    }
 
     private void Update()
     {

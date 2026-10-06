@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        if (moveSpeed == 0) moveSpeed = GetComponent<EnemyData>().moveSpeed;
+        if (moveSpeed == 0) { moveSpeed = GetComponent<EnemyData>().moveSpeed; }
         
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
     }

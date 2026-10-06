@@ -32,11 +32,10 @@ public class PauseMenuState : State
         // Transition checks for viewing the pause Menu, state
 
         // Basically if we are already viewing the Pause Menu and press 'ESC' then close the menu and enter 'Playing'State
-        if (GameManager.singleton.gameMenu.Pause_Menu.activeSelf && stateMachine.CurrentState == this && Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == true)
         {
             Debug.Log("Changing State to Playing");
             SwitchState(gameStateFactory.Playing());
-            return;
         }
     }
 

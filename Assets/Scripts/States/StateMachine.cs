@@ -42,14 +42,14 @@ public class StateMachine : MonoBehaviour
         {
             currentParentStateName = "null";
         }
-        else
-        {
-            StatePath = currentState.GetType().Name;
-            while (currentParentStateName != null)
-            {
-                StatePath += " > " + currentState.CurrentParentState?.GetType().Name;
-            }
-        }
+        //else
+        //{
+        //    StatePath = currentState.GetType().Name;
+        //    while (currentParentStateName != null)
+        //    {
+        //        StatePath += " > " + currentState.CurrentParentState?.GetType().Name;
+        //    }
+        //}
     }
 
     public void ChangeState(int stateIndex)

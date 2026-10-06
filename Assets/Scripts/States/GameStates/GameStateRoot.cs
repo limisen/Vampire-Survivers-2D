@@ -34,5 +34,6 @@ public class GameStateRoot : State
     {
         // Initialize any child states if applicable
         SetChildState(gameStateFactory.MainMenu());
+        SwitchState(gameStateFactory.MainMenu());
     }
 }

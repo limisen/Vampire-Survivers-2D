@@ -19,6 +19,11 @@ public class PlayingState : State
     {
         // Update logic for playing state
         
+        if (GameManager.singleton.Player_current_HP <= 0 && GameManager.singleton.gamePaused == false)
+        {
+            SwitchState(gameStateFactory.GameOver());
+        }
+
         // Player Regen Logic
         if (GameManager.singleton.Player_current_HP < GameManager.singleton.Player_MaxHP && GameManager.singleton.gamePaused == false)
         {
@@ -44,6 +49,7 @@ public class PlayingState : State
             SetChildState(gameStateFactory.Upgrade());
             Debug.Log("Changing State to Upgrade");
             SwitchState(gameStateFactory.Upgrade());
+            stateMachine.CurrentState = gameStateFactory.Upgrade();
             return;
         }
         else if (GameManager.singleton.gamePaused == false)

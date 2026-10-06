@@ -61,16 +61,18 @@ public class GameMenu : MonoBehaviour
     }
     public void RestartPressed()
     {
+        Debug.Log("Restart Pressed");
+
         GameManager.singleton.gamePaused = false;
-        GameOver_Menu.SetActive(false);
-        LvL_Up_Menu.SetActive(false);
-        Pause_Menu.SetActive(false);
-        Settings_Menu.SetActive(false);
+
         Main_Menu.SetActive(false);
+        Settings_Menu.SetActive(false);
+        GameOver_Menu.SetActive(false);
+        Pause_Menu.SetActive(false);
+        LvL_Up_Menu.SetActive(false);
+        Inventory.SetActive(false);
 
         Player_UI.SetActive(true);
-
-        Debug.Log("Restart Pressed");
 
         #region Destroying spawned GameObjects
         // IF there are any Enemies left in the scene destroy them
@@ -121,7 +123,7 @@ public class GameMenu : MonoBehaviour
         GameManager.singleton.time_between_launch = 2;
 
         GameManager.singleton.Aura_DMG = 5;
-        GameManager.singleton.amount_to_chain = 1;
+        GameManager.singleton.amount_to_chain = 2;
         GameManager.singleton.time_between_lightning = 2;
 
         GameManager.singleton.Chain_Lightning_DMG = 5;
@@ -148,9 +150,6 @@ public class GameMenu : MonoBehaviour
     }
     public void ContinuePressed()
     {
-        //GameManager.singleton.gamePaused = false;
-        //Pause_Menu.SetActive(false);
-        Player_UI.SetActive(true);
         Debug.Log("Continue Pressed");
     }
     public void SettingsPressed()
@@ -160,12 +159,15 @@ public class GameMenu : MonoBehaviour
     public void QuitPressed()
     {
         Debug.Log("Quit Pressed");
+
+        // IF in the Unity Editor Exit Playmode
 #if UNITY_EDITOR
         if (EditorApplication.isPlaying)
         {
             EditorApplication.ExitPlaymode();
         }
 #endif
+
         // Otherwise IF it is a build
         Application.Quit();
 
@@ -173,7 +175,7 @@ public class GameMenu : MonoBehaviour
     public void Close_LVL_Up_Menu()
     {
         //GameManager.singleton.gamePaused = false;
-        LvL_Up_Menu.SetActive(false);
+        //LvL_Up_Menu.SetActive(false);
         //HP_slider.maxValue = GameManager.singleton.Player_MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
         Debug.Log("Close LVL up menu");
     }
