@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private float timeRemaining;
 
     [SerializeField] bool scale_With_Time;
+    [SerializeField] float amountToScaleWith = 0.1f;
 
     private int nr_of_enemies_in_scene;
 
@@ -43,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (scale_With_Time)
         {
-            Enemies_to_spawn += 0.1f;
+            Enemies_to_spawn += amountToScaleWith;
         }
 
         for (int i = 0; i < Enemies_to_spawn; i++)

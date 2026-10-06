@@ -9,7 +9,7 @@ public class EnemyData : MonoBehaviour
     [SerializeField] public float currentHP;
 
     
-    [SerializeField] public int DMG = 3;
+    [SerializeField] public float DMG = 3;
 
 
     [SerializeField] public float EXP_to_Drop = 1;
@@ -19,6 +19,9 @@ public class EnemyData : MonoBehaviour
 
     private void Awake()
     {
+        //DMG = DMG * (1 + GameManager.singleton.Player_current_lvl);
+        //MaxHP = MaxHP * (1 + GameManager.singleton.Player_current_lvl);
+
         currentHP = MaxHP;
     }
 
