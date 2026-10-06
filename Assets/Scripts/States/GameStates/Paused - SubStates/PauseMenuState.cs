@@ -30,9 +30,11 @@ public class PauseMenuState : State
     public override void CheckForTransition()
     {
         // Transition checks for viewing the pause Menu, state
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
+
+        // Basically if we are already viewing the Pause Menu and press 'ESC' then close the menu and enter 'Playing'State
+        if (GameManager.singleton.gameMenu.Pause_Menu.activeSelf && stateMachine.CurrentState == this && Input.GetButtonDown("Cancel"))
         {
-            GameManager.singleton.gameMenu.Pause_Menu.SetActive(false); 
+            Debug.Log("Changing State to Playing");
             SwitchState(gameStateFactory.Playing());
             return;
         }

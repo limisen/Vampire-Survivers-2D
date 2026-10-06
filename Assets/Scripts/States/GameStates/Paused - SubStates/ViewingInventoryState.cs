@@ -11,8 +11,8 @@ public class ViewingInventoryState : State
     {
         // Enter logic for viewing inventory state
         GameManager.singleton.gamePaused = true;
-        InitializeChildState();
         // Toggle this menu's visability (aka GameObject) ON
+        InitializeChildState();
     }
 
     public override void OnUpdate()
@@ -24,7 +24,7 @@ public class ViewingInventoryState : State
     public override void OnExit()
     {
         // Exit logic for viewing inventory state
-        // Toggle this menu's visability (aka GameObject) ON
+        // Toggle this menu's visability (aka GameObject) OFF
     }
 
     public override void CheckForTransition()

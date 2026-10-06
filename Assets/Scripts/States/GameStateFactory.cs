@@ -9,8 +9,6 @@ enum GameStates
 
     idle,
     moving,
-
-    Paused,
     
     MainMenu,
     Settings,
@@ -36,7 +34,6 @@ public class GameStateFactory
 
         stateDictionary[GameStates.GameStateRoot] = new GameStateRoot(stateMachine, this);
 
-        stateDictionary[GameStates.Paused] = new PausedState(stateMachine, this);
         stateDictionary[GameStates.Playing] = new PlayingState(stateMachine, this);
         stateDictionary[GameStates.idle] = new IdleState(stateMachine, this);
         stateDictionary[GameStates.moving] = new MovingState(stateMachine, this);
@@ -53,7 +50,6 @@ public class GameStateFactory
 
     public State GameStateRoot() { return stateDictionary[GameStates.GameStateRoot]; }
 
-    public State Paused() { return stateDictionary[GameStates.Paused]; }
     public State Playing() { return stateDictionary[GameStates.Playing]; }
     public State Idle() { return stateDictionary[GameStates.idle]; }
     public State Moving() { return stateDictionary[GameStates.moving]; }

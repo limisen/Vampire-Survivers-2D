@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
@@ -8,6 +7,7 @@ public class StateMachine : MonoBehaviour
 
     [SerializeField] string currentStateName;
     [SerializeField] string currentParentStateName;
+    [SerializeField] string StatePath;
     public State CurrentState { get { return currentState; } set { currentState = value; } }
 
     private void Awake()
@@ -44,14 +44,20 @@ public class StateMachine : MonoBehaviour
         }
         else
         {
-                currentParentStateName = currentState.CurrentParentState?.GetType().Name;
+            StatePath = currentState.GetType().Name;
+            while (currentParentStateName != null)
+            {
+                StatePath += " > " + currentState.CurrentParentState?.GetType().Name;
+            }
         }
     }
 
     public void ChangeState(int stateIndex)
     {
-        
-        // Check if the stateIndex is 11, which corresponds to the UI "Back" button, which means we need to go back to the previous state. aka the parent state of the current state.
+        Debug.Log("Changing state...");
+        // Check if the stateIndex is 11, (which corresponds to the UI "Back" button being pressed),
+        // which means we need to go back to the previous state.
+        // aka the parent state of the current state.
         if (stateIndex == 11)
         {
             currentState.ChangeState(currentState.CurrentParentState);

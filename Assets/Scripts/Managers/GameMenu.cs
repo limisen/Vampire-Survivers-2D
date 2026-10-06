@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class GameMenu : MonoBehaviour
@@ -32,22 +33,21 @@ public class GameMenu : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == false)
-        {
-            Pause_Menu.SetActive(true);
-            Player_UI.SetActive(false);
-            GameManager.singleton.gamePaused = true;
+        //if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == false)
+        //{
+        //    Pause_Menu.SetActive(true);
+        //    Player_UI.SetActive(false);
+        //    GameManager.singleton.gamePaused = true;
 
-            Debug.Log("Pause button was pressed");
-        }
-        else if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == true)
-        {
-            Pause_Menu.SetActive(false);
-            Player_UI.SetActive(true);
-            GameManager.singleton.gamePaused = false;
+        //    Debug.Log("Pause button was pressed");
+        //}
+        //else if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == true)
+        //{
+        //    Pause_Menu.SetActive(false);
+        //    Player_UI.SetActive(true);
+        //    GameManager.singleton.gamePaused = false;
 
-            Debug.Log("Pause button was pressed");
-        }
+        //}
 
         // If there's any meny active make sure the game is paused
         if (Start_Menu.activeSelf || Settings_Menu.activeSelf || GameOver_Menu.activeSelf || Pause_Menu.activeSelf || LvL_Up_Menu.activeSelf)
@@ -74,9 +74,9 @@ public class GameMenu : MonoBehaviour
         Settings_Menu.SetActive(false);
         Start_Menu.SetActive(false);
 
-        Debug.Log("Restart Pressed");
-
         Player_UI.SetActive(true);
+
+        Debug.Log("Restart Pressed");
 
         #region Destroying spawned GameObjects
         // IF there are any Enemies left in the scene destroy them
@@ -141,7 +141,7 @@ public class GameMenu : MonoBehaviour
         HP_slider.value = GameManager.singleton.Player_current_HP;
         #endregion
 
-        // Also reset Camera Position
+        // Reset Camera Position
         FindAnyObjectByType<Camera>().gameObject.transform.position = new Vector3(0, 0, -10);
 
         // Reset the amount the Spawner starts to spawn
@@ -154,8 +154,8 @@ public class GameMenu : MonoBehaviour
     }
     public void ContinuePressed()
     {
-        GameManager.singleton.gamePaused = false;
-        Pause_Menu.SetActive(false);
+        //GameManager.singleton.gamePaused = false;
+        //Pause_Menu.SetActive(false);
         Player_UI.SetActive(true);
         Debug.Log("Continue Pressed");
     }
@@ -166,11 +166,21 @@ public class GameMenu : MonoBehaviour
     public void QuitPressed()
     {
         Debug.Log("Quit Pressed");
+#if UNITY_EDITOR
+        if (EditorApplication.isPlaying)
+        {
+            EditorApplication.ExitPlaymode();
+        }
+#endif
+        // Otherwise IF it is a build
+        Application.Quit();
+
     }
     public void Close_LVL_Up_Menu()
     {
-        GameManager.singleton.gamePaused = false;
+        //GameManager.singleton.gamePaused = false;
         LvL_Up_Menu.SetActive(false);
-        HP_slider.maxValue = GameManager.singleton.Player_MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
+        //HP_slider.maxValue = GameManager.singleton.Player_MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
+        Debug.Log("Close LVL up menu");
     }
 }

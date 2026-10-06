@@ -92,21 +92,21 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if (Player_current_HP <= 0)
-        {
-            if (gamePaused == false)
-            {
-                Debug.Log("Player Died");
-            }
-            gamePaused = true;
-            gameMenu.Player_UI.SetActive(false);
+        //if (Player_current_HP <= 0)
+        //{
+        //    if (gamePaused == false)
+        //    {
+        //        Debug.Log("Player Died");
+        //    }
+        //    gamePaused = true;
+        //    gameMenu.Player_UI.SetActive(false);
 
-            gameMenu.GameOver_Menu.SetActive(true);
-        }
+        //    gameMenu.GameOver_Menu.SetActive(true);
+        //}
 
         gameMenu.Player_Score_UI.text = "Score: " + score.ToString();
 
-        On_level_up();
+        //On_level_up();
 
         #region Weapon Active state change check and corresponding logic
         // IF weapon is unlocked turn the corresponding weapon GameObject ON or OFF
@@ -137,26 +137,19 @@ public class GameManager : MonoBehaviour
             Chain_Lightning_objRef.SetActive(false);
         }
         #endregion
-
-        if (Player_current_HP < Player_MaxHP && gamePaused == false)
-        {
-            Player_current_HP += Player_HP_regen * Time.deltaTime;
-        }
-        gameMenu.HP_slider.value = Player_current_HP;
-
     }
 
-    public void On_level_up()
-    {
-        if (current_EXP >= EXP_to_next_lvl)
-        {
-            gameMenu.LvL_Up_Menu.SetActive(true);
-            gamePaused = true;
-        }
-        else
-        {
-            gameMenu.EXP_slider.value = current_EXP;
-            gameMenu.EXP_slider.maxValue = EXP_to_next_lvl;
-        }
-    }
+    //public void On_level_up()
+    //{
+    //    if (current_EXP >= EXP_to_next_lvl)
+    //    {
+    //        gameMenu.LvL_Up_Menu.SetActive(true);
+    //        gamePaused = true;
+    //    }
+    //    else
+    //    {
+    //        gameMenu.EXP_slider.value = current_EXP;
+    //        gameMenu.EXP_slider.maxValue = EXP_to_next_lvl;
+    //    }
+    //}
 }

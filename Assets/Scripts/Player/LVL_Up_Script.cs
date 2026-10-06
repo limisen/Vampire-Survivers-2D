@@ -99,8 +99,8 @@ public class LVL_Up_Script : MonoBehaviour
         // Depending on the chosen upgrade perform that upgrade
         switch (choice)
         {
+            // Upgrade application happens here
             case 0:
-                // Upgrade application happens here
                 switch (upgradeOption_1[0].ToString())
                 {
                     case "Magic Missile":

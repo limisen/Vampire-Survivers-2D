@@ -17,6 +17,20 @@ public class MovingState : State
     {
         // Update logic for moving state
         CheckForTransition();
+
+        // check if the player has enough EXP to level up
+        if (GameManager.singleton.current_EXP >= GameManager.singleton.EXP_to_next_lvl)
+        {
+            SetChildState(gameStateFactory.Upgrade());
+            SwitchState(gameStateFactory.Upgrade());
+            return;
+        }
+        else
+        {
+            // make sure the EXP slider is updated to reflect the current EXP and the EXP needed for the next level
+            GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP;
+            GameManager.singleton.gameMenu.EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
+        }
     }
 
     public override void OnExit()
@@ -33,7 +47,9 @@ public class MovingState : State
         }
         if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
         {
+            Debug.Log("Pause (ESC) was pressed");
             SwitchState(gameStateFactory.PauseMenu());
+            GameManager.singleton.gameMenu.Player_UI.SetActive(false);
         }
     }
 

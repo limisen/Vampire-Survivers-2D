@@ -10,6 +10,7 @@ public class GameOverState : State
     public override void OnEnter()
     {
         // Enter logic for game over state
+        GameManager.singleton.gamePaused = true;
         GameManager.singleton.gameMenu.GameOver_Menu.SetActive(true);
         InitializeChildState();
     }
@@ -18,7 +19,6 @@ public class GameOverState : State
     {
         // Update logic for game over state
         CheckForTransition();
-        GameManager.singleton.gamePaused = true;
     }
 
 

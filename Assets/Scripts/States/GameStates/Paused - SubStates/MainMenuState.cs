@@ -10,8 +10,8 @@ public class MainMenuState : State
     public override void OnEnter()
     {
         // Enter logic for main menu state
-        GameManager.singleton.gameMenu.Start_Menu.SetActive(true);
         GameManager.singleton.gamePaused = true;
+        GameManager.singleton.gameMenu.Start_Menu.SetActive(true);
         InitializeChildState();
     }
 
