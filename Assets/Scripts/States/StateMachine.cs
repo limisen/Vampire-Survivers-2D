@@ -52,7 +52,7 @@ public class StateMachine : MonoBehaviour
         //}
     }
 
-    public void ChangeState(int stateIndex)
+    public void ChangeStateViaButton(int stateIndex)
     {
         Debug.Log("Changing state via button pressed...");
         // Check if the stateIndex is 11, (which corresponds to the UI "Back" button being pressed),
