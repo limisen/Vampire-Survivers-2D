@@ -25,6 +25,7 @@ public class GameOverState : State
     public override void OnExit()
     {
         // Exit logic for game over state
+        Debug.Log("Exiting 'GameOver State'");
         GameManager.singleton.gameMenu.GameOver_Menu.SetActive(false);
     }
 
@@ -36,6 +37,7 @@ public class GameOverState : State
     public override void InitializeChildState()
     {
         // Initialize any substates if applicable
+        SetChildState(gameStateFactory.Settings());
     }
 
 }

@@ -58,6 +58,7 @@ public class StateMachine : MonoBehaviour
                 currentState.CurrentParentState = null;
             }
             currentState = currentState.CurrentParentState;
+            currentStateName = currentState.ToString();
         }
         else
         {
