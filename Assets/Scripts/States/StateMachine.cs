@@ -55,10 +55,10 @@ public class StateMachine : MonoBehaviour
     public void ChangeStateViaButton(int stateIndex)
     {
         Debug.Log("Changing state via button pressed...");
-        // Check if the stateIndex is 11, (which corresponds to the UI "Back" button being pressed),
+        // Check if the stateIndex is 10, (which corresponds to the UI "Back" button being pressed),
         // which means we need to go back to the previous state.
         // aka the parent state of the current state.
-        if (stateIndex == 11)
+        if (stateIndex == 10)
         {
             currentState.ChangeState(currentState.CurrentParentState);
             currentState = currentState.CurrentParentState;
