@@ -32,7 +32,7 @@ public class IdleState : State
             Debug.Log("Changing State to Moving");
             SwitchState(gameStateFactory.Moving());
         }
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
+        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             Debug.Log("Pause (ESC) was pressed");
             SwitchState(gameStateFactory.PauseMenu());

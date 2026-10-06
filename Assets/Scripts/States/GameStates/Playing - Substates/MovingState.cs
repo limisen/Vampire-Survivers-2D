@@ -25,7 +25,7 @@ public class MovingState : State
             SwitchState(gameStateFactory.Upgrade());
             return;
         }
-        else
+        else if (GameManager.singleton.gamePaused == false)
         {
             // make sure the EXP slider is updated to reflect the current EXP and the EXP needed for the next level
             GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP;
@@ -46,7 +46,7 @@ public class MovingState : State
             Debug.Log("Changing State to Idle");
             SwitchState(gameStateFactory.Idle());
         }
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
+        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             Debug.Log("Pause (ESC) was pressed");
             SwitchState(gameStateFactory.PauseMenu());

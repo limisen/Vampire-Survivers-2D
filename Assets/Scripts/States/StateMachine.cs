@@ -14,7 +14,7 @@ public class StateMachine : MonoBehaviour
     {
         stateMachine = new GameStateFactory(this);
 
-        currentState = stateMachine.MainMenu();
+        currentState = stateMachine.GameStateRoot();
         currentState.OnEnter();
     }
 

@@ -39,14 +39,14 @@ public class PlayingState : State
         // Transition checks for playing state
         
         // check if the player has enough EXP to level up
-        if (GameManager.singleton.current_EXP >= GameManager.singleton.EXP_to_next_lvl)
+        if (GameManager.singleton.current_EXP >= GameManager.singleton.EXP_to_next_lvl && GameManager.singleton.gamePaused == false)
         {
             SetChildState(gameStateFactory.Upgrade());
             Debug.Log("Changing State to Upgrade");
             SwitchState(gameStateFactory.Upgrade());
             return;
         }
-        else
+        else if (GameManager.singleton.gamePaused == false)
         {
             // make sure the EXP slider is updated to reflect the current EXP and the EXP needed for the next level
             GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP;
@@ -54,7 +54,7 @@ public class PlayingState : State
         }
 
 
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
+        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             Debug.Log("Pause (ESC) was pressed");
             GameManager.singleton.gameMenu.Player_UI.SetActive(false);
@@ -63,7 +63,7 @@ public class PlayingState : State
             return;
         }
         
-        // IF the player is moving go to moving state:
+        // IF the player is moving, go to the moving state:
         if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             if (currentChildState != gameStateFactory.Moving())
@@ -73,7 +73,7 @@ public class PlayingState : State
             Debug.Log("Changing State to Moving");
             SwitchState(gameStateFactory.Moving());
         }
-        // Else go to idle
+        // Else go to idle state
         else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             if (currentChildState != gameStateFactory.Idle())
@@ -87,16 +87,5 @@ public class PlayingState : State
 
     public override void InitializeChildState()
     {
-        // Initialize any child states if applicable
-
-        // Set up the two child states 'Moving' and 'Idle'
-        //if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0))
-        //{
-        //    SetChildState(gameStateFactory.Moving());
-        //}
-        //else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-        //{
-        //    SetChildState(gameStateFactory.Idle());
-        //}
     }
 }
