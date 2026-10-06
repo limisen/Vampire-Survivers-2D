@@ -21,9 +21,8 @@ public class MovingState : State
         // check if the player has enough EXP to level up
         if (GameManager.singleton.current_EXP >= GameManager.singleton.EXP_to_next_lvl)
         {
-            SetChildState(gameStateFactory.Upgrade());
             SwitchState(gameStateFactory.Upgrade());
-            return;
+            stateMachine.CurrentState = gameStateFactory.Playing();
         }
         else if (GameManager.singleton.gamePaused == false)
         {

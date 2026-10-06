@@ -63,8 +63,6 @@ public class GameMenu : MonoBehaviour
     {
         Debug.Log("Restart Pressed");
 
-        GameManager.singleton.gamePaused = false;
-
         Main_Menu.SetActive(false);
         Settings_Menu.SetActive(false);
         GameOver_Menu.SetActive(false);

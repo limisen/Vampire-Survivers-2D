@@ -37,6 +37,7 @@ public class IdleState : State
             Debug.Log("Pause (ESC) was pressed");
             GameManager.singleton.gameMenu.Player_UI.SetActive(false);
             SwitchState(gameStateFactory.PauseMenu());
+            stateMachine.CurrentState = gameStateFactory.PauseMenu();
         }
     }
 

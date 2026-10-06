@@ -42,14 +42,6 @@ public class StateMachine : MonoBehaviour
         {
             currentParentStateName = "null";
         }
-        //else
-        //{
-        //    StatePath = currentState.GetType().Name;
-        //    while (currentParentStateName != null)
-        //    {
-        //        StatePath += " > " + currentState.CurrentParentState?.GetType().Name;
-        //    }
-        //}
     }
 
     public void ChangeStateViaButton(int stateIndex)
@@ -61,6 +53,10 @@ public class StateMachine : MonoBehaviour
         if (stateIndex == 10)
         {
             currentState.ChangeState(currentState.CurrentParentState);
+            if (currentState == stateMachine.GameStateRoot() && currentState.CurrentParentState != null)
+            {
+                currentState.CurrentParentState = null;
+            }
             currentState = currentState.CurrentParentState;
         }
         else

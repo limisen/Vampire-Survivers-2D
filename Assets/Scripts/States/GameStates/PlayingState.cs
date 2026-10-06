@@ -49,7 +49,7 @@ public class PlayingState : State
             SetChildState(gameStateFactory.Upgrade());
             Debug.Log("Changing State to Upgrade");
             SwitchState(gameStateFactory.Upgrade());
-            //stateMachine.CurrentState = gameStateFactory.Upgrade();
+            stateMachine.CurrentState = gameStateFactory.Upgrade();
             return;
         }
         else if (GameManager.singleton.gamePaused == false)
@@ -66,6 +66,7 @@ public class PlayingState : State
             GameManager.singleton.gameMenu.Player_UI.SetActive(false);
             Debug.Log("Changing State to PauseMenu");
             SwitchState(gameStateFactory.PauseMenu());
+            stateMachine.CurrentState = gameStateFactory.PauseMenu();
             return;
         }
         

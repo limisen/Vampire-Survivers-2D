@@ -36,6 +36,7 @@ public class PauseMenuState : State
         {
             Debug.Log("Changing State to Playing");
             SwitchState(gameStateFactory.Playing());
+            stateMachine.CurrentState = gameStateFactory.Playing();
         }
     }
 

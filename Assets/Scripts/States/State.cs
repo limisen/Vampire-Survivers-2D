@@ -50,7 +50,7 @@ public abstract class State
             // If this is the root state,
             stateMachine.CurrentState = newState;
         }
-        else if (currentParentState != null && currentParentState != newState)
+        else if (currentParentState != null && currentParentState != newState && currentParentState != gameStateFactory.GameStateRoot())
         {
             // if the parent exists and is not the same as the new state
             // and this is a child state, set the new state as the child of the parent
