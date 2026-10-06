@@ -3,23 +3,23 @@ using UnityEngine;
 
 enum GameStates
 {
-    GameStateRoot,
+    GameStateRoot,      // = 0
     
-    Playing,
+    Playing,            // = 1
 
-    idle,
-    moving,
-    
-    MainMenu,
-    Settings,
-    PauseMenu,
-    Upgrade,
+    idle,               // = 2
+    moving,             // = 3
 
-    ViewingInventory,
+    MainMenu,           // = 4
+    Settings,           // = 5
+    PauseMenu,          // = 6
+    Upgrade,            // = 7
 
-    GameOver,
+    ViewingInventory,   // = 8
 
-    ParentState,
+    GameOver,           // = 9
+
+    ParentState,        // = 10
 }
 
 public class GameStateFactory

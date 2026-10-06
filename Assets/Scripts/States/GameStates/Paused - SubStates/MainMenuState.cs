@@ -11,7 +11,7 @@ public class MainMenuState : State
     {
         // Enter logic for main menu state
         GameManager.singleton.gamePaused = true;
-        GameManager.singleton.gameMenu.Start_Menu.SetActive(true);
+        GameManager.singleton.gameMenu.Main_Menu.SetActive(true);
         InitializeChildState();
     }
 
@@ -24,7 +24,7 @@ public class MainMenuState : State
     public override void OnExit()
     {
         // Exit logic for main menu state
-        GameManager.singleton.gameMenu.Start_Menu.SetActive(false);
+        GameManager.singleton.gameMenu.Main_Menu.SetActive(false);
     }
 
     public override void CheckForTransition()

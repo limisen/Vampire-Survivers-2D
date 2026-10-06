@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameMenu : MonoBehaviour
 {
     [Header("Menus")]
-    [SerializeField] public GameObject Start_Menu;
+    [SerializeField] public GameObject Main_Menu;
     [SerializeField] public GameObject Settings_Menu;
     [SerializeField] public GameObject GameOver_Menu;
     [SerializeField] public GameObject Pause_Menu;
@@ -48,22 +48,16 @@ public class GameMenu : MonoBehaviour
         //    GameManager.singleton.gamePaused = false;
 
         //}
-
-        // If there's any meny active make sure the game is paused
-        if (Start_Menu.activeSelf || Settings_Menu.activeSelf || GameOver_Menu.activeSelf || Pause_Menu.activeSelf || LvL_Up_Menu.activeSelf)
-        {
-            GameManager.singleton.gamePaused = true;
-        }
     }
 
 
     public void StartPressed()
     {
-        GameManager.singleton.gamePaused = false;
-        Start_Menu.SetActive(false);
+        //GameManager.singleton.gamePaused = false;
+        //Main_Menu.SetActive(false);
         Debug.Log("Start Pressed");
 
-        Player_UI.SetActive(true);
+        //Player_UI.SetActive(true);
     }
     public void RestartPressed()
     {
@@ -72,7 +66,7 @@ public class GameMenu : MonoBehaviour
         LvL_Up_Menu.SetActive(false);
         Pause_Menu.SetActive(false);
         Settings_Menu.SetActive(false);
-        Start_Menu.SetActive(false);
+        Main_Menu.SetActive(false);
 
         Player_UI.SetActive(true);
 

@@ -64,7 +64,7 @@ public class PlayingState : State
         }
         
         // IF the player is moving go to moving state:
-        if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) && stateMachine.CurrentState == this)
+        if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             if (currentChildState != gameStateFactory.Moving())
             {
@@ -74,7 +74,7 @@ public class PlayingState : State
             SwitchState(gameStateFactory.Moving());
         }
         // Else go to idle
-        else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && stateMachine.CurrentState == this)
+        else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
             if (currentChildState != gameStateFactory.Idle())
             {

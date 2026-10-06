@@ -41,8 +41,9 @@ public class MovingState : State
     public override void CheckForTransition()
     {
         // Transition checks for moving state
-        if ((Input.GetAxisRaw("Horizontal") == 0 || Input.GetAxisRaw("Vertical") == 0) && stateMachine.CurrentState == this)
+        if ((Input.GetAxisRaw("Horizontal") == 0 || Input.GetAxisRaw("Vertical") == 0) && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
         {
+            Debug.Log("Changing State to Idle");
             SwitchState(gameStateFactory.Idle());
         }
         if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
