@@ -17,9 +17,6 @@ public class SoundSettings : MonoBehaviour
 
     public void ChangeVolume(float newVolumeValue)
     {
-        Volume_Value = Volume_Slider.value;
-        newVolumeValue = Volume_Value;
-
         Debug.Log("Master_Volume Changed...");
 
         PlayerPrefs.SetFloat("Master_Volume", newVolumeValue);
