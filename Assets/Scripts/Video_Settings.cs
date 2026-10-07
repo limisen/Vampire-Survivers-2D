@@ -9,13 +9,23 @@ public class Video_Settings : MonoBehaviour
     private void Start()
     {
         // get playerPrefs current settings
-        // Make sure they are applied
+        value = PlayerPrefs.GetInt("Video_Settings", 0);
 
         // get other necessary stuff
-        TMP_Dropdown dropdown = GetComponent<TMP_Dropdown>();
-        value = dropdown.value;
-
+        dropdown = GetComponent<TMP_Dropdown>();
         dropdown.onValueChanged.AddListener(delegate { OnValueChange(dropdown); });
+
+        // Make sure The Player's Video Settings are applied
+        if (value == 0)
+        {
+            //Set the applications video settings to be Fullscreen
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        }
+        else if (value == 1)
+        {
+            //Set the applications video settings to be windowed
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
     }
 
     public void OnValueChange(TMP_Dropdown dropdown)
@@ -28,14 +38,14 @@ public class Video_Settings : MonoBehaviour
         {
             //Set the applications video settings to be Fullscreen
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-            //PlayerSettings.fullScreenMode = FullScreenMode.FullScreenWindow;
+            PlayerPrefs.SetInt("Video_Settings", 0);
             Debug.Log("...To Fullscreen");
         }
         else if (dropdown.value == 1)
         {
             //Set the applications video settings to be windowed
             Screen.fullScreenMode = FullScreenMode.Windowed;
-            //PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
+            PlayerPrefs.SetInt("Video_Settings", 1);
             Debug.Log("...To Windowed");
         }
     }
