@@ -32,32 +32,12 @@ public class GameMenu : MonoBehaviour
 
     private void Update()
     {
-
-        //if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == false)
-        //{
-        //    Pause_Menu.SetActive(true);
-        //    Player_UI.SetActive(false);
-        //    GameManager.singleton.gamePaused = true;
-
-        //    Debug.Log("Pause button was pressed");
-        //}
-        //else if (Input.GetButtonDown("Cancel") && Pause_Menu.activeSelf == true)
-        //{
-        //    Pause_Menu.SetActive(false);
-        //    Player_UI.SetActive(true);
-        //    GameManager.singleton.gamePaused = false;
-
-        //}
     }
 
 
     public void StartPressed()
     {
-        //GameManager.singleton.gamePaused = false;
-        //Main_Menu.SetActive(false);
         Debug.Log("Start Pressed");
-
-        //Player_UI.SetActive(true);
     }
     public void RestartPressed()
     {
