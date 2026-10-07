@@ -17,11 +17,11 @@ public class SoundSettings : MonoBehaviour
 
     public void ChangeVolume(float newVolumeValue)
     {
-        Debug.Log("Master_Volume Changed...");
+        //Debug.Log("Master_Volume Changed...");
 
         PlayerPrefs.SetFloat("Master_Volume", newVolumeValue);
         AudioListener.volume = PlayerPrefs.GetFloat("Master_Volume");
 
-        Debug.Log("New Value: " + newVolumeValue);
+        //Debug.Log("New Value: " + newVolumeValue);
     }
 }

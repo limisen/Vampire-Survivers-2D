@@ -68,6 +68,5 @@ public class StateMachine : MonoBehaviour
             currentState = newState;
             currentStateName = currentState.ToString();
         }
-        Debug.Log("State changed to: " + currentStateName);
     }
 }

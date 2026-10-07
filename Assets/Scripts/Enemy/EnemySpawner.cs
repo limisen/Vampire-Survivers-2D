@@ -35,8 +35,11 @@ public class EnemySpawner : MonoBehaviour
                 timeRemaining = time_between_spawns;
 
             }
-            if (nr_of_enemies_in_scene != GameObject.FindGameObjectsWithTag("Enemy").Length)
-            Debug.Log(GameObject.FindGameObjectsWithTag("Enemy").Length);
+            if (nr_of_enemies_in_scene != GameObject.FindGameObjectsWithTag("Enemy").Length) 
+            {
+                nr_of_enemies_in_scene = GameObject.FindGameObjectsWithTag("Enemy").Length;
+                Debug.Log(nr_of_enemies_in_scene); 
+            }
         }
     }
 

@@ -10,8 +10,11 @@ public class UpgradeState : State
     public override void OnEnter()
     {
         // Enter logic for upgrade state
+        Debug.Log("Entering state: " + this.GetType().Name);
+
         GameManager.singleton.gamePaused = true;
         GameManager.singleton.gameMenu.LvL_Up_Menu.SetActive(true);
+
         InitializeChildState();
     }
 

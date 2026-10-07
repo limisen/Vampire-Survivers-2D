@@ -10,15 +10,27 @@ public class PauseMenuState : State
     public override void OnEnter()
     {
         // Enter logic for viewing the pause Menu, state
+        Debug.Log("Entering state: " + this.GetType().Name);
+
         GameManager.singleton.gamePaused = true;
         GameManager.singleton.gameMenu.Pause_Menu.SetActive(true);
+        
         InitializeChildState();
     }
 
     public override void OnUpdate()
     {
         // Update logic for viewing the pause Menu, state
-        CheckForTransition();
+
+        // Basically if we are already viewing the Pause Menu and the player presses 'ESC' then close the menu and enter 'Playing'State
+        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == true)
+        {
+            CheckForTransition();
+
+            Debug.Log("Changing State to Playing");
+            SwitchState(gameStateFactory.Playing());
+        }
+
     }
 
     public override void OnExit()
@@ -31,13 +43,7 @@ public class PauseMenuState : State
     {
         // Transition checks for viewing the pause Menu, state
 
-        // Basically if we are already viewing the Pause Menu and press 'ESC' then close the menu and enter 'Playing'State
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == true)
-        {
-            Debug.Log("Changing State to Playing");
-            SwitchState(gameStateFactory.Playing());
-            stateMachine.CurrentState = gameStateFactory.Playing();
-        }
+        
     }
 
     public override void InitializeChildState()
