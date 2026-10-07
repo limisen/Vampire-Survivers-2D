@@ -63,15 +63,6 @@ public class GameMenu : MonoBehaviour
     {
         Debug.Log("Restart Pressed");
 
-        Main_Menu.SetActive(false);
-        Settings_Menu.SetActive(false);
-        GameOver_Menu.SetActive(false);
-        Pause_Menu.SetActive(false);
-        LvL_Up_Menu.SetActive(false);
-        Inventory.SetActive(false);
-
-        Player_UI.SetActive(true);
-
         #region Destroying spawned GameObjects
         // IF there are any Enemies left in the scene destroy them
         GameObject[] Enemies_in_Scene = GameObject.FindGameObjectsWithTag("Enemy");
@@ -165,16 +156,12 @@ public class GameMenu : MonoBehaviour
             EditorApplication.ExitPlaymode();
         }
 #endif
-
         // Otherwise IF it is a build
         Application.Quit();
 
     }
     public void Close_LVL_Up_Menu()
     {
-        //GameManager.singleton.gamePaused = false;
-        //LvL_Up_Menu.SetActive(false);
-        //HP_slider.maxValue = GameManager.singleton.Player_MaxHP; // Just to make sure that if a upgrade increases MaxHP it increases the max slider's maxValue
         Debug.Log("Close LVL up menu");
     }
 }
