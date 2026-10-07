@@ -28,14 +28,14 @@ public class Video_Settings : MonoBehaviour
         {
             //Set the applications video settings to be Fullscreen
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-            PlayerSettings.fullScreenMode = FullScreenMode.FullScreenWindow;
+            //PlayerSettings.fullScreenMode = FullScreenMode.FullScreenWindow;
             Debug.Log("...To Fullscreen");
         }
         else if (dropdown.value == 1)
         {
             //Set the applications video settings to be windowed
             Screen.fullScreenMode = FullScreenMode.Windowed;
-            PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
+            //PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
             Debug.Log("...To Windowed");
         }
     }
