@@ -436,12 +436,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 121
-        y: 496
+        y: 485
         width: 95
-        height: 58
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 34, y: 10, z: 33, w: 42}
+      border: {x: 32, y: 11, z: 29, w: 34}
       customData: 
       outline: []
       physicsShape: []
@@ -463,7 +463,7 @@ TextureImporter:
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 27, y: 10, z: 26, w: 10}
+      border: {x: 11, y: 6, z: 10, w: 6}
       customData: 
       outline: []
       physicsShape: []
@@ -639,7 +639,7 @@ TextureImporter:
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 36, y: 12, z: 36, w: 12}
+      border: {x: 9, y: 9, z: 9, w: 9}
       customData: 
       outline: []
       physicsShape: []
@@ -1893,7 +1893,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 31, y: 24, z: 22, w: 24}
       customData: 
       outline: []
       physicsShape: []
@@ -1915,7 +1915,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 31, y: 24, z: 22, w: 24}
       customData: 
       outline: []
       physicsShape: []
@@ -1937,7 +1937,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 31, y: 24, z: 22, w: 24}
       customData: 
       outline: []
       physicsShape: []
@@ -1959,7 +1959,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 31, y: 24, z: 22, w: 24}
       customData: 
       outline: []
       physicsShape: []
@@ -3027,6 +3027,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_118
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 462
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 11, z: 6, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a67ee1c08a80a4dbcc91afffff8acd
+      internalID: -1630009732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -3065,6 +3087,7 @@ TextureImporter:
       ui_big_pieces_no_boxes_not_Sliced_115: -53794715
       ui_big_pieces_no_boxes_not_Sliced_116: 1395658392
       ui_big_pieces_no_boxes_not_Sliced_117: 1312069052
+      ui_big_pieces_no_boxes_not_Sliced_118: -1630009732
       ui_big_pieces_no_boxes_not_Sliced_12: 5805315674254919147
       ui_big_pieces_no_boxes_not_Sliced_13: 4416612516609702015
       ui_big_pieces_no_boxes_not_Sliced_14: 5033095582270979572
