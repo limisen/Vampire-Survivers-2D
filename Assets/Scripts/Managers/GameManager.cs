@@ -91,21 +91,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
-        //if (Player_current_HP <= 0)
-        //{
-        //    if (gamePaused == false)
-        //    {
-        //        Debug.Log("Player Died");
-        //    }
-        //    gamePaused = true;
-        //    gameMenu.Player_UI.SetActive(false);
-
-        //    gameMenu.GameOver_Menu.SetActive(true);
-        //}
         if (gameMenu.Player_Score_UI.text != score.ToString()) { gameMenu.Player_Score_UI.text = "Score: " + score.ToString(); }
-
-        //On_level_up();
 
         #region Weapon Active state change check and corresponding logic
         // IF weapon is unlocked turn the corresponding weapon GameObject ON or OFF

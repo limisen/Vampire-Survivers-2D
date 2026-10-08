@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class MainMenu_HighScore_Display : MonoBehaviour
 {
-
-
-
     private TextMeshProUGUI textComponent;
     private string ScoreToWrite;
 
@@ -21,6 +18,11 @@ public class MainMenu_HighScore_Display : MonoBehaviour
         {
             ScoreToWrite = GameManager.singleton.score.ToString();
             PlayerPrefs.SetInt("Higscore", GameManager.singleton.score);
+        }
+
+        if (PlayerPrefs.GetInt("Higscore") == 0 && GameManager.singleton.score == 0)
+        {
+            ScoreToWrite = "0";
         }
     }
     private void OnEnable()
