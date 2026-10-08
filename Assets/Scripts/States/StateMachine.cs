@@ -47,25 +47,24 @@ public class StateMachine : MonoBehaviour
     public void ChangeStateViaButton(int stateIndex)
     {
         Debug.Log("Changing state via button pressed...");
-        // Check if the stateIndex is 10, (which corresponds to the UI "Back" button being pressed),
+        // Check if the stateIndex is -1, (which corresponds to the UI "Back" button being pressed),
         // which means we need to go back to the previous state.
         // aka the parent state of the current state.
-        if (stateIndex == 10)
+        if (stateIndex == -1)
         {
             currentState.ChangeState(currentState.CurrentParentState);
-            if (currentState == stateMachine.GameStateRoot() && currentState.CurrentParentState != null)
-            {
-                currentState.CurrentParentState = null;
-            }
+
             currentState = currentState.CurrentParentState;
+
             currentStateName = currentState.ToString();
         }
         else
         {
             State newState;
             newState = stateMachine.GetState(stateIndex);
+
             currentState.ChangeState(newState);
-            currentState = newState;
+
             currentStateName = currentState.ToString();
         }
         Debug.Log("State changed to: " + currentStateName);

@@ -19,11 +19,6 @@ public class MainMenuState : State
     {
         // Update logic for main menu state
         CheckForTransition();
-
-        if (stateMachine.CurrentState == this && GameManager.singleton.gameMenu.Main_Menu.activeSelf == false)
-        {
-            GameManager.singleton.gameMenu.Main_Menu.SetActive(true);
-        }
     }
 
     public override void OnExit()

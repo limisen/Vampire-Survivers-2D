@@ -41,21 +41,18 @@ public abstract class State
 
     protected void SwitchState(State newState) 
     { 
-        OnExit();
-
-        newState.OnEnter();
-        
-        if (isRootState) 
-        { 
-            // If this is the root state,
-            stateMachine.CurrentState = newState;
-        }
-        else if (currentParentState != null && currentParentState != newState && currentParentState != gameStateFactory.GameStateRoot())
+        if (newState.isRootState) 
         {
-            // if the parent exists and is not the same as the new state
-            // and this is a child state, set the new state as the child of the parent
-            currentParentState.SetChildState(newState);
+            ExitStates();
+            newState.OnEnter();
         }
+        else 
+        {
+            OnExit();
+            newState.OnEnter();
+        }
+
+        stateMachine.CurrentState = newState;
     }
 
     public void ChangeState(State newState)

@@ -3,6 +3,8 @@ using UnityEngine;
 
 enum GameStates
 {
+    ParentState = -1,
+
     GameStateRoot,      // = 0
     
     Playing,            // = 1
@@ -15,11 +17,7 @@ enum GameStates
     PauseMenu,          // = 6
     Upgrade,            // = 7
 
-    ViewingInventory,   // = 8
-
     GameOver,           // = 9
-
-    ParentState,        // = 10
 }
 
 public class GameStateFactory
@@ -43,8 +41,6 @@ public class GameStateFactory
         stateDictionary[GameStates.PauseMenu] = new PauseMenuState(stateMachine, this);
         stateDictionary[GameStates.Upgrade] = new UpgradeState(stateMachine, this);
 
-        stateDictionary[GameStates.ViewingInventory] = new ViewingInventoryState(stateMachine, this);
-
         stateDictionary[GameStates.GameOver] = new GameOverState(stateMachine, this);
     }
 
@@ -58,8 +54,6 @@ public class GameStateFactory
     public State Settings() { return stateDictionary[GameStates.Settings]; }
     public State PauseMenu() { return stateDictionary[GameStates.PauseMenu]; }
     public State Upgrade() { return stateDictionary[GameStates.Upgrade]; }
-    
-    public State ViewingInventory() { return stateDictionary[GameStates.ViewingInventory]; }
     
     public State GameOver() { return stateDictionary[GameStates.GameOver]; }
 
