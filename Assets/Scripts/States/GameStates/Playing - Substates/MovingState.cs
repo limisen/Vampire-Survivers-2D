@@ -16,19 +16,56 @@ public class MovingState : State
     public override void OnUpdate()
     {
         // Update logic for moving state
-        CheckForTransition();
+
+        // If the player tries to pause
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Debug.Log("Pause (ESC) was pressed");
+
+            GameManager.singleton.gameMenu.Player_UI.SetActive(false);
+
+            CheckForTransition();
+
+            SwitchState(gameStateFactory.PauseMenu());
+            return;
+        }
 
         // check if the player has enough EXP to level up
         if (GameManager.singleton.current_EXP >= GameManager.singleton.EXP_to_next_lvl)
         {
+            CheckForTransition();
+
             SwitchState(gameStateFactory.Upgrade());
-            stateMachine.CurrentState = gameStateFactory.Playing();
         }
-        else if (GameManager.singleton.gamePaused == false)
+        
+        // Check if the Player Can Regen HP
+        if (GameManager.singleton.Player_current_HP < GameManager.singleton.Player_MaxHP)
         {
-            // make sure the EXP slider is updated to reflect the current EXP and the EXP needed for the next level
-            GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP;
-            GameManager.singleton.gameMenu.EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
+            GameManager.singleton.Player_current_HP += GameManager.singleton.Player_HP_regen * Time.deltaTime;
+        }
+
+        // Update HP UI
+        GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
+        GameManager.singleton.gameMenu.EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
+        GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP;
+
+        // Has the Player died?
+        if (GameManager.singleton.Player_current_HP <= 0)
+        {
+            Debug.Log("Player Died...");
+
+            CheckForTransition();
+
+            SwitchState(gameStateFactory.GameOver());
+        }
+
+        // IF the player tries to move go to the idle state
+        if ((Input.GetAxisRaw("Horizontal") == 0 || Input.GetAxisRaw("Vertical") == 0))
+        {
+            CheckForTransition();
+
+            Debug.Log("Changing State to Idle");
+            SwitchState(gameStateFactory.Idle());
         }
     }
 
@@ -40,21 +77,12 @@ public class MovingState : State
     public override void CheckForTransition()
     {
         // Transition checks for moving state
-        if ((Input.GetAxisRaw("Horizontal") == 0 || Input.GetAxisRaw("Vertical") == 0) && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
-        {
-            Debug.Log("Changing State to Idle");
-            SwitchState(gameStateFactory.Idle());
-        }
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this && GameManager.singleton.gamePaused == false)
-        {
-            Debug.Log("Pause (ESC) was pressed");
-            GameManager.singleton.gameMenu.Player_UI.SetActive(false);
-            SwitchState(gameStateFactory.PauseMenu());
-        }
+        
     }
 
     public override void InitializeChildState()
     {
         // Initialize any child states if applicable
+        SetChildState(gameStateFactory.Settings());
     }
 }

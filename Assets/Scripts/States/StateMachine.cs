@@ -25,22 +25,14 @@ public class StateMachine : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (currentState.ToString() == currentStateName)
-        {
-            return;
-        }
-        else
+        if (currentState.ToString() != currentStateName)
         {
             currentStateName = currentState.ToString();
         }
 
-        if (currentState.CurrentParentState?.GetType().Name == currentParentStateName)
+        if (currentState.CurrentParentState?.GetType().Name != currentParentStateName)
         {
-            return;
-        }
-        else if (currentState.CurrentParentState == null)
-        {
-            currentParentStateName = "null";
+            currentParentStateName = currentState.CurrentParentState?.GetType().Name;
         }
     }
 
@@ -53,8 +45,6 @@ public class StateMachine : MonoBehaviour
         if (stateIndex == -1)
         {
             currentState.ChangeState(currentState.CurrentParentState);
-
-            currentState = currentState.CurrentParentState;
 
             currentStateName = currentState.ToString();
         }

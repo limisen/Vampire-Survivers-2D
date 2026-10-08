@@ -12,7 +12,7 @@ public class PlayingState : State
         // Enter logic for playing state
         GameManager.singleton.gamePaused = false;
         GameManager.singleton.gameMenu.Player_UI.SetActive(true);
-        //InitializeChildState();
+        InitializeChildState();
     }
 
     public override void OnUpdate()
@@ -28,11 +28,13 @@ public class PlayingState : State
 
             Debug.Log("Changing State to PauseMenu");
 
+            CheckForTransition();
+
             SwitchState(gameStateFactory.PauseMenu());
             return;
         }
 
-        // Player Regen Logic
+        // Check if the Player Can Regen HP
         if (GameManager.singleton.Player_current_HP < GameManager.singleton.Player_MaxHP)
         {
             GameManager.singleton.Player_current_HP += GameManager.singleton.Player_HP_regen * Time.deltaTime;
@@ -40,8 +42,11 @@ public class PlayingState : State
 
         // Update HP UI
         GameManager.singleton.gameMenu.HP_slider.value = GameManager.singleton.Player_current_HP;
+        GameManager.singleton.gameMenu.EXP_slider.maxValue = GameManager.singleton.EXP_to_next_lvl;
+        GameManager.singleton.gameMenu.EXP_slider.value = GameManager.singleton.current_EXP;
 
-        if (GameManager.singleton.Player_current_HP <= 0 && GameManager.singleton.gamePaused == false)
+        // Has the Player died?
+        if (GameManager.singleton.Player_current_HP <= 0)
         {
             Debug.Log("Player Died...");
 
@@ -53,10 +58,8 @@ public class PlayingState : State
         // IF the player is moving, go to the moving state:
         if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0))
         {
-            if (currentChildState != gameStateFactory.Moving())
-            {
+            
                 SetChildState(gameStateFactory.Moving());
-            }
 
             CheckForTransition();
 
@@ -66,10 +69,8 @@ public class PlayingState : State
         // Else go to idle state
         else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
-            if (currentChildState != gameStateFactory.Idle())
-            {
+            
                 SetChildState(gameStateFactory.Idle());
-            }
 
             CheckForTransition();
 
@@ -91,5 +92,6 @@ public class PlayingState : State
 
     public override void InitializeChildState()
     {
+        SetChildState(gameStateFactory.Settings());
     }
 }
