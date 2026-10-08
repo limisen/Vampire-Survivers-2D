@@ -10,25 +10,14 @@ public class SettingsState : State
     public override void OnEnter()
     {
         // Enter logic for settings state
-        Debug.Log("Entering state: " + this.GetType().Name);
-
         GameManager.singleton.gameMenu.Settings_Menu.SetActive(true);
-        
         InitializeChildState();
     }
 
     public override void OnUpdate()
     {
         // Update logic for settings state
-        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
-        {
-            Debug.Log("Pause (ESC) was pressed");
-
-            CheckForTransition();
-
-            Debug.Log("Changing State to ParentState");
-            SwitchState(currentParentState);
-        }
+        CheckForTransition();
     }
 
     public override void OnExit()
@@ -40,6 +29,13 @@ public class SettingsState : State
     public override void CheckForTransition()
     {
         // Transition checks for settings state
+        if (Input.GetButtonDown("Cancel") && stateMachine.CurrentState == this)
+        {
+            Debug.Log("Pause (ESC) was pressed");
+            Debug.Log("Changing State to ParentState");
+            SwitchState(currentParentState);
+            return;
+        }
     }
 
     public override void InitializeChildState()

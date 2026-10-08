@@ -11,10 +11,7 @@ public class GameStateRoot : State
     public override void OnEnter()
     {
         // Enter logic for the root game state
-        Debug.Log("Entering state: " + this.GetType().Name);
         InitializeChildState();
-
-        SwitchState(gameStateFactory.MainMenu());
     }
 
     public override void OnUpdate()
@@ -36,8 +33,7 @@ public class GameStateRoot : State
     public override void InitializeChildState()
     {
         // Initialize any child states if applicable
-        SetChildState(gameStateFactory.Playing());
-
         SetChildState(gameStateFactory.MainMenu());
+        SwitchState(gameStateFactory.MainMenu());
     }
 }

@@ -10,11 +10,8 @@ public class MainMenuState : State
     public override void OnEnter()
     {
         // Enter logic for main menu state
-        Debug.Log("Entering state: " + this.GetType().Name);
-        
         GameManager.singleton.gamePaused = true;
         GameManager.singleton.gameMenu.Main_Menu.SetActive(true);
-        
         InitializeChildState();
     }
 
@@ -22,6 +19,11 @@ public class MainMenuState : State
     {
         // Update logic for main menu state
         CheckForTransition();
+
+        if (stateMachine.CurrentState == this && GameManager.singleton.gameMenu.Main_Menu.activeSelf == false)
+        {
+            GameManager.singleton.gameMenu.Main_Menu.SetActive(true);
+        }
     }
 
     public override void OnExit()

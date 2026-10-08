@@ -10,11 +10,8 @@ public class GameOverState : State
     public override void OnEnter()
     {
         // Enter logic for game over state
-        Debug.Log("Entering state: " + this.GetType().Name);
-
         GameManager.singleton.gamePaused = true;
         GameManager.singleton.gameMenu.GameOver_Menu.SetActive(true);
-
         InitializeChildState();
     }
 
@@ -28,6 +25,7 @@ public class GameOverState : State
     public override void OnExit()
     {
         // Exit logic for game over state
+        Debug.Log("Exiting 'GameOver State'");
         GameManager.singleton.gameMenu.GameOver_Menu.SetActive(false);
     }
 

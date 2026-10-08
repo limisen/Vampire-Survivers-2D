@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-
 public abstract class State
 {
     protected StateMachine stateMachine; // Context for the states
@@ -9,11 +5,10 @@ public abstract class State
 
     protected bool isRootState; // Flag to indicate if this is the root state
 
-    protected List<State> currentChildStates = new(); // Reference to the child state(s)
+    protected State currentChildState; // Reference to the child state
     protected State currentParentState; // Reference to the parent state
 
-    // implement setter for this List of ChildStates
-    public List<State> CurrentChildStates { get { return currentChildStates; } }
+    public State CurrentChildState { get { return currentChildState; } set { currentChildState = value; } }
     public State CurrentParentState { get { return currentParentState; } set { currentParentState = value; } }
 
 
@@ -35,64 +30,32 @@ public abstract class State
     public void UpdateStates() 
     {
         OnUpdate();
-        if (currentChildStates.Count != 0) 
-        {
-            for (int i = 0; i < currentChildStates.Count; i++)
-            {
-                currentChildStates[i].UpdateStates();                
-            }
-        }
+        if (currentChildState != null) { currentChildState.UpdateStates(); }
     }
 
     public void ExitStates()
     {
-        if (currentChildStates.Count != 0) 
-        {
-            Debug.Log($"Child State Exists, Exiting them first before exiting current state...");
-            for (int i = 0; i < currentChildStates.Count; i++)
-            {
-                currentChildStates[i].ExitStates();
-            }
-        }
-
-        Debug.Log("Exiting state: " + this.GetType().Name);
         OnExit();
+        if (currentChildState != null) { currentChildState.ExitStates(); }
     }
 
-
     protected void SwitchState(State newState) 
-    {
-        if (newState.isRootState) 
-        {
-            // IF the new state is the root state, exit all states then enter the root (again)
-            ExitStates();
-            newState.OnEnter();
+    { 
+        OnExit();
+
+        newState.OnEnter();
+        
+        if (isRootState) 
+        { 
+            // If this is the root state,
+            stateMachine.CurrentState = newState;
         }
-        else if (currentChildStates.Contains(newState))
+        else if (currentParentState != null && currentParentState != newState && currentParentState != gameStateFactory.GameStateRoot())
         {
-            // IF the new state is a child of the current state, enter that child state.
-            newState.OnEnter();
+            // if the parent exists and is not the same as the new state
+            // and this is a child state, set the new state as the child of the parent
+            currentParentState.SetChildState(newState);
         }
-        else if (newState == currentParentState)
-        {
-            // IF the new state is a parent of this state exit this state then re-enter that state.
-            OnExit();
-            newState.OnEnter();
-        }
-        else if (currentParentState.currentChildStates.Contains(newState))
-        {
-            // IF the new state is a child of the parent. Exit this state and make the parent enter the child state.
-            OnExit();
-            currentParentState.ChangeState(newState);
-        }
-        else
-        {
-            // Else Exit all states and re enter the root state
-            ExitStates();
-            gameStateFactory.GameStateRoot().OnEnter();
-            gameStateFactory.GameStateRoot().SetChildState(newState);
-        }
-        stateMachine.CurrentState = newState;
     }
 
     public void ChangeState(State newState)
@@ -107,23 +70,8 @@ public abstract class State
 
     public void SetChildState(State newChildState) 
     {
-        if (currentChildStates.Count != 0)
-        {
-            if (currentChildStates.Contains(newChildState))
-            {
-                return;
-            }
-            else
-            {
-                currentChildStates.Add(newChildState);
-                newChildState.SetParentState(this);
-            }
-        }
-        else
-        {
-            currentChildStates.Add(newChildState);
-            newChildState.SetParentState(this);
-        }
+        currentChildState = newChildState;
+        newChildState.SetParentState(this);
     }
 
 }
