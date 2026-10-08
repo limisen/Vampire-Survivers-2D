@@ -55,6 +55,8 @@ public class IdleState : State
 
             CheckForTransition();
 
+            GameManager.singleton.gameMenu.Player_UI.SetActive(false);
+
             SwitchState(gameStateFactory.GameOver());
         }
 
