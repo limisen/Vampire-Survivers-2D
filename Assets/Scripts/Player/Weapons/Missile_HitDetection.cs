@@ -21,6 +21,5 @@ public class Missile_HitDetection : MonoBehaviour
             // Destroy the Missle
             Destroy(gameObject.GetComponentInParent<MissileMovement>().gameObject);
         }
-
     }
 }
