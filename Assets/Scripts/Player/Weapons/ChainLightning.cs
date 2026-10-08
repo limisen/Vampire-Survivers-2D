@@ -66,10 +66,10 @@ public class ChainLightning : MonoBehaviour
             {
                 if (Trail.activeSelf == false)
                 {
+                    Trail.GetComponent<TrailRenderer>().Clear(); // Clear the trail renderer so we don't see the trail from the place it stopped at.
                     this.transform.position = Player.transform.position; // make sure we origniate from the player
 
                     Trail.SetActive(true);
-                    Trail.GetComponent<TrailRenderer>().Clear(); // Clear the trail renderer so we don't see the trail from the place it stopped at.
                 }
 
                 // Find the nearest enemy to the current position of the chain lightning
