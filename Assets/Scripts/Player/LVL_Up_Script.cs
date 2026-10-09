@@ -352,7 +352,7 @@ public class LVL_Up_Script : MonoBehaviour
         var enumerator = UpgradeOptions.GetEnumerator();
 
         // Randomly pick a type of upgrade.
-        for (int i = 0; i < Random.Range(1, UpgradeOptions.Count); i++) // Make sure to move at least once as GetEnumerator() starts one step outside the index and can go on step outside the index
+        for (int i = 0; i < Random.Range(1, UpgradeOptions.Count + 1); i++) // Make sure to move at least once as GetEnumerator() starts one step outside the index and can go on step outside the index
         {
             enumerator.MoveNext();
         }
