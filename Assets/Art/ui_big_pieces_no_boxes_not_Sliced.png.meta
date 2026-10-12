@@ -3036,7 +3036,7 @@ TextureImporter:
         width: 20
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 11, z: 6, w: 10}
       customData: 
       outline: []
@@ -3045,6 +3045,50 @@ TextureImporter:
       bones: []
       spriteID: e8a67ee1c08a80a4dbcc91afffff8acd
       internalID: -1630009732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_119
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 367
+        width: 81
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 52, y: 13, z: 29, w: 12}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fa02b7a8d80dd4a920a1d5619028ad
+      internalID: 1014050210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_no_boxes_not_Sliced_120
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 289
+        width: 81
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 52, y: 13, z: 29, w: 12}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4e7290a556f234b9cf6ae6f56d116f
+      internalID: 2093029420
       vertices: []
       indices: 
       edges: []
@@ -3088,7 +3132,9 @@ TextureImporter:
       ui_big_pieces_no_boxes_not_Sliced_116: 1395658392
       ui_big_pieces_no_boxes_not_Sliced_117: 1312069052
       ui_big_pieces_no_boxes_not_Sliced_118: -1630009732
+      ui_big_pieces_no_boxes_not_Sliced_119: 1014050210
       ui_big_pieces_no_boxes_not_Sliced_12: 5805315674254919147
+      ui_big_pieces_no_boxes_not_Sliced_120: 2093029420
       ui_big_pieces_no_boxes_not_Sliced_13: 4416612516609702015
       ui_big_pieces_no_boxes_not_Sliced_14: 5033095582270979572
       ui_big_pieces_no_boxes_not_Sliced_15: 5721013367490446627
