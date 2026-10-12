@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Animator AnimationController;
+
     [SerializeField] float minX, maxX, minY, maxY; // Max Positional bounds (cant go beyond these values)
 
     private float moveSpeed;
@@ -19,6 +21,31 @@ public class PlayerMovement : MonoBehaviour
             // Move the Player
             transform.position += (moveSpeed * Time.deltaTime) * new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
 
+            // Animator Variables reset
+            AnimationController.SetBool("Idle", false);
+            AnimationController.SetBool("MovingRight", false);
+            AnimationController.SetBool("MovingLeft", false);
+            AnimationController.SetBool("MovingUp", false);
+            AnimationController.SetBool("MovingDown", false);
+
+            // Depending on the direction we are moving set the respective animation Bool to true
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                AnimationController.SetBool("MovingLeft", true);
+            } else if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                AnimationController.SetBool("MovingRight", true);
+            } else if (Input.GetAxisRaw("Vertical") < 0)
+            {
+                AnimationController.SetBool("MovingDown", true);
+            } else if (Input.GetAxisRaw("Vertical") > 0)
+            {
+                AnimationController.SetBool("MovingUp", true);
+            }
+            else
+            {
+                AnimationController.SetBool("Idle", true);
+            }
 
             // out of bounds check and handeling
             if (transform.position.x < minX)
