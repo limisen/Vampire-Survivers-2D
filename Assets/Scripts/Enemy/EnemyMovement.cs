@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     float moveSpeed;
-
+    [SerializeField] private Animator AnimationController;
     GameObject player;
 
     private void Awake()
@@ -32,6 +32,35 @@ public class EnemyMovement : MonoBehaviour
 
             // Now set the position and then rotate so we are facing the target (aka the player)
             transform.SetPositionAndRotation((transform.position += (Time.deltaTime * moveSpeed) * delta), Quaternion.AngleAxis(angle_to_rotate, Vector3.forward));
+
+            // Animator Variables reset
+            AnimationController.SetBool("Idle", false);
+            AnimationController.SetBool("MovingRight", false);
+            AnimationController.SetBool("MovingLeft", false);
+            AnimationController.SetBool("MovingUp", false);
+            AnimationController.SetBool("MovingDown", false);
+
+            // Depending on the direction we are moving set the respective animation Bool to true
+            if (delta.x < 0)
+            {
+                AnimationController.SetBool("MovingLeft", true);
+            }
+            else if (delta.x > 0)
+            {
+                AnimationController.SetBool("MovingRight", true);
+            }
+            else if (delta.y < 0)
+            {
+                AnimationController.SetBool("MovingDown", true);
+            }
+            else if (delta.y > 0)
+            {
+                AnimationController.SetBool("MovingUp", true);
+            }
+            else
+            {
+                AnimationController.SetBool("Idle", true);
+            }
         }
     }
 }

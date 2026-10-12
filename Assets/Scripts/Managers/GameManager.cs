@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     #region Player Data
     [Header("Player Data")]
-    [SerializeField] public float Player_MoveSpeed = 15f;
+    [SerializeField] public float Player_MoveSpeed = 7.5f;
     [Space]
     [SerializeField] public float Player_MaxHP = 10;
     [SerializeField] public float Player_current_HP = 0;
