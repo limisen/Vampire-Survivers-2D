@@ -27,7 +27,6 @@ public class Aura : MonoBehaviour
             // Starting from the last element, deal DMG to each enemy and spawn the DMG Text pop up.
             for (int i = 0; i < Enemies.Length; i++)
             {
-                Debug.Log("Attempting to Deal Aura DMG to: " + Enemies[i]);
                 if (Enemies[i].gameObject.CompareTag("Enemy")) 
                 { 
                     Debug.Log("It is a Enemy! Dealing DMG");

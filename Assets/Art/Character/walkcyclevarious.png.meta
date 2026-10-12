@@ -1,0 +1,2615 @@
+fileFormatVersion: 2
+guid: 1d8fa4afcda1e834f8ed690189afc862
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8246339311729315537
+    second: walkcyclevarious_0
+  - first:
+      213: -130865274240421675
+    second: walkcyclevarious_1
+  - first:
+      213: -682981442410162631
+    second: walkcyclevarious_2
+  - first:
+      213: 852434201080889070
+    second: walkcyclevarious_3
+  - first:
+      213: 5224233285005427433
+    second: walkcyclevarious_4
+  - first:
+      213: -2034199459605542528
+    second: walkcyclevarious_5
+  - first:
+      213: -2083177627946262830
+    second: walkcyclevarious_6
+  - first:
+      213: -6635949031116274448
+    second: walkcyclevarious_7
+  - first:
+      213: -166395661724611813
+    second: walkcyclevarious_8
+  - first:
+      213: 2855168098311985005
+    second: walkcyclevarious_9
+  - first:
+      213: 6596359223503728559
+    second: walkcyclevarious_10
+  - first:
+      213: 6079296475218852850
+    second: walkcyclevarious_11
+  - first:
+      213: -445461906272246357
+    second: walkcyclevarious_12
+  - first:
+      213: -8034138233614140381
+    second: walkcyclevarious_13
+  - first:
+      213: -8179883421256859970
+    second: walkcyclevarious_14
+  - first:
+      213: -816949423277045803
+    second: walkcyclevarious_15
+  - first:
+      213: -6761171866031613324
+    second: walkcyclevarious_16
+  - first:
+      213: -7042386942032577462
+    second: walkcyclevarious_17
+  - first:
+      213: 84514824033753661
+    second: walkcyclevarious_18
+  - first:
+      213: 4058464014062136642
+    second: walkcyclevarious_19
+  - first:
+      213: -1741806601315781472
+    second: walkcyclevarious_20
+  - first:
+      213: 4076044127237331138
+    second: walkcyclevarious_21
+  - first:
+      213: -6226610061923733434
+    second: walkcyclevarious_22
+  - first:
+      213: -2171271932267460388
+    second: walkcyclevarious_23
+  - first:
+      213: 5740128100394679031
+    second: walkcyclevarious_24
+  - first:
+      213: 7696605766607738198
+    second: walkcyclevarious_25
+  - first:
+      213: 5611057819322901490
+    second: walkcyclevarious_26
+  - first:
+      213: 9048897156113408988
+    second: walkcyclevarious_27
+  - first:
+      213: -4508085522473375651
+    second: walkcyclevarious_28
+  - first:
+      213: 7076971154770563065
+    second: walkcyclevarious_29
+  - first:
+      213: 2799151422723998238
+    second: walkcyclevarious_30
+  - first:
+      213: -6578480353701090512
+    second: walkcyclevarious_31
+  - first:
+      213: -31527806533544547
+    second: walkcyclevarious_32
+  - first:
+      213: 874937362623046123
+    second: walkcyclevarious_33
+  - first:
+      213: 3508004607731392134
+    second: walkcyclevarious_34
+  - first:
+      213: 4419202751982710379
+    second: walkcyclevarious_35
+  - first:
+      213: -9065468926492988479
+    second: walkcyclevarious_36
+  - first:
+      213: -3278086105093001233
+    second: walkcyclevarious_37
+  - first:
+      213: 9163159013789332838
+    second: walkcyclevarious_38
+  - first:
+      213: 5419447736825126949
+    second: walkcyclevarious_39
+  - first:
+      213: 6418751609670383133
+    second: walkcyclevarious_40
+  - first:
+      213: -1753294221116162818
+    second: walkcyclevarious_41
+  - first:
+      213: 8665464869200942855
+    second: walkcyclevarious_42
+  - first:
+      213: 5460419578531555386
+    second: walkcyclevarious_43
+  - first:
+      213: -861928276514786209
+    second: walkcyclevarious_44
+  - first:
+      213: -2865551290209002136
+    second: walkcyclevarious_45
+  - first:
+      213: -6072196594798485389
+    second: walkcyclevarious_46
+  - first:
+      213: -448713538416926593
+    second: walkcyclevarious_47
+  - first:
+      213: -5838484662935137852
+    second: walkcyclevarious_48
+  - first:
+      213: 5331657684509984332
+    second: walkcyclevarious_49
+  - first:
+      213: -6196781299270969599
+    second: walkcyclevarious_50
+  - first:
+      213: -2815132615006071122
+    second: walkcyclevarious_51
+  - first:
+      213: -7622482432721696939
+    second: walkcyclevarious_52
+  - first:
+      213: 2344669823824519642
+    second: walkcyclevarious_53
+  - first:
+      213: -5638141265126319655
+    second: walkcyclevarious_54
+  - first:
+      213: -8954740095294003214
+    second: walkcyclevarious_55
+  - first:
+      213: 6697234308534473573
+    second: walkcyclevarious_56
+  - first:
+      213: -2577468130698006790
+    second: walkcyclevarious_57
+  - first:
+      213: -5129669180434242413
+    second: walkcyclevarious_58
+  - first:
+      213: -8625132328623751993
+    second: walkcyclevarious_59
+  - first:
+      213: 8630220989610320950
+    second: walkcyclevarious_60
+  - first:
+      213: -4494673981917906609
+    second: walkcyclevarious_61
+  - first:
+      213: 623714027410107804
+    second: walkcyclevarious_62
+  - first:
+      213: -2560024724770841670
+    second: walkcyclevarious_63
+  - first:
+      213: -2149719035323187910
+    second: walkcyclevarious_64
+  - first:
+      213: -107321809434956617
+    second: walkcyclevarious_65
+  - first:
+      213: 7392935519427945622
+    second: walkcyclevarious_66
+  - first:
+      213: 6037597633738217740
+    second: walkcyclevarious_67
+  - first:
+      213: 6188710383147773848
+    second: walkcyclevarious_68
+  - first:
+      213: 9056432150517573405
+    second: walkcyclevarious_69
+  - first:
+      213: 3632450804266766236
+    second: walkcyclevarious_70
+  - first:
+      213: 9107640750439732661
+    second: walkcyclevarious_71
+  - first:
+      213: -3957390761329644483
+    second: walkcyclevarious_72
+  - first:
+      213: 7980820399978839536
+    second: walkcyclevarious_73
+  - first:
+      213: -3043571540533643083
+    second: walkcyclevarious_74
+  - first:
+      213: 6308845029612442548
+    second: walkcyclevarious_75
+  - first:
+      213: -8261684389766136754
+    second: walkcyclevarious_76
+  - first:
+      213: 4526515449599335295
+    second: walkcyclevarious_77
+  - first:
+      213: -4574229051643966034
+    second: walkcyclevarious_78
+  - first:
+      213: 466557720009543783
+    second: walkcyclevarious_79
+  - first:
+      213: -8776237312789414130
+    second: walkcyclevarious_80
+  - first:
+      213: -1799159076389389168
+    second: walkcyclevarious_81
+  - first:
+      213: -2766593485222803295
+    second: walkcyclevarious_82
+  - first:
+      213: -4927833617723916911
+    second: walkcyclevarious_83
+  - first:
+      213: 5793617210418383502
+    second: walkcyclevarious_84
+  - first:
+      213: 3130327667218817096
+    second: walkcyclevarious_85
+  - first:
+      213: -8737750872854078463
+    second: walkcyclevarious_86
+  - first:
+      213: -27165271320277381
+    second: walkcyclevarious_87
+  - first:
+      213: -7426590935095547458
+    second: walkcyclevarious_88
+  - first:
+      213: 8184926627398373431
+    second: walkcyclevarious_89
+  - first:
+      213: 6408273981096886582
+    second: walkcyclevarious_90
+  - first:
+      213: -6495594227353783183
+    second: walkcyclevarious_91
+  - first:
+      213: 4212185217842005323
+    second: walkcyclevarious_92
+  - first:
+      213: -7695037154290706121
+    second: walkcyclevarious_93
+  - first:
+      213: 8741440067138477434
+    second: walkcyclevarious_94
+  - first:
+      213: 1938800967261442332
+    second: walkcyclevarious_95
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: walkcyclevarious_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 427
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f21f803461e1f8d80800000000000000
+      internalID: -8246339311729315537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 429
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d03777f9b21f2ef0800000000000000
+      internalID: -130865274240421675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 427
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93655f82fff8586f0800000000000000
+      internalID: -682981442410162631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 428
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeef1d5b36474db00800000000000000
+      internalID: 852434201080889070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 429
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e245885e74308840800000000000000
+      internalID: 5224233285005427433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 427
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0898bef7e5215c3e0800000000000000
+      internalID: -2034199459605542528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_6
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 427
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ded83a0cf01713e0800000000000000
+      internalID: -2083177627946262830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_7
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 429
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f487b4d38f58e3a0800000000000000
+      internalID: -6635949031116274448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_8
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 427
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b0dbaf608d0bdf0800000000000000
+      internalID: -166395661724611813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_9
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 427
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67d9e112489f9720800000000000000
+      internalID: 2855168098311985005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_10
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 429
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafafc7c3c9fa8b50800000000000000
+      internalID: 6596359223503728559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_11
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 428
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb34b94feffd5450800000000000000
+      internalID: 6079296475218852850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_12
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 365
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5aca3a1c661d9f0800000000000000
+      internalID: -445461906272246357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_13
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 367
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c7b0dd7d1018090800000000000000
+      internalID: -8034138233614140381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_14
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 365
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebeb0e30e573b7e80800000000000000
+      internalID: -8179883421256859970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 366
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d78c12f3dc99a4f0800000000000000
+      internalID: -816949423277045803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_16
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 367
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a12d3920e7b22a0800000000000000
+      internalID: -6761171866031613324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_17
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 365
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c7c4d636a644e90800000000000000
+      internalID: -7042386942032577462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_18
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 365
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a59c0e8c14c2100800000000000000
+      internalID: 84514824033753661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_19
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 367
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d21e3a48f825830800000000000000
+      internalID: 4058464014062136642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_20
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 365
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a47425ef1cd3d7e0800000000000000
+      internalID: -1741806601315781472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_21
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 365
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c85cc4b984019830800000000000000
+      internalID: 4076044127237331138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_22
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 367
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640b9208323a699a0800000000000000
+      internalID: -6226610061923733434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_23
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 366
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd80c667ea71ed1e0800000000000000
+      internalID: -2171271932267460388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_24
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 307
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa3345481809af40800000000000000
+      internalID: 5740128100394679031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_25
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 309
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65590e69a26dfca60800000000000000
+      internalID: 7696605766607738198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_26
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 307
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f36be6ab5b7edd40800000000000000
+      internalID: 5611057819322901490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_27
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 308
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3ae273504249d70800000000000000
+      internalID: 9048897156113408988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 309
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58a4e72a101071c0800000000000000
+      internalID: -4508085522473375651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_29
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 307
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff09c515c3763260800000000000000
+      internalID: 7076971154770563065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_30
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 307
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e124eff636598d620800000000000000
+      internalID: 2799151422723998238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_31
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 309
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ba2cbf8fa84b4a0800000000000000
+      internalID: -6578480353701090512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_32
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 307
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95550380adff8ff0800000000000000
+      internalID: -31527806533544547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_33
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 307
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be12ddb45e6642c00800000000000000
+      internalID: 874937362623046123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_34
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 309
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e5342ca9feea030800000000000000
+      internalID: 3508004607731392134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_35
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 308
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6eab5e2d79245d30800000000000000
+      internalID: 4419202751982710379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_36
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 246
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cb2b02da0cf03280800000000000000
+      internalID: -9065468926492988479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_37
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 248
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fefa9c23e06e182d0800000000000000
+      internalID: -3278086105093001233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_38
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 246
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665f45513941a2f70800000000000000
+      internalID: 9163159013789332838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_39
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 247
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520a140d00fb53b40800000000000000
+      internalID: 5419447736825126949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_40
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 248
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16bedbb49cf31950800000000000000
+      internalID: 6418751609670383133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_41
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 246
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc30abf13c0ba7e0800000000000000
+      internalID: -1753294221116162818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_42
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 246
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707595e036ae14870800000000000000
+      internalID: 8665464869200942855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_43
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 248
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3826f61dae47cb40800000000000000
+      internalID: 5460419578531555386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_44
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 246
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f54b8789cc0d904f0800000000000000
+      internalID: -861928276514786209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_45
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 246
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d1e6da8448b38d0800000000000000
+      internalID: -2865551290209002136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_46
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 248
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37023b07e593bbba0800000000000000
+      internalID: -6072196594798485389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_47
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 247
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7020c80a69d5c9f0800000000000000
+      internalID: -448713538416926593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_48
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 185
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c15f27f12989fea0800000000000000
+      internalID: -5838484662935137852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_49
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 187
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46033d6a6addf940800000000000000
+      internalID: 5331657684509984332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_50
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 185
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1079b228d3c900aa0800000000000000
+      internalID: -6196781299270969599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_51
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 186
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea652f64dc3aee8d0800000000000000
+      internalID: -2815132615006071122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_52
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 187
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557c7f2fc90873690800000000000000
+      internalID: -7622482432721696939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_53
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 185
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad163ac38c0f98020800000000000000
+      internalID: 2344669823824519642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_54
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 185
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d99caa346c41c1b0800000000000000
+      internalID: -5638141265126319655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_55
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 187
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7ad0cd35f5ab380800000000000000
+      internalID: -8954740095294003214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_56
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 185
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56391c1ce1b51fc50800000000000000
+      internalID: 6697234308534473573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_57
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 185
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afeead1246efa3cd0800000000000000
+      internalID: -2577468130698006790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_58
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 187
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394a2fcfe01cfc8b0800000000000000
+      internalID: -5129669180434242413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_59
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 186
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ccb4a358df5d4880800000000000000
+      internalID: -8625132328623751993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_60
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 124
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634e7d2e344b4c770800000000000000
+      internalID: 8630220989610320950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_61
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 126
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49b796c3d5bf91c0800000000000000
+      internalID: -4494673981917906609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_62
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 124
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d25357a90e7a800800000000000000
+      internalID: 623714027410107804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_63
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 125
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb11df8317f87cd0800000000000000
+      internalID: -2560024724770841670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_64
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 126
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d7aa45de9aa22e0800000000000000
+      internalID: -2149719035323187910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_65
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 124
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc2af70267b28ef0800000000000000
+      internalID: -107321809434956617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_66
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 124
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694eeda7fabf89660800000000000000
+      internalID: 7392935519427945622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_67
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 126
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0994bf2f0bd9c350800000000000000
+      internalID: 6037597633738217740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_68
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 124
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f6b45ed47b2e550800000000000000
+      internalID: 6188710383147773848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_69
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 124
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17e600de09eead70800000000000000
+      internalID: 9056432150517573405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_70
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 126
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f076cc2ce096230800000000000000
+      internalID: 3632450804266766236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_71
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 125
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b515d71207d46e70800000000000000
+      internalID: 9107640750439732661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_72
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 63
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ca889d1168419c0800000000000000
+      internalID: -3957390761329644483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_73
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 65
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fdfdec9ed191ce60800000000000000
+      internalID: 7980820399978839536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_74
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 63
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8f0063fcf03c5d0800000000000000
+      internalID: -3043571540533643083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_75
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 64
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3d905f0258d8750800000000000000
+      internalID: 6308845029612442548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_76
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 65
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c799dd1d9985d80800000000000000
+      internalID: -8261684389766136754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_77
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 63
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b9fa3a1d961de30800000000000000
+      internalID: 4526515449599335295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_78
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 63
+        width: 19
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead4d7fa9e21580c0800000000000000
+      internalID: -4574229051643966034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_79
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 65
+        width: 20
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760926046cb897600800000000000000
+      internalID: 466557720009543783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_80
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 63
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f78aa99aa843680800000000000000
+      internalID: -8776237312789414130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_81
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 63
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09cf3653a5a1807e0800000000000000
+      internalID: -1799159076389389168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_82
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 65
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8826b12e51b99d0800000000000000
+      internalID: -2766593485222803295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_83
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 64
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d7657fe61dc9bb0800000000000000
+      internalID: -4927833617723916911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_84
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ac39f2820176050800000000000000
+      internalID: 5793617210418383502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_85
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 1
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840a72b9d68217b20800000000000000
+      internalID: 3130327667218817096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_86
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 0
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c5caf20e54db680800000000000000
+      internalID: -8737750872854078463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_87
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e4ab4645d7f9ff0800000000000000
+      internalID: -27165271320277381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_88
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb96e7d64e27fe890800000000000000
+      internalID: -7426590935095547458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_89
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73057bae663b69170800000000000000
+      internalID: 8184926627398373431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_90
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 0
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63188aabb33cee850800000000000000
+      internalID: 6408273981096886582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_91
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 174ff7127730bd5a0800000000000000
+      internalID: -6495594227353783183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_92
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 0
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45cf957320b47a30800000000000000
+      internalID: 4212185217842005323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_93
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739d11d6a7cb53590800000000000000
+      internalID: -7695037154290706121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_94
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 1
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dd72b4d65df4970800000000000000
+      internalID: 8741440067138477434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkcyclevarious_95
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 0
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c115dcf153108ea10800000000000000
+      internalID: 1938800967261442332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      walkcyclevarious_0: -8246339311729315537
+      walkcyclevarious_1: -130865274240421675
+      walkcyclevarious_10: 6596359223503728559
+      walkcyclevarious_11: 6079296475218852850
+      walkcyclevarious_12: -445461906272246357
+      walkcyclevarious_13: -8034138233614140381
+      walkcyclevarious_14: -8179883421256859970
+      walkcyclevarious_15: -816949423277045803
+      walkcyclevarious_16: -6761171866031613324
+      walkcyclevarious_17: -7042386942032577462
+      walkcyclevarious_18: 84514824033753661
+      walkcyclevarious_19: 4058464014062136642
+      walkcyclevarious_2: -682981442410162631
+      walkcyclevarious_20: -1741806601315781472
+      walkcyclevarious_21: 4076044127237331138
+      walkcyclevarious_22: -6226610061923733434
+      walkcyclevarious_23: -2171271932267460388
+      walkcyclevarious_24: 5740128100394679031
+      walkcyclevarious_25: 7696605766607738198
+      walkcyclevarious_26: 5611057819322901490
+      walkcyclevarious_27: 9048897156113408988
+      walkcyclevarious_28: -4508085522473375651
+      walkcyclevarious_29: 7076971154770563065
+      walkcyclevarious_3: 852434201080889070
+      walkcyclevarious_30: 2799151422723998238
+      walkcyclevarious_31: -6578480353701090512
+      walkcyclevarious_32: -31527806533544547
+      walkcyclevarious_33: 874937362623046123
+      walkcyclevarious_34: 3508004607731392134
+      walkcyclevarious_35: 4419202751982710379
+      walkcyclevarious_36: -9065468926492988479
+      walkcyclevarious_37: -3278086105093001233
+      walkcyclevarious_38: 9163159013789332838
+      walkcyclevarious_39: 5419447736825126949
+      walkcyclevarious_4: 5224233285005427433
+      walkcyclevarious_40: 6418751609670383133
+      walkcyclevarious_41: -1753294221116162818
+      walkcyclevarious_42: 8665464869200942855
+      walkcyclevarious_43: 5460419578531555386
+      walkcyclevarious_44: -861928276514786209
+      walkcyclevarious_45: -2865551290209002136
+      walkcyclevarious_46: -6072196594798485389
+      walkcyclevarious_47: -448713538416926593
+      walkcyclevarious_48: -5838484662935137852
+      walkcyclevarious_49: 5331657684509984332
+      walkcyclevarious_5: -2034199459605542528
+      walkcyclevarious_50: -6196781299270969599
+      walkcyclevarious_51: -2815132615006071122
+      walkcyclevarious_52: -7622482432721696939
+      walkcyclevarious_53: 2344669823824519642
+      walkcyclevarious_54: -5638141265126319655
+      walkcyclevarious_55: -8954740095294003214
+      walkcyclevarious_56: 6697234308534473573
+      walkcyclevarious_57: -2577468130698006790
+      walkcyclevarious_58: -5129669180434242413
+      walkcyclevarious_59: -8625132328623751993
+      walkcyclevarious_6: -2083177627946262830
+      walkcyclevarious_60: 8630220989610320950
+      walkcyclevarious_61: -4494673981917906609
+      walkcyclevarious_62: 623714027410107804
+      walkcyclevarious_63: -2560024724770841670
+      walkcyclevarious_64: -2149719035323187910
+      walkcyclevarious_65: -107321809434956617
+      walkcyclevarious_66: 7392935519427945622
+      walkcyclevarious_67: 6037597633738217740
+      walkcyclevarious_68: 6188710383147773848
+      walkcyclevarious_69: 9056432150517573405
+      walkcyclevarious_7: -6635949031116274448
+      walkcyclevarious_70: 3632450804266766236
+      walkcyclevarious_71: 9107640750439732661
+      walkcyclevarious_72: -3957390761329644483
+      walkcyclevarious_73: 7980820399978839536
+      walkcyclevarious_74: -3043571540533643083
+      walkcyclevarious_75: 6308845029612442548
+      walkcyclevarious_76: -8261684389766136754
+      walkcyclevarious_77: 4526515449599335295
+      walkcyclevarious_78: -4574229051643966034
+      walkcyclevarious_79: 466557720009543783
+      walkcyclevarious_8: -166395661724611813
+      walkcyclevarious_80: -8776237312789414130
+      walkcyclevarious_81: -1799159076389389168
+      walkcyclevarious_82: -2766593485222803295
+      walkcyclevarious_83: -4927833617723916911
+      walkcyclevarious_84: 5793617210418383502
+      walkcyclevarious_85: 3130327667218817096
+      walkcyclevarious_86: -8737750872854078463
+      walkcyclevarious_87: -27165271320277381
+      walkcyclevarious_88: -7426590935095547458
+      walkcyclevarious_89: 8184926627398373431
+      walkcyclevarious_9: 2855168098311985005
+      walkcyclevarious_90: 6408273981096886582
+      walkcyclevarious_91: -6495594227353783183
+      walkcyclevarious_92: 4212185217842005323
+      walkcyclevarious_93: -7695037154290706121
+      walkcyclevarious_94: 8741440067138477434
+      walkcyclevarious_95: 1938800967261442332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
