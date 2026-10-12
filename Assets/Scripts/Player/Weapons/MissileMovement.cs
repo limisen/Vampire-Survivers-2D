@@ -13,7 +13,7 @@ public class MissileMovement : MonoBehaviour
 
     // Orbiting relavent distances
     public float distance_from_Player = 1;
-    public float rotation_Speed;
+    public float orbit_Speed;
     [SerializeField] float maxDistance;
     [SerializeField] float minDistance;
 
@@ -101,11 +101,11 @@ public class MissileMovement : MonoBehaviour
             transform.position -= Time.deltaTime * GameManager.singleton.Missile_MoveSpeed * delta;
         }
 
-        // get the rotation speed based on the normal moveSpeed towards enemies. Convert to Degrees and scale it to be Per Second
-        rotation_Speed = Mathf.Atan(GameManager.singleton.Missile_MoveSpeed) * Mathf.Rad2Deg * Time.deltaTime;
+        // get the orbit ("rotation") speed based on the normal moveSpeed towards enemies. Convert to Degrees and scale it to be Per Second
+        orbit_Speed = Mathf.Atan(GameManager.singleton.Missile_MoveSpeed) * Mathf.Rad2Deg * Time.deltaTime;
 
-        // Last argument (rotation_Speed) is the amount in degrees to rotate
-        transform.RotateAround(Player.transform.position, new Vector3(0, 0, 1), rotation_Speed);
+        // Last argument (orbit-/rotation-Speed) is the amount in degrees to rotate
+        transform.RotateAround(Player.transform.position, new Vector3(0, 0, 1), orbit_Speed);
 
         // Apply the rotation to face the direction the missile is moving in
         transform.rotation = Quaternion.AngleAxis(angle_to_rotate, new Vector3(0, 0, 1));

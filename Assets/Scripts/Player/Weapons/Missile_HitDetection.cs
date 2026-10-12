@@ -5,6 +5,11 @@ public class Missile_HitDetection : MonoBehaviour
 {
     public float DMG;
 
+    [SerializeField] FeedBackText TextPrefab;
+
+    [SerializeField] float TextEnlargeAmount;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -20,6 +25,8 @@ public class Missile_HitDetection : MonoBehaviour
 
             // Destroy the Missle
             Destroy(gameObject.GetComponentInParent<MissileMovement>().gameObject);
+
+            TextPopUps.SpawnText(TextPrefab , DMG.ToString(), transform.position, TextEnlargeAmount);
         }
     }
 }

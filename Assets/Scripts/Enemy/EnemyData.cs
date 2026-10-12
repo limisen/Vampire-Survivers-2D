@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyData : MonoBehaviour
@@ -20,7 +21,7 @@ public class EnemyData : MonoBehaviour
     private void Awake()
     {
         //DMG = DMG * (1 + GameManager.singleton.Player_current_lvl);
-        //MaxHP = MaxHP * (1 + GameManager.singleton.Player_current_lvl);
+        MaxHP = MaxHP * (GameManager.singleton.Player_current_lvl + (Time.realtimeSinceStartup / 60));
 
         currentHP = MaxHP;
     }
