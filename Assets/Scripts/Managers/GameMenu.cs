@@ -96,7 +96,7 @@ public class GameMenu : MonoBehaviour
         GameManager.singleton.time_between_lightning = 2;
 
         GameManager.singleton.Chain_Lightning_DMG = 5;
-        GameManager.singleton.radius = 5;
+        GameManager.singleton.Aura_Radius = 5;
         #endregion
 
         #region Updating UI values

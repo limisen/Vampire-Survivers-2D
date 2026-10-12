@@ -39,6 +39,7 @@ public class LVL_Up_Script : MonoBehaviour
                 {
                     { "DMG", 5},
                     { "Radius", 5},
+                    { "TickRate", 1},
                     { "Unlocked", false}
                 }
             },
@@ -131,7 +132,10 @@ public class LVL_Up_Script : MonoBehaviour
                                 GameManager.singleton.Aura_DMG += 5;
                                 break;
                             case "Radius":
-                                GameManager.singleton.radius += 2;
+                                GameManager.singleton.Aura_Radius += 2;
+                                break;
+                            case "TickRate":
+                                GameManager.singleton.Aura_TickRate *= 0.9f;
                                 break;
                             case "Unlocked":
                                 GameManager.singleton.Aura_Unlocked = true;
@@ -146,7 +150,7 @@ public class LVL_Up_Script : MonoBehaviour
                                 GameManager.singleton.Chain_Lightning_DMG += 5;
                                 break;
                             case "Amount To Chain":
-                                GameManager.singleton.radius += 1;
+                                GameManager.singleton.Aura_Radius += 1;
                                 break;
                             case "Time Between Lightning":
                                 GameManager.singleton.time_between_lightning -= 0.2f;
@@ -207,7 +211,10 @@ public class LVL_Up_Script : MonoBehaviour
                                 GameManager.singleton.Aura_DMG += 5;
                                 break;
                             case "Radius":
-                                GameManager.singleton.radius += 2;
+                                GameManager.singleton.Aura_Radius += 2;
+                                break;
+                            case "TickRate":
+                                GameManager.singleton.Aura_TickRate *= 0.9f;
                                 break;
                             case "Unlocked":
                                 GameManager.singleton.Aura_Unlocked = true;
@@ -222,7 +229,7 @@ public class LVL_Up_Script : MonoBehaviour
                                 GameManager.singleton.Chain_Lightning_DMG += 5;
                                 break;
                             case "Amount To Chain":
-                                GameManager.singleton.radius += 1;
+                                GameManager.singleton.Aura_Radius += 1;
                                 break;
                             case "Time Between Lightning":
                                 GameManager.singleton.time_between_lightning -= 0.2f;
@@ -282,7 +289,10 @@ public class LVL_Up_Script : MonoBehaviour
                                 GameManager.singleton.Aura_DMG += 5;
                                 break;
                             case "Radius":
-                                GameManager.singleton.radius += 2;
+                                GameManager.singleton.Aura_Radius += 2;
+                                break;
+                            case "TickRate":
+                                GameManager.singleton.Aura_TickRate *= 0.9f;
                                 break;
                             case "Unlocked":
                                 GameManager.singleton.Aura_Unlocked = true;
@@ -297,7 +307,7 @@ public class LVL_Up_Script : MonoBehaviour
                                 GameManager.singleton.Chain_Lightning_DMG += 5;
                                 break;
                             case "Amount To Chain":
-                                GameManager.singleton.radius += 1;
+                                GameManager.singleton.Aura_Radius += 1;
                                 break;
                             case "Time Between Lightning":
                                 GameManager.singleton.time_between_lightning -= 0.2f;

@@ -7,24 +7,40 @@ using UnityEngine;
 public class FeedBackText : MonoBehaviour
 {
     TextMeshPro myText;
-    [SerializeField] Vector3 startScale = Vector3.one;
+    [SerializeField] Vector3 startScale;
     [SerializeField] Vector3 EnlargedScale;
     [SerializeField] float EnlargedAmount;
 
-    public void Initialize(string aText, float EnlargeAmount = 2)
+    public void Initialize(string aText, float EnlargeAmount = 1.5f)
     {
         startScale = transform.localScale;
-        EnlargedScale = startScale * (this.EnlargedAmount = EnlargeAmount);
+
+        if (EnlargeAmount != 1.5f)
+        {
+            EnlargedScale = startScale * EnlargeAmount;
+        }
+        else
+        {
+            EnlargedScale = startScale * this.EnlargedAmount;
+        }
+
 
         myText = GetComponent<TextMeshPro>();
         Debug.Log("Test: " + (myText != null));
         myText.text = aText;
 
         StartCoroutine(AnimateText());
+        Destroy(gameObject, 1);
     }
 
     IEnumerator AnimateText()
     {
+        for (float t = 0; t < 1; t += Time.deltaTime)
+        {
+            transform.localScale = Vector3.Lerp(Vector3.zero, startScale, t);
+            yield return null;
+        }
+
         for (float t = 0; t < 1; t += Time.deltaTime)
         {
             transform.localScale = Vector3.Lerp(startScale, EnlargedScale, t);

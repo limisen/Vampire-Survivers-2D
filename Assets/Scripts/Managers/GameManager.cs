@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool Aura_Unlocked = false;
     [SerializeField] public GameObject Aura_objRef;
     [SerializeField] public float Aura_DMG = 5;
-    [SerializeField] public float radius = 5;
+    [SerializeField] public float Aura_Radius = 5;
+    [SerializeField] public float Aura_TickRate = 1;
     [Space]
     [Space]
     [SerializeField] public bool Chain_Lightning_Unlocked = false;

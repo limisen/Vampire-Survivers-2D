@@ -18,10 +18,15 @@ public class EnemyData : MonoBehaviour
 
     [SerializeField] public int score_to_give = 1;
 
+    [SerializeField] private float ScaleAmount;
+
     private void Awake()
     {
+        // Scale the Enemy's MaxHP by multiplying it's bases value by the players current lvl + 1 every 4 min
+        ScaleAmount = GameManager.singleton.Player_current_lvl + (Time.realtimeSinceStartup / 240);
+
         //DMG = DMG * (1 + GameManager.singleton.Player_current_lvl);
-        MaxHP = MaxHP * (GameManager.singleton.Player_current_lvl + (Time.realtimeSinceStartup / 60));
+        MaxHP = MaxHP * ScaleAmount;
 
         currentHP = MaxHP;
     }

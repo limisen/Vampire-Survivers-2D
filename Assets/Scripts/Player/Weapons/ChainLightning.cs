@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChainLightning : MonoBehaviour
 {
     private float timeRemaining;
-
     private int amountChained;
     private int MAXamountToChain;
 
@@ -19,10 +18,15 @@ public class ChainLightning : MonoBehaviour
     float nearestDistance = float.PositiveInfinity;
 
 
+    public float DMG;
+    [SerializeField] FeedBackText TextPrefab;
+    [SerializeField] private float TextEnlargeAmount;
+
     private void Awake()
     {
         timeRemaining = GameManager.singleton.time_between_lightning;
         MAXamountToChain = GameManager.singleton.amount_to_chain;
+        DMG = GameManager.singleton.Chain_Lightning_DMG;
         Trail = this.transform.GetChild(0).gameObject;
         Player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -82,7 +86,16 @@ public class ChainLightning : MonoBehaviour
                 float Am_I_Close_Enough = Vector3.Distance(this.transform.position, nearestObj.transform.position);
                 if (Am_I_Close_Enough < 1)
                 {
-                    nearestObj.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Chain_Lightning_DMG;
+                    // make sure we deal the correct amount of DMG
+                    DMG = GameManager.singleton.Chain_Lightning_DMG;
+
+                    // Deal the DMG
+                    nearestObj.GetComponent<EnemyData>().currentHP -= DMG;
+
+                    // Display the dmg dealt
+                    TextPopUps.SpawnText(TextPrefab, GameManager.singleton.Chain_Lightning_DMG.ToString(), transform.position, TextEnlargeAmount);
+
+                    // Increment the amount we have chained.
                     amountChained++;
 
                     // If we have reached the max amount to chain, reset the chain lightning effect

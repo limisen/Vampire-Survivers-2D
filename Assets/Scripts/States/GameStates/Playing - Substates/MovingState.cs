@@ -66,7 +66,7 @@ public class MovingState : State
         {
             CheckForTransition();
 
-            Debug.Log("Changing State to Idle");
+            //Debug.Log("Changing State to Idle");
             SwitchState(gameStateFactory.Idle());
         }
     }

@@ -1,23 +1,42 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Aura : MonoBehaviour
 {
+    [SerializeField] FeedBackText TextPrefab;
+    [SerializeField] private float TextEnlargeAmount;
+
+    float timer;
+    Collider2D[] Enemies;
+
     private void Awake()
     {
-        gameObject.GetComponent<CircleCollider2D>().radius = GameManager.singleton.radius;
+        timer = GameManager.singleton.Aura_TickRate;
     }
 
     private void Update()
     {
-        gameObject.GetComponent<CircleCollider2D>().radius = GameManager.singleton.radius;
-    }
+        timer -= Time.deltaTime;
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (GameManager.singleton.gamePaused == false && collision.gameObject.CompareTag("Enemy"))
+        // Check if it's time to deal DMG
+        if (GameManager.singleton.gamePaused == false && timer <= 0)
         {
-            // Deal dmg to the Enemy whilst inside of the Aura, do so over time (scaled to be per second not per frame)
-            collision.gameObject.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Aura_DMG * Time.deltaTime;
+            // Get the Enemies withing the Aura's Radius
+            Enemies = Physics2D.OverlapCircleAll(transform.position, GameManager.singleton.Aura_Radius);
+
+            // Starting from the last element, deal DMG to each enemy and spawn the DMG Text pop up.
+            for (int i = 0; i < Enemies.Length; i++)
+            {
+                Debug.Log("Attempting to Deal Aura DMG to: " + Enemies[i]);
+                if (Enemies[i].gameObject.CompareTag("Enemy")) 
+                { 
+                    Debug.Log("It is a Enemy! Dealing DMG");
+                    Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Aura_DMG;
+                    TextPopUps.SpawnText(TextPrefab, GameManager.singleton.Aura_DMG.ToString(), Enemies[i].transform.position, TextEnlargeAmount);
+                }
+            }
+            // Reset The timer once we are done with all the enemies
+            timer = GameManager.singleton.Aura_TickRate;
         }
     }
 }

@@ -4,7 +4,7 @@ public class AuraVisuals : MonoBehaviour
 {
     void Update()
     {
-        float radius = GameManager.singleton./*Aura*/radius;
+        float radius = GameManager.singleton.Aura_Radius;
 
         radius *= 1.15f;
 
