@@ -27,9 +27,6 @@ public class EnemyMovement : MonoBehaviour
             // Make it so the direaction/point we are moving to doesnt change the speed of the movement, based on the distance.
             delta.Normalize();
 
-            // Calculate the amount to rotate in order to face the target, then convert it from Radiants to Degrees
-            //float angle_to_rotate = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-
             // Now set the position and then rotate so we are facing the target (aka the player)
             transform.position += (Time.deltaTime * moveSpeed) * delta;
 
