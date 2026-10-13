@@ -64,6 +64,13 @@ public class GameMenu : MonoBehaviour
         {
             Destroy(Missile);
         }
+
+        // IF there are any Projectiles left in the scene destroy them
+        GameObject[] Projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        foreach (GameObject Projectile in Projectiles)
+        {
+            Destroy(Projectile);
+        }
         #endregion
 
         #region Player Data Reset
@@ -91,12 +98,13 @@ public class GameMenu : MonoBehaviour
         GameManager.singleton.amount_to_spawn = 1;
         GameManager.singleton.time_between_launch = 2;
 
-        GameManager.singleton.Aura_DMG = 5;
+        GameManager.singleton.Chain_Lightning_DMG = 5;
         GameManager.singleton.amount_to_chain = 2;
         GameManager.singleton.time_between_lightning = 2;
 
-        GameManager.singleton.Chain_Lightning_DMG = 5;
+        GameManager.singleton.Aura_DMG = 5;
         GameManager.singleton.Aura_Radius = 5;
+        GameManager.singleton.Aura_TickRate = 1;
         #endregion
 
         #region Updating UI values

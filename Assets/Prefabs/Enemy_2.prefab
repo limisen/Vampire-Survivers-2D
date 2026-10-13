@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5769028705716477251}
   - component: {fileID: 8541557230062475992}
   - component: {fileID: 8026883112427240775}
-  - component: {fileID: 252568707920814544}
+  - component: {fileID: -6276795956399548384}
   - component: {fileID: -7066378958736640782}
   - component: {fileID: -4752821903851986436}
   - component: {fileID: 4762569960947209446}
@@ -117,7 +117,7 @@ MonoBehaviour:
   EXP_Prefab: {fileID: 4495294543294757013, guid: 56d3ec21444ae1849922ef158e9a9f55, type: 3}
   score_to_give: 20
   ScaleAmount: 0
---- !u!114 &252568707920814544
+--- !u!114 &-6276795956399548384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,10 +126,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1973793669278704617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31973fdc4206d9544b861db9fcccc758, type: 3}
+  m_Script: {fileID: 11500000, guid: a06035dbd6107a04da67591787a2c31a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement_Type_2
+  minDistance: 4.5
+  maxDistance: 10
   AnimationController: {fileID: 4762569960947209446}
+  SyringePrefab: {fileID: 8577058294393426678, guid: 67830099ea8e6114e81481c36d6e50c4, type: 3}
+  throwingCooldown: 2.5
 --- !u!50 &-7066378958736640782
 Rigidbody2D:
   serializedVersion: 5

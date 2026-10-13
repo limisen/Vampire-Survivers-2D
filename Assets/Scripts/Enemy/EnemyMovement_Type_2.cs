@@ -3,18 +3,21 @@ using UnityEngine;
 public class EnemyMovement_Type_2 : MonoBehaviour
 {
     [SerializeField] float minDistance;
+    [SerializeField] float maxDistance;
     float Distance;
     float moveSpeed;
     [SerializeField] private Animator AnimationController;
     GameObject player;
 
     [SerializeField] GameObject SyringePrefab;
-
+    [SerializeField] float throwingCooldown;
+    private float timer;
     private void Awake()
     {
         if (moveSpeed == 0) { moveSpeed = GetComponent<EnemyData>().moveSpeed; }
         
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        timer = throwingCooldown;
     }
 
 
@@ -33,20 +36,30 @@ public class EnemyMovement_Type_2 : MonoBehaviour
 
             // Move towards ONLY if it's farther away than minDistance to the target (aka the player)
             Distance = Vector3.Distance(player.transform.position, transform.position);
-            if (Distance > minDistance)
+            if (Distance > maxDistance)
             {
                 transform.position += (Time.deltaTime * moveSpeed) * delta;            
             }
-            else if (Distance < minDistance)
+            else if (Distance < minDistance && Distance !< maxDistance)
             {
-                transform.position += transform.position - player.transform.position;
+                transform.position += (Time.deltaTime * moveSpeed) * (transform.position - player.transform.position).normalized;
             }
+            else
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                // throw a syringe
+                GameObject Syringe = Instantiate(SyringePrefab, transform.position, Quaternion.identity);
 
-            //if (/*Enemy is close enough*/)
-            //{
-            //    // throw a syringe
-            //    Instantiate(SyringePrefab, transform.position, Quaternion.identity);
-            //}
+                // Set it's DMG
+                Syringe.GetComponent<ProjectileHitDetection>().DMG = GetComponent<EnemyData>().DMG;
+                Syringe.GetComponent<ProjectileMovement>().ProjectileMoveSpeed = GetComponent<EnemyData>().moveSpeed * 0.75f;
+
+                    // reset the timer
+                    timer = throwingCooldown;
+                }
+            }
 
             // Animator Variables reset
             AnimationController.SetBool("Idle", false);
