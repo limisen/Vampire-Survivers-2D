@@ -117,6 +117,9 @@ MonoBehaviour:
   EXP_Prefab: {fileID: 4495294543294757013, guid: 56d3ec21444ae1849922ef158e9a9f55, type: 3}
   score_to_give: 20
   ScaleAmount: 0
+  death_SFX_Clip: {fileID: 8300000, guid: a46d36c6716536e438b921e19f4fadc8, type: 3}
+  throw_SFX_Clip: {fileID: 8300000, guid: 6f2c198af31bdc345b10307d4c7e359b, type: 3}
+  death_SFX_prefab: {fileID: 5808608635993349095, guid: 2a121b07355592444bbc518baf2d1874, type: 3}
 --- !u!114 &-6276795956399548384
 MonoBehaviour:
   m_ObjectHideFlags: 0

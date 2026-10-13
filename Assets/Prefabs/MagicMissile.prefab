@@ -184,10 +184,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e0607b83053b1949819819357d127eb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::Missile_HitDetection
   DMG: 1
   TextPrefab: {fileID: 3147969663705580254, guid: d3d9d1094b02358478792ea17e50a815, type: 3}
-  TextEnlargeAmount: 1.5
+  TextEnlargeAmount: 0
 --- !u!1 &5182906813110636331
 GameObject:
   m_ObjectHideFlags: 0

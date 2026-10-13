@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    AudioSource audiSource;
-    [SerializeField] List<AudioClip> sounds = new List<AudioClip>();
+    public AudioSource audiSource;
+    [SerializeField] public List<AudioClip> Music = new List<AudioClip>();
+    [SerializeField] public List<AudioClip> SFX = new List<AudioClip>();
 
     [SerializeField] StateMachine stateMachine;
 
@@ -13,12 +14,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         audiSource = GetComponent<AudioSource>();
-    }
-
-    private void Start()
-    {
         audiSource.volume = PlayerPrefs.GetFloat("Master_Volume", 0.33f);
-        audiSource.generator = sounds[0]; // main menu song
     }
 
     private void Update()
@@ -29,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
         if (stateMachine.CurrentState.GetType().Name == "MainMenuState")
         {
-            audiSource.generator = sounds[0]; // main menu song
+            audiSource.generator = Music[0]; // main menu song
             if (audiSource.isPlaying == false)
             {
                 audiSource.Play();
@@ -37,7 +33,14 @@ public class AudioManager : MonoBehaviour
         }
         else if (stateMachine.CurrentState.GetType().Name == "PlayingSate" || stateMachine.CurrentState.GetType().Name == "IdleState" || stateMachine.CurrentState.GetType().Name == "MovingState")
         {
-            audiSource.generator = sounds[1]; // main menu song
+            audiSource.generator = Music[1]; // main menu song
+            if (audiSource.isPlaying == false)
+            {
+                audiSource.Play();
+            }
+        }
+        else if (stateMachine.CurrentState.GetType().Name == "SettingsState")
+        {
             if (audiSource.isPlaying == false)
             {
                 audiSource.Play();

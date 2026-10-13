@@ -11,11 +11,11 @@ public class FeedBackText : MonoBehaviour
     [SerializeField] Vector3 EnlargedScale;
     [SerializeField] float EnlargedAmount;
 
-    public void Initialize(string aText, float EnlargeAmount = 1.5f)
+    public void Initialize(string aText, float EnlargeAmount = 1.25f)
     {
         startScale = transform.localScale;
 
-        if (EnlargeAmount != 1.5f)
+        if (EnlargeAmount != 1.25f)
         {
             EnlargedScale = startScale * EnlargeAmount;
         }
@@ -36,19 +36,19 @@ public class FeedBackText : MonoBehaviour
     {
         for (float t = 0; t < 1; t += Time.deltaTime)
         {
-            transform.localScale = Vector3.Lerp(Vector3.zero, startScale, t);
+            transform.localScale = Vector3.Lerp(Vector3.zero, startScale, t * 2);
             yield return null;
         }
 
         for (float t = 0; t < 1; t += Time.deltaTime)
         {
-            transform.localScale = Vector3.Lerp(startScale, EnlargedScale, t);
+            transform.localScale = Vector3.Lerp(startScale, EnlargedScale, t * 2);
             yield return null;
         }
 
         for (float t = 0; t < 1; t += Time.deltaTime)
         {
-            transform.localScale = Vector3.Lerp(EnlargedScale, Vector3.zero, t);
+            transform.localScale = Vector3.Lerp(EnlargedScale, Vector3.zero, t * 2);
             yield return null;
         }
         Destroy(gameObject);

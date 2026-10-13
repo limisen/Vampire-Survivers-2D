@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyData : MonoBehaviour
@@ -20,6 +21,10 @@ public class EnemyData : MonoBehaviour
 
     [SerializeField] private float ScaleAmount;
 
+    [SerializeField] AudioSource MasterAudioSource;
+    [SerializeField] AudioClip death_SFX_Clip;
+
+
     private void Awake()
     {
         // Scale the Enemy's MaxHP by multiplying it's bases value by the players current lvl + 1 every 4 min
@@ -29,6 +34,8 @@ public class EnemyData : MonoBehaviour
         MaxHP = MaxHP * ScaleAmount;
 
         currentHP = MaxHP;
+
+        MasterAudioSource = GameObject.FindAnyObjectByType<AudioSource>();
     }
 
     private void LateUpdate()
@@ -46,6 +53,9 @@ public class EnemyData : MonoBehaviour
 
             // Increase the player's score for killing this enemy.
             GameManager.singleton.score += score_to_give;
+
+            // Play the DeathSFX via a coroutine
+            MasterAudioSource.PlayOneShot(death_SFX_Clip);
         }
     }
 }

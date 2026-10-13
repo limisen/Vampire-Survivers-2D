@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
@@ -6,10 +7,13 @@ public class SoundSettings : MonoBehaviour
     public float Volume_Value;
     Slider Volume_Slider;
 
-    private void Start()
+    [SerializeField] AudioSource audioSource;
+
+    private void Awake()
     {
         Volume_Value = PlayerPrefs.GetFloat("Master_Volume", 0.33f);
-        AudioListener.volume = Volume_Value;
+        audioSource = FindAnyObjectByType<AudioSource>();
+        audioSource.volume = Volume_Value;
 
         Volume_Slider = GetComponent<Slider>();
         Volume_Slider.value = Volume_Value;
@@ -20,7 +24,7 @@ public class SoundSettings : MonoBehaviour
         Debug.Log("Master_Volume Changed...");
 
         PlayerPrefs.SetFloat("Master_Volume", newVolumeValue);
-        AudioListener.volume = PlayerPrefs.GetFloat("Master_Volume");
+        audioSource.volume = PlayerPrefs.GetFloat("Master_Volume");
 
         Debug.Log("New Value: " + newVolumeValue);
         Volume_Value = newVolumeValue;
