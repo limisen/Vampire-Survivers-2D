@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement_Type_2 : MonoBehaviour
 {
+    [SerializeField] float minDistance;
+    float Distance;
     float moveSpeed;
     [SerializeField] private Animator AnimationController;
     GameObject player;
+
+    [SerializeField] GameObject SyringePrefab;
 
     private void Awake()
     {
@@ -27,8 +31,22 @@ public class EnemyMovement : MonoBehaviour
             // Make it so the direaction/point we are moving to doesnt change the speed of the movement, based on the distance.
             delta.Normalize();
 
-            // Now set the position and then rotate so we are facing the target (aka the player)
-            transform.position += (Time.deltaTime * moveSpeed) * delta;
+            // Move towards ONLY if it's farther away than minDistance to the target (aka the player)
+            Distance = Vector3.Distance(player.transform.position, transform.position);
+            if (Distance > minDistance)
+            {
+                transform.position += (Time.deltaTime * moveSpeed) * delta;            
+            }
+            else if (Distance < minDistance)
+            {
+                transform.position += transform.position - player.transform.position;
+            }
+
+            //if (/*Enemy is close enough*/)
+            //{
+            //    // throw a syringe
+            //    Instantiate(SyringePrefab, transform.position, Quaternion.identity);
+            //}
 
             // Animator Variables reset
             AnimationController.SetBool("Idle", false);
