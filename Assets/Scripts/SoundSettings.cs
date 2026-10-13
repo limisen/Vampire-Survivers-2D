@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
-    float Volume_Value;
+    public float Volume_Value;
     Slider Volume_Slider;
 
     private void Start()
@@ -23,5 +23,6 @@ public class SoundSettings : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("Master_Volume");
 
         Debug.Log("New Value: " + newVolumeValue);
+        Volume_Value = newVolumeValue;
     }
 }
