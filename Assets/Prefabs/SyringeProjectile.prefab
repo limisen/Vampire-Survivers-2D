@@ -156,6 +156,7 @@ MonoBehaviour:
   DMG: 0
   TextPrefab: {fileID: 3147969663705580254, guid: d3d9d1094b02358478792ea17e50a815, type: 3}
   TextEnlargeAmount: 0
+  Syringe_Hit_SFX: {fileID: 8300000, guid: 5f3e01b2086015e47b0f233daec3e575, type: 3}
 --- !u!70 &8516127972445752189
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

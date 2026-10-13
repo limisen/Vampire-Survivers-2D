@@ -188,6 +188,7 @@ MonoBehaviour:
   DMG: 1
   TextPrefab: {fileID: 3147969663705580254, guid: d3d9d1094b02358478792ea17e50a815, type: 3}
   TextEnlargeAmount: 0
+  Missile_Hit_SFX: {fileID: 8300000, guid: 6f2c198af31bdc345b10307d4c7e359b, type: 3}
 --- !u!1 &5182906813110636331
 GameObject:
   m_ObjectHideFlags: 0

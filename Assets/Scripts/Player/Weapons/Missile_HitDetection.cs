@@ -7,6 +7,13 @@ public class Missile_HitDetection : MonoBehaviour
     [SerializeField] FeedBackText TextPrefab;
     [SerializeField] private float TextEnlargeAmount;
 
+    AudioSource MasterAudioSource;
+    [SerializeField] AudioClip Missile_Hit_SFX;
+
+    private void Awake()
+    {
+        MasterAudioSource = FindAnyObjectByType<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,6 +33,9 @@ public class Missile_HitDetection : MonoBehaviour
 
             // Display the dmg dealt
             TextPopUps.SpawnText(TextPrefab , DMG.ToString(), transform.position, TextEnlargeAmount);
+
+            // Play the SFX for when the Missile hits something
+            MasterAudioSource.PlayOneShot(Missile_Hit_SFX);
         }
     }
 }

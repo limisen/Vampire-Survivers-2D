@@ -9,9 +9,13 @@ public class Aura : MonoBehaviour
     float timer;
     Collider2D[] Enemies;
 
+    AudioSource MasterAudioSource;
+    [SerializeField] AudioClip Aura_Hit_SFX;
+
     private void Awake()
     {
         timer = GameManager.singleton.Aura_TickRate;
+        MasterAudioSource = FindAnyObjectByType<AudioSource>();
     }
 
     private void Update()
@@ -32,6 +36,9 @@ public class Aura : MonoBehaviour
                     Debug.Log("It is a Enemy! Dealing DMG");
                     Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Aura_DMG;
                     TextPopUps.SpawnText(TextPrefab, GameManager.singleton.Aura_DMG.ToString(), Enemies[i].transform.position, TextEnlargeAmount);
+
+                    // Play the SFX for when Aura Hits a enemy (played once per enemy)
+                    MasterAudioSource.PlayOneShot(Aura_Hit_SFX);
                 }
             }
             // Reset The timer once we are done with all the enemies

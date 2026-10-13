@@ -22,6 +22,10 @@ public class ChainLightning : MonoBehaviour
     [SerializeField] FeedBackText TextPrefab;
     [SerializeField] private float TextEnlargeAmount;
 
+
+    AudioSource MasterAudioSource;
+    [SerializeField] AudioClip Lightning_Hit_SFX;
+
     private void Awake()
     {
         timeRemaining = GameManager.singleton.time_between_lightning;
@@ -29,6 +33,7 @@ public class ChainLightning : MonoBehaviour
         DMG = GameManager.singleton.Chain_Lightning_DMG;
         Trail = this.transform.GetChild(0).gameObject;
         Player = GameObject.FindGameObjectWithTag("Player");
+        MasterAudioSource = FindAnyObjectByType<AudioSource>();
     }
 
     private void Update()
@@ -94,6 +99,9 @@ public class ChainLightning : MonoBehaviour
 
                     // Display the dmg dealt
                     TextPopUps.SpawnText(TextPrefab, GameManager.singleton.Chain_Lightning_DMG.ToString(), transform.position, TextEnlargeAmount);
+
+                    // Play SFX for when the lightning "hits" a enemy
+                    MasterAudioSource.PlayOneShot(Lightning_Hit_SFX);
 
                     // Increment the amount we have chained.
                     amountChained++;
