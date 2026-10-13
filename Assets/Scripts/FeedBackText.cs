@@ -30,7 +30,6 @@ public class FeedBackText : MonoBehaviour
         myText.text = aText;
 
         StartCoroutine(AnimateText());
-        Destroy(gameObject, 1);
     }
 
     IEnumerator AnimateText()
@@ -52,5 +51,6 @@ public class FeedBackText : MonoBehaviour
             transform.localScale = Vector3.Lerp(EnlargedScale, Vector3.zero, t);
             yield return null;
         }
+        Destroy(gameObject);
     }
 }
