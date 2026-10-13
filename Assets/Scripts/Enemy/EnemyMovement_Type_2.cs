@@ -68,7 +68,7 @@ public class EnemyMovement_Type_2 : MonoBehaviour
             AnimationController.SetBool("MovingUp", false);
             AnimationController.SetBool("MovingDown", false);
 
-            // Depending on the direction's magnitude decide if we are moving more on the X- or Y-Axis then set the respective animation Bool to true
+            // Depending on the direction's magnitude, Check either the X- or Y-Axis. Then decide if we are moving Left / right respectivly Up / Down, and set the appropriate animation Bool to true
             if (Mathf.Abs(delta.x) > (Mathf.Abs(delta.y)))
             {
                 if (delta.x < 0)
@@ -91,6 +91,7 @@ public class EnemyMovement_Type_2 : MonoBehaviour
                     AnimationController.SetBool("MovingUp", true);
                 }
             }
+            // Otherwise enter Idle
             else
             {
                 AnimationController.SetBool("Idle", true);

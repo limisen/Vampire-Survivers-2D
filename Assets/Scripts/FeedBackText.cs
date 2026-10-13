@@ -11,11 +11,11 @@ public class FeedBackText : MonoBehaviour
     [SerializeField] Vector3 EnlargedScale;
     [SerializeField] float EnlargedAmount;
 
-    public void Initialize(string aText, float EnlargeAmount = 1.25f)
+    public void Initialize(string aText, float EnlargeAmount = 1.05f)
     {
         startScale = transform.localScale;
 
-        if (EnlargeAmount != 1.25f)
+        if (EnlargeAmount != 1.05f)
         {
             EnlargedScale = startScale * EnlargeAmount;
         }
