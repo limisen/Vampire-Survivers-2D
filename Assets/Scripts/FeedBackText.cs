@@ -26,7 +26,6 @@ public class FeedBackText : MonoBehaviour
 
 
         myText = GetComponent<TextMeshPro>();
-        Debug.Log("Test: " + (myText != null));
         myText.text = aText;
 
         StartCoroutine(AnimateText());

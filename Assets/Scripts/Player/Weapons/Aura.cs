@@ -33,7 +33,6 @@ public class Aura : MonoBehaviour
             {
                 if (Enemies[i].gameObject.CompareTag("Enemy")) 
                 { 
-                    Debug.Log("It is a Enemy! Dealing DMG");
                     Enemies[i].gameObject.GetComponent<EnemyData>().currentHP -= GameManager.singleton.Aura_DMG;
                     TextPopUps.SpawnText(TextPrefab, GameManager.singleton.Aura_DMG.ToString(), Enemies[i].transform.position, TextEnlargeAmount);
 
