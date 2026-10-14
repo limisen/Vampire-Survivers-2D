@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     [Space]
     [Space]
     [SerializeField] public int score;
+    [Space]
+    [Space]
+    [SerializeField] public AudioSource MasterAudioSource;
+    [SerializeField] public AudioClip Player_Death_SFX;
+    [SerializeField] public AudioClip Player_LVL_UP_SFX;
     #endregion
 
     #region Weapon Data
@@ -125,18 +130,4 @@ public class GameManager : MonoBehaviour
         }
         #endregion
     }
-
-    //public void On_level_up()
-    //{
-    //    if (current_EXP >= EXP_to_next_lvl)
-    //    {
-    //        gameMenu.LvL_Up_Menu.SetActive(true);
-    //        gamePaused = true;
-    //    }
-    //    else
-    //    {
-    //        gameMenu.EXP_slider.value = current_EXP;
-    //        gameMenu.EXP_slider.maxValue = EXP_to_next_lvl;
-    //    }
-    //}
 }

@@ -33,7 +33,7 @@ public class IdleState : State
         if (GameManager.singleton.current_EXP >= GameManager.singleton.EXP_to_next_lvl)
         {
             CheckForTransition();
-
+            GameManager.singleton.MasterAudioSource.PlayOneShot(GameManager.singleton.Player_LVL_UP_SFX, 0.25f);
             SwitchState(gameStateFactory.Upgrade());
         }
 
@@ -56,6 +56,9 @@ public class IdleState : State
             CheckForTransition();
 
             GameManager.singleton.gameMenu.Player_UI.SetActive(false);
+
+            Debug.Log("Playing Player_Death_SFX...");
+            GameManager.singleton.MasterAudioSource.PlayOneShot(GameManager.singleton.Player_Death_SFX, 5);
 
             SwitchState(gameStateFactory.GameOver());
         }
